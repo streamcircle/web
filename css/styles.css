@@ -157,11 +157,11 @@ a:hover {
 }
 
 /* Animated underline for text links */
-a:not(.btn):not(.navbar__link):not(.navbar__brand) {
+a:not(.btn):not(.navbar__link):not(.navbar__brand):not(.link--image) {
   position: relative;
 }
 
-a:not(.btn):not(.navbar__link):not(.navbar__brand)::after {
+a:not(.btn):not(.navbar__link):not(.navbar__brand):not(.link--image)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -174,7 +174,7 @@ a:not(.btn):not(.navbar__link):not(.navbar__brand)::after {
   transition: transform var(--transition-normal);
 }
 
-a:not(.btn):not(.navbar__link):not(.navbar__brand):hover::after {
+a:not(.btn):not(.navbar__link):not(.navbar__brand):not(.link--image):hover::after {
   transform: scaleX(1);
 }
 
@@ -1027,18 +1027,10 @@ table {
   width: 100%;
   max-width: 200px;
   aspect-ratio: 3 / 2;
-  padding: 8px;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.references__item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: var(--radius-xl);
-  padding: 10px;
 }
 
 /* ============================================
@@ -1047,7 +1039,7 @@ table {
 .about-images {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 3rem;
   margin-top: 2rem;
 }
 
@@ -1215,4 +1207,16 @@ table {
 
 .link--mint:hover {
   color: var(--color-teal-pastel);
+}
+
+/* Link style for images */
+.link--image img {
+  transition:
+    transform var(--transition-normal),
+    opacity var(--transition-normal);
+}
+
+.link--image:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
