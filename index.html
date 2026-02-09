@@ -11,11 +11,9 @@
     <title>Tweenly</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->    
+    <!-- Font Awesome icons (free version)-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- Core theme CSS (BEM methodology)-->
     <link href="css/styles.css" rel="stylesheet" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BPP6FPK8H"></script>
@@ -29,1252 +27,623 @@
 
 <body>
 
-
-    <nav class="navbar py-3 navbar-expand-lg navbar-dark bg-black-dark">
-        <div class="container px-4">
-            <a class="navbar-brand" href="https://tween.ly" aria-label="Link to homepage">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar__brand" href="https://tween.ly" aria-label="Link to homepage">
                 <img src="assets/logo_tweenly_dark.svg" alt="Tweenly logo" width="174" >
             </a>
-            <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>-->
-            <button id="menuToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button id="menuToggle" class="navbar__toggle" type="button" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar__toggle-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/"
-                            aria-label="Link to homepage">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#solution"
-                            aria-label="Link to Solution section">Solution</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing"
-                            aria-label="Link to Pricing section">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services"
-                            aria-label="Link to Services section">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#references"
-                            aria-label="Link to Reference section">References</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq" aria-label="Link to FAQ section">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about-us" aria-label="Link to About us section">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact"
-                            aria-label="Link to Contact section">Contact</a></li>
+            <div class="navbar__menu" id="navbarMenu">
+                <ul class="navbar__nav">
+                    <li class="navbar__item"><a class="navbar__link" aria-current="page" href="/" aria-label="Link to homepage">Home</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#solution" aria-label="Link to Solution section">Solution</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#pricing" aria-label="Link to Pricing section">Pricing</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#services" aria-label="Link to Services section">Services</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#references" aria-label="Link to Reference section">References</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#faq" aria-label="Link to FAQ section">FAQ</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#about-us" aria-label="Link to About us section">About Us</a></li>
+                    <li class="navbar__item"><a class="navbar__link" href="#contact" aria-label="Link to Contact section">Contact</a></li>
                 </ul>
-                <div class="ml-auto d-flex menu-buttons">
-                    <a class="btn btn-link-cs" target="_blank" href="https://editor.tween.ly/login"
-                        aria-label="Link to app login">Log in</a>
-                    <a class="btn btn-primary-cs" target="_blank" href="https://editor.tween.ly/signup"
-                        aria-label="Link to app signup">Sign up</a>
+                <div class="navbar__actions">
+                    <a class="btn btn--outline" target="_blank" href="https://editor.tween.ly/login" aria-label="Link to app login">Log in</a>
+                    <a class="btn btn--primary" target="_blank" href="https://editor.tween.ly/signup" aria-label="Link to app signup">Sign up</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Header-->
-    <header class="bg-dark py-5">
-        <div class="container px-5">
-            <div class="row bg-dark-teal gx-5 justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center headline-pd">
-                        <h1 class="display-5 mb-2">Where Broadcast Design Comes to Life</h1>
-                    </div>
-                </div>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Where Broadcast Design Comes to Life</h1>
             </div>
         </div>
     </header>
-    <section class="py-5 bg-dark" id="examples">
-        <!-- <div class="container px-4">
-            <div class="row gx-3">
-                <div class="col-lg-4">
-                    <video class="width-image promo-video video-example" loop muted 
-                    > -->
-                    <!-- je mozne pridat poster="assets/tweenly-logo.png" aby nebola cierna obrazovka ked sa videao neprehrava-->
-                        <!-- <source src="assets/Tweenly-promo.mp4" type="video/mp4" >
-                        Your browser does not support the video tag.
-                    </video>         
-                </div>
-                <div class="col-lg-4">
-                    <video class="width-image promo-video video-example" loop muted>
-                        <source src="assets/Tweenly-promo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="col-lg-4">
-                    <video class="width-image promo-video video-example" loop muted>
-                        <source src="assets/Tweenly-promo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>    
-                </div>
-            </div>
-        </div> -->
 
-        <div class="container px-5 mt-3">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-10">
-                    <div class="text-center my-5">
-                        <h3 class="mb-4 mt-3">Animation tool for broadcast graphics</h3>
-                        <p class="lead text-start mb-4">With over 30 years in broadcast technology, we’ve seen the same challenge across TV stations of all sizes: the need to create graphics with real-time data, tickers, and API control — and export them as production-ready HTML. That’s why we built Tweenly — a web-based application tailored to the specifics of broadcast graphics. It streamlines design, data connection, and playout integration in one powerful tool.</p>
-                    </div>
-                </div>
+    <!-- Examples Section -->
+    <section class="section section--dark" id="examples">
+        <div class="container">
+            <div class="section__content text--center my-5">
+                <h3 class="mb-4 mt-3">Animation tool for broadcast graphics</h3>
+                <p class="text--lead text--start mb-4">With over 30 years in broadcast technology, we've seen the same challenge across TV stations of all sizes: the need to create graphics with real-time data, tickers, and API control — and export them as production-ready HTML. That's why we built Tweenly — a web-based application tailored to the specifics of broadcast graphics. It streamlines design, data connection, and playout integration in one powerful tool.</p>
             </div>
         </div>
-        <div class="container px-5 view-desktop">
-            <div class="row">
-                <div class="divider"></div>
+        <div class="container view-desktop">
+            <div class="divider"></div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section section--dark" id="solution">
+        <div class="container">
+            <div class="section__content text--center">
+                <span class="section__subheadline">Solution</span>
+                <h2 class="mb-3 mt-3">Right Broadcast Tools</h2>
+                <p class="text--lead text--start mb-5">Take full control of your broadcast graphics design from scene creation to playout integration. Tweenly allows you to spend more time creating dynamic tickers, lower thirds and titles, and less time dealing with technical challenges. The appliactaion is fully cloud-based — access your graphics, share, and export from anywhere.</p>
+                <video class="video" loop="true" autoplay muted>
+                    <source src="assets/Tweenly-promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <div class="grid grid--cols-3">
+                <div class="card">
+                    <h4 class="card__title">
+                       Editor
+                    </h4>
+                    <p class="card__text">The Editor is where you build individual scenes. Each scene consists of objects — such as shapes, texts, and images — that can be nested, grouped, and positioned in layers. Styling is handled through CSS. The timeline allows you to animate objects and control their timing. Triggers and labels define programmatic behavior during playback.</p>
+                </div>
+                <div class="card">
+                    <h4 class="card__title">
+                        Gallery
+                    </h4>
+                    <p class="card__text">The Gallery is a personal cloud-based storage for your graphics. It contains all created or imported scenes and allows browsing, editing, versioning, and exporting. Every project remains accessible and editable at any time.</p>
+                </div>
+                <div class="card">
+                    <h4 class="card__title">
+                        Workspaces
+                    </h4>
+                    <p class="card__text">Workspaces are shared environments where multiple users can collaborate on graphics. Each workspace contains a set of scenes, assets, and configuration data. Access rights and roles determine who can view, edit, or export content. All changes are synced in real time.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Animation section-->
-    <section class="pt-5 bg-dark" id="solution">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-10">
-                    <div class="text-center">
-                        <span class="subheadline-sc text-pastel-teal">Solution</span>
-                        <h2 class="mb-3 mt-3">Right Broadcast Tools</h2>
-                        <p class="lead text-start mb-5">Take full control of your broadcast graphics design from scene creation to playout integration. Tweenly allows you to spend more time creating dynamic tickers, lower thirds and titles, and less time dealing with technical challenges. The appliactaion is fully cloud-based — access your graphics, share, and export from anywhere.</p>
-                        <!-- <img class="width-image" src="assets/animation-proces.png"> -->
-                        <!-- <a href="https://www.youtube.com/watch?v=z0Sj1p160HU" target="_blank"> -->
-                        <video class="width-image promo-video" loop="true" autoplay muted>
-                            <source src="assets/Tweenly-promo.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <!-- </a> -->
-                    </div>
+    <!-- Features Section -->
+    <section class="section section--teal py-5">
+        <div class="container py-5">
+            <div class="grid grid--cols-3">
+                <div class="features__item">
+                    <h4 class="features__title">Graphics export options</h4>
+                    <p class="features__text">Graphic files can be exported as plain HTML with files linked to our cloud, or as a ZIP package that includes all assets needed for offline use. The package format is especially recommended when working with images, custom fonts, or image sequences.</p>
                 </div>
-            </div>
-        </div>
-        <div class="container py-5 px-5">
-            <div class="row gx-3">
-                <div class="col-lg-4 pb-3">
-                    <div class="p-3 bk-light-grey h-100">
-                        <h4 class="text-start">
-                            <i class="fa-solid fa-pen me-2"></i> Editor
-                        </h4>
-                        <p class="text-start">The Editor is where you build individual scenes. Each scene consists of objects — such as shapes, texts, and images — that can be nested, grouped, and positioned in layers. Styling is handled through CSS. The timeline allows you to animate objects and control their timing. Triggers and labels define programmatic behavior during playback.</p>
-                    </div>
+                <div class="features__item">
+                    <h4 class="features__title">Tickers</h4>
+                    <p class="features__text">Display scrolling or crawling text within a scene. Their direction, speed, and content can be configured for different use cases, such as sports results or news headlines.</p>
                 </div>
-                <div class="col-lg-4 pb-3">
-                    <div class="p-3 bk-light-grey h-100">
-                        <h4 class="text-start">
-                            <i class="fa-solid fa-images me-2"></i> Gallery
-                        </h4>
-                        <p class="text-start">The Gallery is a personal cloud-based storage for your graphics. It contains all created or imported scenes and allows browsing, editing, versioning, and exporting. Every project remains accessible and editable at any time.</p>
-                    </div>
+                <div class="features__item">
+                    <h4 class="features__title">Image Sequence</h4>
+                    <p class="features__text">An image sequence is a series of numbered images used for frame-by-frame animation. Tweenly supports importing and timing these sequences.</p>
                 </div>
-                <div class="col-lg-4 pb-3">
-                    <div class="p-3 bk-light-grey h-100">
-                        <h4 class="text-start">
-                            <i class="fa-solid fa-people-group me-2"></i> Workspaces
-                        </h4>
-                        <p class="text-start">Workspaces are shared environments where multiple users can collaborate on graphics. Each workspace contains a set of scenes, assets, and configuration data. Access rights and roles determine who can view, edit, or export content. All changes are synced in real time.</p>
-                    </div>
+                <div class="features__item">
+                    <h4 class="features__title">Code Triggers</h4>
+                    <p class="features__text">Triggers are code blocks executed during timeline playback. Timeline labels mark specific timeline points and are used to pause, jump, or sync animations programmatically.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="bk-dark-teal py-5">
-        <div class="container px-5 py-5">
-            <div class="row gx-5">
-                <div class="col-lg-4 mb-5 mb-lg-4 text-center">
-                    <h4 class="text-start"><i class="fa-solid fa-file-export me-2"></i>Graphics export options</h4>
-                    <p class="text-start mb-0">Graphic files can be exported as plain HTML with files linked to our cloud, or as a ZIP package that includes all assets needed for offline use. The package format is especially recommended when working with images, custom fonts, or image sequences.</p>
-                    <!-- <a href="https://docs.tween.ly/getting-started/introduction/" target="_blank" rel="noopener">
-                        <p class=" text-start ">Learn more →</p> 
-                    </a> -->
+                <div class="features__item">
+                    <h4 class="features__title">Data Source & API Control</h4>
+                    <p class="features__text">Text, image, and ticker fields can be updated from external sources. This includes connecting to structured data feeds (JSON, XML, TXT) or receiving values via API commands from a playout system. No scripting is required. Input values are applied in real time during playback.</p>
                 </div>
-                <div class="col-lg-4 mb-5 mb-lg-4 text-center">
-                    <h4 class="text-start"><i class="fa-solid fa-newspaper me-2"></i>Tickers</h4>
-                    <p class="text-start mb-0">Display scrolling or crawling text within a scene. Their direction, speed, and content can be configured for different use cases, such as sports results or news headlines.</p>
-                    <!-- <a href="https://docs.tween.ly/getting-started/introduction/" target="_blank" rel="noopener">
-                        <p class=" text-start ">Learn more →</p> 
-                    </a> -->
+                <div class="features__item">
+                    <h4 class="features__title">Build-in Test App</h4>
+                    <p class="features__text">The Test App simulates API inputs to preview graphics under different conditions. It allows manual testing of text, images, and styles before playout.</p>
                 </div>
-                <div class="col-lg-4 mb-5 mb-lg-4 text-center">
-                    <h4 class="text-start"><i class="fa-solid fa-film me-2"></i>Image Sequence</h4>
-                    <p class="text-start mb-0">An image sequence is a series of numbered images used for frame-by-frame animation. Tweenly supports importing and timing these sequences.</p>
-                    <!-- <a href="https://docs.tween.ly/getting-started/introduction/" target="_blank" rel="noopener">
-                        <p class=" text-start ">Learn more →</p> 
-                    </a> -->
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0 text-center">
-                    <h4 class="text-start"><i class="fa-solid fa-code me-2"></i>Code Triggers</h4>
-                    <p class="text-start mb-0">Triggers are code blocks executed during timeline playback. Timeline labels mark specific timeline points and are used to pause, jump, or sync animations programmatically.</p>
-                    <!-- <a href="https://docs.tween.ly/getting-started/introduction/" target="_blank" rel="noopener">
-                        <p class="text-start ">Learn more →</p> 
-                    </a> -->
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0 text-center">
-                    <h4 class="text-start"><i class="fa-solid fa-database me-2"></i>Data Source & API Control</h4>
-                    <p class="text-start mb-0">Text, image, and ticker fields can be updated from external sources. This includes connecting to structured data feeds (JSON, XML, TXT) or receiving values via API commands from a playout system. No scripting is required. Input values are applied in real time during playback.</p>
-                    <br/>
-                    <!-- <a href="https://docs.tween.ly/getting-started/introduction/" target="_blank" rel="noopener">
-                        <p class="text-start ">Learn more →</p> 
-                    </a> -->
-                </div>
-                <div class="col-lg-4 mb-lg-0 text-center">
-                    <h4 class="text-start"><i class="fa-solid fa-vial me-2"></i>Build-in Test App</h4>
-                    <p class="text-start mb-0">The Test App simulates API inputs to preview graphics under different conditions. It allows manual testing of text, images, and styles before playout.</p>
-                    <br/>
-                    <!-- <a href="https://docs.tween.ly/getting-started/introduction/" target="_blank" rel="noopener">
-                        <p class="text-start ">Learn more →</p> 
-                    </a> -->
-                </div>
-            </div>
-        </div>    
-    </section>
-    <!-- Pricing section desktop -->
-    <section class="bg-dark pt-5 view-desktop" id="pricing">
-        <div class="container px-5 py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="text-center mb-5">
-                        <span class="subheadline-sc text-pastel-teal">Pricing</span>
-                        <h2 class="mb-3 mt-3">Two Simple Plans</h2>
-                        <p class="lead mb-0">Free or Unlimited – nothing in between. Start for free and explore the core features. When you're ready to go live, unlock everything with Unlimited.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="tab-content pt-5" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                        aria-labelledby="pills-home-tab-desktop">
-                        <div class="table-responsive pricing-options_table">
-                            <table class="table pricing-options-table__table text-white">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>
-                                            <div class="pricing-option__header">
-                                                <img class="mb-3" src="assets/pricing-icon-1.svg" alt="" width="45"
-                                                    height="44">
-                                                <span class="text-pastel-teal">Free</span>
-                                                <div class="h5">Free</div>
-                                                <p>Try it out. No credit card needed.</p>
-                                            </div>
-                                        </th>
-                                        <th>
-                                            <div class="pricing-option__header">
-                                                <img class="mb-3" src="assets/pricing-icon-4.svg" alt="" width="45"
-                                                    height="44">
-                                                <span class="text-pastel-teal">Unlimited</span>
-                                                <div class="h5">40€/mth</div>
-                                                <p>Everything unlocked. No limits.</p>
-                                            </div>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="pricing-options-table__title head-title-tb"><b>Editor</b></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="tb-light-gray">
-                                        <td class="pricing-options-table__title">Plain HTML export</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-dark-gray">
-                                        <td class="pricing-options-table__title">Zip package export</td>
-                                        <td>-</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-light-gray">
-                                        <td class="pricing-options-table__title">Tickers</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-dark-gray">
-                                        <td class="pricing-options-table__title">Image sequence</td>
-                                        <td>-</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-light-gray">
-                                        <td class="pricing-options-table__title">Code triggers</td>
-                                        <td>-</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-dark-gray">
-                                        <td class="pricing-options-table__title">Data source</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-light-gray">
-                                        <td class="pricing-options-table__title">API control</td>
-                                        <td>-</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-dark-gray">
-                                        <td class="pricing-options-table__title">Build-in test app</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pricing-options-table__title head-title-tb"><b>Gallery</b></td>
-                                        <td></i></td>
-                                        <td></i></td>
-                                    </tr>
-                                    <tr class="tb-light-gray">
-                                        <td class="pricing-options-table__title">Storage utilization</td>
-                                        <td>Limited - 256 MB</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pricing-options-table__title head-title-tb"><b>Workspaces</b></td>
-                                        <td></i></td>
-                                        <td></i></td>
-                                    </tr>
-                                    <tr class="tb-light-gray">
-                                        <td class="pricing-options-table__title">Personal workspace</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-dark-gray">
-                                        <td class="pricing-options-table__title">Own workspaces</td>
-                                        <td>-</td>
-                                        <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                    </tr>
-                                    <tr class="tb-light-gray">
-                                        <td class="pricing-options-table__title">Collaboration roles</td>
-                                        <td>Limited - admin, collaborator</td>
-                                        <td>Unlimited - owner, admin, collaborator</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container px-5">
-            <div class="row">
-                <div class="divider"></div>
             </div>
         </div>
     </section>
 
-
-    <!-- Pricing section mobile-->
-    <section class="bg-dark pt-5 view-mobile" id="pricing">
-        <div class="container px-5">
-            <div class="text-center mb-5">
-                <span class="subheadline-sc text-pastel-teal">Pricing</span>
+    <!-- Pricing Section Desktop -->
+    <section class="section section--dark view-desktop" id="pricing">
+        <div class="container py-5">
+            <div class="section__header">
+                <span class="section__subheadline">Pricing</span>
                 <h2 class="mb-3 mt-3">Two Simple Plans</h2>
-                <p class="lead mb-0">Free or Unlimited – nothing in between. Start for free and explore the core features. When you're ready to go live, unlock everything with Unlimited.</p>
+                <p class="text--lead mb-0">Free or Unlimited – nothing in between. Start for free and explore the core features. When you're ready to go live, unlock everything with Unlimited.</p>
             </div>
-            <div class="col-sm-12">
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home1" role="tabpanel"
-                        aria-labelledby="pills-home-tab-mobile">
 
-                        <div class="my-5 mobile-content">
-
-                            <div class="pricing-option__header">
-                                <img src="assets/pricing-icon-1.svg">
-                                <span class="text-pastel-teal">Free</span>
-                                <div class="h5">Free</div>
-                                <p>Try it out. No credit cat needed.</p>
-                            </div>
-
-                            <div class="content">
-                                <button class="btn btn-link" id="show-more-btn">
-                                    <img src="assets/chevron-down.svg" alt="Down Arrow"> Show more
-                                </button>
-                                <p>
-
-                                </p>
-                                <div id="table-container" style="display: none;">
-                                    <div class="table-responsive pricing-options_table">
-                                        <table class="table pricing-options-table__table">
-                                            <thead></thead>
-                                            <tbody>
-                                                <tr>
-                                                <td class="pricing-options-table__title head-title-tb"><b>Editor</b></td>
-                                                <td></td>
-
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Plain HTML export</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Zip package export</td>
-                                                    <td>-</td>
-
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Tickers</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Image sequence</td>
-                                                    <td>-</td>
-         
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Code triggers</td>
-                                                    <td>-</td>
-       
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Data source</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                    
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">API control</td>
-                                                    <td>-</td>
-                                                    
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Build-in test app</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                   
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb"><b>Gallery</b></td>
-                                                    <td></i></td>
-                                                    <td></i></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Storage utilization</td>
-                                                    <td>Limited - 256 MB</td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb"><b>Workspaces</b></td>
-                                                    <td></i></td>
-                                                    
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Personal workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                    
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Own workspaces</td>
-                                                    <td>-</td>
-                                                   
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Collaboration roles</td>
-                                                    <td>Limited - admin, collaborator</td>
-                                                   
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+            <div class="pricing pricing-desktop">
+                <table class="pricing__table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>
+                                <div class="pricing__header">
+                                    <img src="assets/pricing-icon-2.svg" alt="" width="45" height="44">
+                                    <span class="text--teal">Free</span>
+                                    <div class="pricing__price">Free</div>
+                                    <p>Try it out. No credit card needed.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="my-5 mobile-content">
-
-                            <div class="pricing-option__header">
-                                <img src="assets/pricing-icon-4.svg">
-                                <span class="text-pastel-teal">Enterprise</span>
-                                <div class="h5">40€/month</div>
-                                <p>Everythink unlocked. No limits.</p>
-                            </div>
-
-                            <div class="content">
-                                <button class="btn btn-link" id="show-more-btn">
-                                    <img src="assets/chevron-down.svg" alt="Down Arrow"> Show more
-                                </button>
-                                <p>
-
-                                </p>
-                                <div id="table-container" style="display: none;">
-                                    <div class="table-responsive pricing-options_table">
-                                        <table class="table pricing-options-table__table">
-                                            <thead></thead>
-                                            <tbody>
-                                                <tr>
-                                                <td class="pricing-options-table__title head-title-tb"><b>Editor</b></td>
-                                                <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Plain HTML export</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Zip package export</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Tickers</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Image sequence</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Code triggers</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Data source</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">API control</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Build-in test app</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb"><b>Gallery</b></td>
-                                                    <td></i></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Storage utilization</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb"><b>Workspaces</b></td>
-                                                    <td></i></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Personal workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Own workspaces</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Collaboration roles</td>
-                                                    <td>Unlimited - owner, admin, collaborator</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                            </th>
+                            <th>
+                                <div class="pricing__header">
+                                    <img src="assets/pricing-icon-3.svg" alt="" width="45" height="44">
+                                    <span class="text--teal">Unlimited</span>
+                                    <div class="pricing__price">40€/mth</div>
+                                    <p>Everything unlocked. No limits.</p>
                                 </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-profile1" role="tabpanel"
-                        aria-labelledby="pills-profile-tab">
-                        <div class="my-5 mobile-content">
-
-                            <div class="pricing-option__header">
-                                <img src="assets/pricing-icon-1.svg">
-                                <span>Free</span>
-                                <div class="h5">FREE</div>
-                                <p>Solution exploration.</p>
-                            </div>
-
-                            <div class="content">
-                                <button class="btn btn-link" id="show-more-btn">
-                                    <img src="assets/chevron-down.svg" alt="Down Arrow"> Show more
-                                </button>
-                                <p>
-
-                                </p>
-                                <div id="table-container" style="display: none;">
-                                    <div class="table-responsive pricing-options_table">
-                                        <table class="table pricing-options-table__table">
-                                            <thead></thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Graphics</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">HTML export</td>
-
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Gallery</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Workspaces
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Personal workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Shared workspaces</td>
-                                                    <td>Unlimited</td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Members per workspace</td>
-                                                    <td>Unlimited</td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Wallet per workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Coins earning</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Store</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Graphics publishing</td>
-                                                    <td>Free and paid</td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Graphics purchasing</td>
-                                                    <td>Free and paid</td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">API accesss</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="my-5 mobile-content">
-
-                            <div class="pricing-option__header pricing-option_popular">
-                                <img src="assets/pricing-icon-2.svg">
-                                <span>Individual</span>
-                                <div class="h5">144€/year</div>
-                                <p>Private use.</p>
-                            </div>
-
-                            <div class="content">
-                                <button class="btn btn-link" id="show-more-btn">
-                                    <img src="assets/chevron-down.svg" alt="Down Arrow"> Show more
-                                </button>
-                                <p>
-
-                                </p>
-                                <div id="table-container" style="display: none;">
-                                    <div class="table-responsive pricing-options_table">
-                                        <table class="table pricing-options-table__table">
-                                            <thead></thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Graphics</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">HTML export</td>
-
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Gallery</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Workspaces
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Personal workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Shared workspaces</td>
-                                                    <td>Unlimited</td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Members per workspace</td>
-                                                    <td>Unlimited</td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Wallet per workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Coins earning</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Store</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Graphics publishing</td>
-                                                    <td>Free and paid</td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Graphics purchasing</td>
-                                                    <td>Free and paid</td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">API accesss</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="my-5 mobile-content">
-
-                            <div class="pricing-option__header">
-                                <img src="assets/pricing-icon-3.svg">
-                                <span>Business</span>
-                                <div class="h5">192€/year</div>
-                                <p>Advanced collaboration.</p>
-                            </div>
-
-                            <div class="content">
-                                <button class="btn btn-link" id="show-more-btn">
-                                    <img src="assets/chevron-down.svg" alt="Down Arrow"> Show more
-                                </button>
-                                <p>
-
-                                </p>
-                                <div id="table-container" style="display: none;">
-                                    <div class="table-responsive pricing-options_table">
-                                        <table class="table pricing-options-table__table">
-                                            <thead></thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Graphics</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">HTML export</td>
-
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Gallery</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Workspaces
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Personal workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Shared workspaces</td>
-                                                    <td>Unlimited</td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Members per workspace</td>
-                                                    <td>Unlimited</td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Wallet per workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Coins earning</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Store</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Graphics publishing</td>
-                                                    <td>Free and paid</td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Graphics purchasing</td>
-                                                    <td>Free and paid</td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">API accesss</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="my-5 mobile-content">
-
-                            <div class="pricing-option__header">
-                                <img src="assets/pricing-icon-4.svg">
-                                <span>Enterprise</span>
-                                <div class="h5">576€/year</div>
-                                <p>Unlimited features.</p>
-                            </div>
-
-                            <div class="content">
-                                <button class="btn btn-link" id="show-more-btn">
-                                    <img src="assets/chevron-down.svg" alt="Down Arrow"> Show more
-                                </button>
-                                <p>
-
-                                </p>
-                                <div id="table-container" style="display: none;">
-                                    <div class="table-responsive pricing-options_table">
-                                        <table class="table pricing-options-table__table">
-                                            <thead></thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Graphics</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">HTML export</td>
-
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Gallery</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Workspaces
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Personal workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Shared workspaces</td>
-                                                    <td>Unlimited</td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Members per workspace</td>
-                                                    <td>Unlimited</td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Wallet per workspace</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Coins earning</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pricing-options-table__title head-title-tb">Store</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">Graphics publishing</td>
-                                                    <td>Free and paid</td>
-                                                </tr>
-                                                <tr class="tb-dark-gray">
-                                                    <td class="pricing-options-table__title">Graphics purchasing</td>
-                                                    <td>Free and paid</td>
-                                                </tr>
-                                                <tr class="tb-light-gray">
-                                                    <td class="pricing-options-table__title">API accesss</td>
-                                                    <td><img src="assets/check-circle.svg" alt="check" width="25"
-                                                            height="24"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-        <div class="container px-5">
-            <div class="row">
-                <div class="divider"></div>
-            </div>
-        </div>
-    </section>
-    <section class="bk-dark-teal py-5" id="services">
-        <div class="container px-5 py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <span class="subheadline-sc text-pastel-teal text-center">Services</span>
-                    <h2 class="mb-3 mt-3 text-white text-center">Send us your graphic. <br/>We’ll handle the rest.</h2>
-                    <p class="text-start">Missing time or resources to build everything from scratch? With Tweenly Services, we convert your existing visuals into production-ready HTML templates, upload them to your shared workspace in Tweenly, and ensure everything is playout-ready.</p>
-                    <p class="my-3 text-center">
-                        <i class="fa-solid fa-hand-point-right"></i> Contact us at
-                        <a class="link-light-mint" href="mailto:info@tween.ly" aria-label="Link to the email info@tween.ly">info@tween.ly</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="bg-dark py-5" id="references">
-        <div class="container px-5 mb-5">
-            <div class="text-center mb-5">
-                <span class="subheadline-sc text-pastel-teal">References</span>
-                <h2 class="mb-3 mt-3 text">Broadcasters we’ve worked with</h2>
-                <p class="lead mb-0">We’ve processed and delivered broadcast graphics for several TV stations.</p>
-            </div>
-            <div class="container px-5">
-                <div class="d-flex justify-content-center align-items-center gap-5">
-                    <a href="https://www.blitzgroup.eu/" target="_blank" rel="noopener" class="ms-auto">
-                    <div class="img-wrapper">
-                        <img src="assets/blitz-logo.png" alt="Reference logo Blitz">
-                    </div>
-                    </a>
-                    <a href="https://prahatv.eu/" target="_blank" rel="noopener" class="me-auto">
-                    <div class="img-wrapper">
-                        <img src="assets/prahatv-logo.png" alt="Reference logo Praha TV">
-                    </div>
-                    </a>
-                </div>
-            </div>
-        </div> 
-
-        <div class="container px-5">
-            <div class="row">
-                <div class="divider"></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="pricing__category">
+                            <td>Editor</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Plain HTML export</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>Zip package export</td>
+                            <td>-</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>Tickers</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>Image sequence</td>
+                            <td>-</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>Code triggers</td>
+                            <td>-</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>Data source</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>API control</td>
+                            <td>-</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>Build-in test app</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr class="pricing__category">
+                            <td>Gallery</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Storage utilization</td>
+                            <td>Limited - 256 MB</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr class="pricing__category">
+                            <td>Workspaces</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Personal workspace</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>Own workspaces</td>
+                            <td>-</td>
+                            <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                        </tr>
+                        <tr>
+                            <td>Collaboration roles</td>
+                            <td>Limited - admin, collaborator</td>
+                            <td>Unlimited - owner, admin, collaborator</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- FAQ section -->
-    <section class="bg-dark py-5" id="faq">
-        <div class="container px-5 mb-5">
-            <div class="text-center mb-5">
-                <span class="subheadline-sc text-pastel-teal">FAQ</span>
-                <h2 class="mb-3 mt-3 text">Frequently asked questions</h2>
-                <p class="lead mb-0">Everything you need to know about the product and billing.</p>
+    <!-- Pricing Section Mobile -->
+    <section class="section section--dark view-mobile" id="pricing-mobile">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__subheadline">Pricing</span>
+                <h2 class="mb-3 mt-3">Two Simple Plans</h2>
+                <p class="text--lead mb-0">Free or Unlimited – nothing in between. Start for free and explore the core features. When you're ready to go live, unlock everything with Unlimited.</p>
             </div>
-        </div>
 
-
-        <div class="container px-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion mb-5" id="accordionExample">
-                        <div class="accordion-item bg-dark">
-                            <h2 class="accordion-header text-light-mint" id="headingOne">
-                                <button class="accordion-button bg-dark faq-title " type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne">
-                                     <p class="text-light-mint p-0 m-0">Is there a free version available?</p>
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionExample">
-                                <p class="accordion-body">
-                                    Yes, you can try Tweenly for free for an unlimited time. Free version is aimed to
-                                    get you up and running as soon as possible. You may try editor, personal cloud
-                                    storage, and free graphics publishing and purchasing.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="accordion-item bg-dark ">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed bg-dark faq-title text-light-mint" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo">
-                                    <p class="text-light-mint p-0 m-0">Can I change my plan later?</p>
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordionExample">
-                                <p class="accordion-body">
-                                    Yes, you can upgrade your plan at any time within the same billing period (monthly
-                                    or annual).
-                                    In this case, we will reduce new membership billing by the already paid period.
-                                    However, at this time, we don’t support license downgrade.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="accordion-item bg-dark ">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed bg-dark faq-title text-light-mint" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                                    aria-controls="collapseThree">
-                                    <p class="text-light-mint p-0 m-0">How does billing work?</p>
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordionExample">
-                                <p class="accordion-body">
-                                    We automatically activate the free licence for each newly registered user.
-                                    With this licence you will have access to all the basic features of our application.
-                                    If you are interested in a higher license, please request license activation in the
-                                    Profile section.
-                                    Tweenly does not have an integrated payment gateway yet.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="accordion-item bg-dark ">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed bg-dark faq-title text-light-mint" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-                                    aria-controls="collapseFour">
-                                    <p class="text-light-mint p-0 m-0">How do I change my account email?</p>
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#accordionExample">
-                                <p class="accordion-body">
-                                    You can change your email after logging in and navigating into profile settings.
-                                </p>
-                            </div>
-                        </div>
+            <div class="pricing-mobile">
+                <!-- Free Plan -->
+                <div class="pricing-mobile__card" data-pricing-card>
+                    <div class="pricing-mobile__header">
+                        <img src="assets/pricing-icon-2.svg" alt="" width="45" height="44">
+                        <span class="text--teal">Free</span>
+                        <div class="pricing__price">Free</div>
+                        <p>Try it out. No credit card needed.</p>
+                    </div>
+                    <button class="pricing-mobile__toggle" data-pricing-toggle>
+                        <img src="assets/chevron-down.svg" alt="Down Arrow" width="24" height="24"> Show more
+                    </button>
+                    <div class="pricing-mobile__content" data-pricing-content>
+                        <table class="pricing__table">
+                            <tbody>
+                                <tr class="pricing__category">
+                                    <td>Editor</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Plain HTML export</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Zip package export</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Tickers</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Image sequence</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Code triggers</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Data source</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>API control</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Build-in test app</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr class="pricing__category">
+                                    <td>Gallery</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Storage utilization</td>
+                                    <td>Limited - 256 MB</td>
+                                </tr>
+                                <tr class="pricing__category">
+                                    <td>Workspaces</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Personal workspace</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Own workspaces</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Collaboration roles</td>
+                                    <td>Limited - admin, collaborator</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container px-5">
-            <div class="row">
-                <div class="divider"></div>
-            </div>
-        </div>
-    </section>
-    <section class="bg-dark py-5" id="about-us">
-        <div class="container px-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <span class="subheadline-sc text-pastel-teal text-center">About us</span>
-                    <h2 class="mb-3 mt-3 text-center">Developing More</h2>
-                    <p class="text-start">Tweenly is developed by PROVYS Technologies, creators of Provys and Stream Circle. We built it in response to a common challenge across TV stations: the need for a tool that simplifies the creation of broadcast graphics with real-time data, playout integration, and full control over HTML output — without workarounds or developer dependencies.</p>
-            
-                    <div class="row gx-5">
-                        <div class="col mb-lg-0">
-                            <div class="img-container">
-                                <a href="https://www.provys.com/" target="_blank" rel="noopener">
-                                    <img class="img-fit" src="assets/provys-technologies.png" alt="PROVYS Technologies">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col mb-lg-0">
-                            <div class="img-container">
-                                <a href="https://provyssphere.tv/" target="_blank" rel="noopener">
-                                    <img class="img-fit" src="assets/sphere-by-provys.png" alt="Sphere by Provys">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col mb-lg-0 ">
-                            <div class="img-container">
-                                <a href="https://streamcircle.com/" target="_blank" rel="noopener">
-                                    <img class="img-fit" src="assets/logo_stream_circle_transparent.svg" alt="Stream Circle">
-                                </a>
-                            </div>
-                        </div>
+
+                <!-- Unlimited Plan -->
+                <div class="pricing-mobile__card" data-pricing-card>
+                    <div class="pricing-mobile__header">
+                        <img src="assets/pricing-icon-3.svg" alt="" width="45" height="44">
+                        <span class="text--teal">Unlimited</span>
+                        <div class="pricing__price">40€/month</div>
+                        <p>Everything unlocked. No limits.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container px-5">
-            <div class="row">
-                <div class="divider"></div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- contact section -->
-    <section class="bg-dark py-3" id="contact">
-        <div class="container px-5">
-            <div class="text-center">
-                <span class="subheadline-sc text-pastel-teal">Contact</span>
-                <h2 class="mb-3 mt-3">We’d like to hear from you</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="mb-5">
-                            <p class="lead">Have a question about graphics, integration, or services? Our team in the heart of Europe is ready to help.</p>
-                            <p class="my-3 text-center">
-                                <i class="fa-solid fa-hand-point-right"></i> Contact us at
-                                <a class="link-light-mint" href="mailto:info@tween.ly" aria-label="Link to the email info@tween.ly">info@tween.ly</a>
-                            </p>
-                        </div>
-                        <div class="map-sc">
-                            <img class="width-image" src="assets/europe-map.png" alt="europe map" width="600" height="">
-
-                            <div class="map-point map-point-container">
-                                <div class="map-point__marker"></div>
-                                <div class="map-point__marker-radar"></div>
-                                <div class="map-point__tooltip"><img class="my-3" src="assets/cz_flag.svg" alt="cz flag"
-                                        width="30" height="30">
-                                    <h3>Praha, CZE</h3>
-                                </div>
-                            </div>
-
-                            <div class="map-point-3 map-point-container-3">
-                                <div class="map-point__marker-3"></div>
-                                <div class="map-point__marker-radar-3"></div>
-                                <div class="map-point__tooltip-3"><img class="my-3" src="assets/cz_flag.svg" alt="cz flag"
-                                        width="30" height="30">
-                                    <h3>Olomouc, CZE</h3>
-                                </div>
-                            </div>
-
-
-                            <div class="map-point-2 map-point-container-2">
-                                <div class="map-point__marker-2"></div>
-                                <div class="map-point__marker-radar-2"></div>
-                                <div class="map-point__tooltip-2">
-                                    <img class="my-3" src="assets/svk_flag.svg" alt="svk flag" width="30" height="30">
-                                    <h3>Poprad, SVK</h3>
-                                </div>
-                            </div>
-                        </div>
+                    <button class="pricing-mobile__toggle" data-pricing-toggle>
+                        <img src="assets/chevron-down.svg" alt="Down Arrow" width="24" height="24"> Show more
+                    </button>
+                    <div class="pricing-mobile__content" data-pricing-content>
+                        <table class="pricing__table">
+                            <tbody>
+                                <tr class="pricing__category">
+                                    <td>Editor</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Plain HTML export</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Zip package export</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Tickers</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Image sequence</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Code triggers</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Data source</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>API control</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Build-in test app</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr class="pricing__category">
+                                    <td>Gallery</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Storage utilization</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr class="pricing__category">
+                                    <td>Workspaces</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Personal workspace</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Own workspaces</td>
+                                    <td><img src="assets/check-circle.svg" alt="check" width="25" height="24"></td>
+                                </tr>
+                                <tr>
+                                    <td>Collaboration roles</td>
+                                    <td>Unlimited - owner, admin, collaborator</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section class="section section--teal py-5" id="services">
+        <div class="container py-5">
+            <div class="section__content text--center">
+                <span class="section__subheadline">Services</span>
+                <h2 class="mb-3 mt-3">Send us your graphic. <br/>We'll handle the rest.</h2>
+                <p class="text--start">Missing time or resources to build everything from scratch? With Tweenly Services, we convert your existing visuals into production-ready HTML templates, upload them to your shared workspace in Tweenly, and ensure everything is playout-ready.</p>
+                <p class="my-3 text--center">
+                    Contact us at
+                    <a class="link--mint" href="mailto:info@tween.ly" aria-label="Link to the email info@tween.ly">info@tween.ly</a>.
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer-->
-    <footer class="pb-5 bg-dark">
+    <!-- References Section -->
+    <section class="section section--dark" id="references">
+        <div class="container mb-5">
+            <div class="section__header">
+                <span class="section__subheadline">References</span>
+                <h2 class="mb-3 mt-3">Broadcasters we've worked with</h2>
+                <p class="text--lead mb-0">We've processed and delivered broadcast graphics for several TV stations.</p>
+            </div>
+            <div class="references">
+                <a class="references__item link--image" href="https://www.blitzgroup.eu/" target="_blank" rel="noopener">
+                    <img src="assets/blitz-logo.png" alt="Reference logo Blitz">
+                </a>
+                <a class="references__item link--image" href="https://prahatv.eu/" target="_blank" rel="noopener">
+                    <img src="assets/prahatv-logo.png" alt="Reference logo Praha TV">
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="divider"></div>
+        </div>
+    </section>
 
-        <div class="container pb-5">
-            <div class="row">
-                <div class="divider"></div>
+    <!-- FAQ Section -->
+    <section class="section section--dark" id="faq">
+        <div class="container mb-5">
+            <div class="section__header">
+                <span class="section__subheadline">FAQ</span>
+                <h2 class="mb-3 mt-3">Frequently asked questions</h2>
+                <p class="text--lead mb-0">Everything you need to know about the product and billing.</p>
             </div>
         </div>
 
         <div class="container">
-            <div class="row pb-3">
-                <div>
-                    <p class="text-center pb-2">
-                        <a href="https://tween.ly" aria-label="Link to homepage">
-                            <span><img src="assets/logo_tweenly_dark.svg" alt="Tweenly logo" width="174"></span>
-                        </a>
-                    </p>
-                    </p>
-                </div>
-                <div>
-                    <p class="text-center">
-                        <span class="mr-4">
-                            <a href="https://docs.tween.ly" target=”_blank”
-                                aria-label="Link to the documentation">Documentation</a>
-                        </span> |
-                        <span class="mr-4">
-                            <a href="https://docs.tween.ly/appendices/terms-and-conditions/" target=”_blank”
-                                aria-label="Link to Terms and Conditions">
-                                Terms and Conditions</a>
-                        </span> |
-                        <span>
-                            <a href="https://docs.tween.ly/appendices/privacy-policy/" target=”_blank”
-                                aria-label="Link to Privacy Policy">
-                                Privacy Policy</a>
-                        </span>
-                    </p>
-                </div>
+            <div class="accordion mb-5">
+                <details class="accordion__item" open>
+                    <summary class="accordion__header">Is there a free version available?</summary>
+                    <div class="accordion__body">
+                        Yes, you can try Tweenly for free for an unlimited time. Free version is aimed to
+                        get you up and running as soon as possible. You may try editor, personal cloud
+                        storage, and free graphics publishing and purchasing.
+                    </div>
+                </details>
+                <details class="accordion__item">
+                    <summary class="accordion__header">Can I change my plan later?</summary>
+                    <div class="accordion__body">
+                        Yes, you can upgrade your plan at any time within the same billing period (monthly
+                        or annual).
+                        In this case, we will reduce new membership billing by the already paid period.
+                        However, at this time, we don't support license downgrade.
+                    </div>
+                </details>
+                <details class="accordion__item">
+                    <summary class="accordion__header">How does billing work?</summary>
+                    <div class="accordion__body">
+                        We automatically activate the free licence for each newly registered user.
+                        With this licence you will have access to all the basic features of our application.
+                        If you are interested in a higher license, please request license activation in the
+                        Profile section.
+                        Tweenly does not have an integrated payment gateway yet.
+                    </div>
+                </details>
+                <details class="accordion__item">
+                    <summary class="accordion__header">How do I change my account email?</summary>
+                    <div class="accordion__body">
+                        You can change your email after logging in and navigating into profile settings.
+                    </div>
+                </details>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center pb-3 pb-md-0">
-                    <p class="m-0 text-nowrap">© 2026 Tweenly by <a target="_blank" class="link-light-mint" href="https://www.provys.com/"
-                            aria-label="Link to PROVYS Technologies website">PROVYS Technologies</a>, all rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <p class="m-0 text-right social-media">
-                        <a href="https://www.facebook.com/app.tween.ly/" target="_blank" aria-label="Link to Facebook">
-                            <img src="assets/facebook.svg" alt="Facebook" width="25" height="25">
+        </div>
+        <div class="container">
+            <div class="divider"></div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section section--dark" id="about-us">
+        <div class="container">
+            <div class="section__content text--center">
+                <span class="section__subheadline">About us</span>
+                <h2 class="mb-3 mt-3">Developing More</h2>
+                <p class="text--start">Tweenly is developed by PROVYS Technologies, creators of Provys and Stream Circle. We built it in response to a common challenge across TV stations: the need for a tool that simplifies the creation of broadcast graphics with real-time data, playout integration, and full control over HTML output — without workarounds or developer dependencies.</p>
+
+                <div class="about-images">
+                    <div class="about-images__item">
+                        <a class="link--image" href="https://www.provys.com/" target="_blank" rel="noopener">
+                            <img src="assets/provys-technologies.png" alt="PROVYS Technologies">
                         </a>
-                        <a href="https://www.linkedin.com/company/tween-ly" target=”_blank”
-                            aria-label="Link to LinkedIn">
-                            <img src="assets/linkedin.svg" alt="LinkedIn" width="25" height="25">
+                    </div>
+                    <div class="about-images__item">
+                        <a class="link--image" href="https://provyssphere.tv/" target="_blank" rel="noopener">
+                            <img src="assets/sphere-by-provys.png" alt="Sphere by Provys">
                         </a>
-                        <a href="https://www.youtube.com/@Tweenly"  target=”_blank”>
-                            <span class="icon icon-youtube"></span>
-                            <img src="assets/youtube.svg" alt="YouTube" class="text-pastel-teal" width="25" height="25"
-                                aria-label="Link to YouTube">
+                    </div>
+                    <div class="about-images__item">
+                        <a class="link--image" href="https://streamcircle.com/" target="_blank" rel="noopener">
+                            <img src="assets/logo_stream_circle_transparent.png" alt="Stream Circle">
                         </a>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="divider"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section--dark py-3" id="contact">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__subheadline">Contact</span>
+                <h2 class="mb-3 mt-3">We'd like to hear from you</h2>
+            </div>
+            <div class="section__content text--center">
+                <p class="text--lead">Have a question about graphics, integration, or services? Our team in the heart of Europe is ready to help.</p>
+                <p class="my-3">
+                    Contact us at
+                    <a class="link--mint" href="mailto:info@tween.ly" aria-label="Link to the email info@tween.ly">info@tween.ly</a>.
+                </p>
+
+                <div class="map">
+                    <img class="map__image" src="assets/europe-map.png" alt="europe map" width="600">
+
+                    <div class="map__point map__point--praha">
+                        <div class="map__marker"></div>
+                        <div class="map__radar"></div>
+                        <div class="map__tooltip">
+                            <img class="my-3" src="assets/cz_flag.svg" alt="cz flag" width="30" height="30">
+                            <h3>Praha, CZE</h3>
+                        </div>
+                    </div>
+
+                    <div class="map__point map__point--olomouc">
+                        <div class="map__marker"></div>
+                        <div class="map__radar"></div>
+                        <div class="map__tooltip">
+                            <img class="my-3" src="assets/cz_flag.svg" alt="cz flag" width="30" height="30">
+                            <h3>Olomouc, CZE</h3>
+                        </div>
+                    </div>
+
+                    <div class="map__point map__point--poprad">
+                        <div class="map__marker"></div>
+                        <div class="map__radar"></div>
+                        <div class="map__tooltip">
+                            <img class="my-3" src="assets/svk_flag.svg" alt="svk flag" width="30" height="30">
+                            <h3>Poprad, SVK</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container pb-5">
+            <div class="divider"></div>
+        </div>
+
+        <div class="container">
+            <div class="footer__logo">
+                <a class="link--image" href="https://tween.ly" aria-label="Link to homepage">
+                    <img src="assets/logo_tweenly_dark.svg" alt="Tweenly logo" width="174">
+                </a>
+            </div>
+            <div class="footer__links">
+                <span>
+                    <a href="https://docs.tween.ly" target="_blank" aria-label="Link to the documentation">Documentation</a>
+                </span> |
+                <span>
+                    <a href="https://docs.tween.ly/appendices/terms-and-conditions/" target="_blank" aria-label="Link to Terms and Conditions">Terms and Conditions</a>
+                </span> |
+                <span>
+                    <a href="https://docs.tween.ly/appendices/privacy-policy/" target="_blank" aria-label="Link to Privacy Policy">Privacy Policy</a>
+                </span>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2026 Tweenly by <a class="link--mint" target="_blank" href="https://www.provys.com/" aria-label="Link to PROVYS Technologies website">PROVYS Technologies</a>, all rights reserved.</p>
+                <div class="footer__social">
+                    <a class="link--image" href="https://www.facebook.com/app.tween.ly/" target="_blank" aria-label="Link to Facebook">
+                        <img src="assets/facebook.svg" alt="Facebook" width="25" height="25">
+                    </a>
+                    <a class="link--image" href="https://www.linkedin.com/company/tween-ly" target="_blank" aria-label="Link to LinkedIn">
+                        <img src="assets/linkedin.svg" alt="LinkedIn" width="25" height="25">
+                    </a>
+                    <a class="link--image" href="https://www.youtube.com/@Tweenly" target="_blank" aria-label="Link to YouTube">
+                        <img src="assets/youtube.svg" alt="YouTube" width="25" height="25">
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+
+    <!-- Core theme JS (vanilla) -->
     <script src="js/scripts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            document.querySelectorAll('.video-example').forEach(video => {
-                video.addEventListener('mouseenter', () => {
-                video.play();
-                });
-                video.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0; // optional: reset to start when mouse leaves
-                });
-            });                                  
-        </script>
-        <script>
-            $(document).ready(function () {
-                $(".mobile-content").each(function () {
-                    var content = $(this).find(".content p");
-                    var tableContainer = $(this).find("#table-container");
-                    var btn = $(this).find(".btn.btn-link");
-                    var fullText = content.text();
-
-                    // Skryjeme časť textu a tabuľku
-                    content.text(''); // Žiadny text
-                    tableContainer.hide();
-
-                    btn.click(function () {
-                        if (content.text() === '') {
-                            content.text(fullText);
-                            tableContainer.show();
-                            btn.html('<img src="assets/chevron-up.svg" alt="Up Arrow" width="24" height="24"> Show less');
-                        } else {
-                            content.text('');
-                            tableContainer.hide();
-                            btn.html('<img src="assets/chevron-down.svg" alt="Down Arrow" width="24" height="24"> Show more');
-                        }
-                    });
-                });
-            });
-        </script>
 </body>
 
 </html>
