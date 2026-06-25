@@ -2,6 +2,9 @@
 
 import { SectionLabel } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── About ────────────────────────────────────────────────────────────────────
 
 export default function AboutUs() {
@@ -10,7 +13,7 @@ export default function AboutUs() {
     <section style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg)', position: 'relative' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 40 : 80, alignItems: 'center' }}>
         <div>
-          <SectionLabel label="About Us" color="#82B820" />
+          <SectionLabel label={t("about.sectionLabel")} color="#82B820" />
           {/* PROVYS Technologies logo */}
           <div style={{ marginBottom: 20 }}>
             <svg width="220" height="78" viewBox="0 0 1000 357" style={{ display: 'block' }}>
@@ -35,28 +38,28 @@ export default function AboutUs() {
             </svg>
           </div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(36px, 4vw, 52px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.05, marginBottom: 24 }}>
-            30 years of broadcast software.
+            {t("about.heading")}
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(226,228,229,0.55)', lineHeight: 1.7, marginBottom: 24 }}>
-            Tweenly is built by PROVYS Technologies — a Prague-based company that has been building mission-critical broadcast software since the early nineties. From scheduling to playout, our tools power TV stations across Europe.
+            {t("about.description")}
           </p>
           <div style={{ display: 'flex', gap: 32, marginTop: 32 }}>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36, color: '#22C68A', letterSpacing: -1, lineHeight: 1 }}>30+</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 4 }}>years</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36, color: '#22C68A', letterSpacing: -1, lineHeight: 1 }}>{t("about.stat0Value")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 4 }}>{t("about.stat0Label")}</div>
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36, color: '#0AB6E0', letterSpacing: -1, lineHeight: 1 }}>~60</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 4 }}>employees</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36, color: '#0AB6E0', letterSpacing: -1, lineHeight: 1 }}>{t("about.stat1Value")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 4 }}>{t("about.stat1Label")}</div>
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36, color: '#82B820', letterSpacing: -1, lineHeight: 1 }}>Prague</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 4 }}>headquarters</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36, color: '#82B820', letterSpacing: -1, lineHeight: 1 }}>{t("about.stat2Value")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 4 }}>{t("about.stat2Label")}</div>
             </div>
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, letterSpacing: 2, color: 'rgba(226,228,229,0.55)', textTransform: 'uppercase', marginBottom: 4 }}>Our Products</div>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, letterSpacing: 2, color: 'rgba(226,228,229,0.55)', textTransform: 'uppercase', marginBottom: 4 }}>{t("about.productsLabel")}</div>
 
           {/* Sphere by Provys */}
           <a href="https://provyssphere.tv/" target="_blank" rel="noopener" style={{
@@ -78,8 +81,8 @@ export default function AboutUs() {
               <path d="M351.54,406.74h-45.67c34.52,41.78,86.73,68.4,145.16,68.4v-32.48c-36.77,0-71.59-12.67-99.5-35.92Z" fill="#F7A600"/>
             </svg>
             <div style={{ flex: 1 }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--white)' }}>Sphere by Provys</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 2 }}>Broadcast scheduling & planning</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--white)' }}>{t("about.product0Name")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 2 }}>{t("about.product0Desc")}</div>
             </div>
             <span style={{ color: '#F7A600', fontSize: 16 }}>↗</span>
           </a>
@@ -110,8 +113,8 @@ export default function AboutUs() {
               <path d="M877.82,352.96c0-22.51-14.7-41.64-35-48.32v-57.58c51.61,7.67,91.21,52.16,91.21,105.91,0,13.78-2.63,26.93-7.37,39.03l-49.88-28.8c.68-3.3,1.03-6.73,1.03-10.23" fill="#FF9B00"/>
             </svg>
             <div style={{ flex: 1 }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--white)' }}>Stream Circle</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 2 }}>Channel automation & playout</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--white)' }}>{t("about.product1Name")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.62)', marginTop: 2 }}>{t("about.product1Desc")}</div>
             </div>
             <span style={{ color: '#0EB0DC', fontSize: 16 }}>↗</span>
           </a>

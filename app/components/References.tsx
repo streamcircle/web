@@ -2,6 +2,9 @@
 
 import { PlayMark, SectionLabel } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── References ─────────────────────────────────────────────────────────────
 
 const ADOPTERS = [
@@ -10,18 +13,18 @@ const ADOPTERS = [
     logo: '/assets/blitz-logo.png',
     logoTile: true,
     logoHeight: 38,
-    type: 'Sports Broadcaster',
-    desc: 'Live score graphics and lower thirds for football and hockey coverage.',
+    type: t("references.adopters.0.type"),
+    desc: t("references.adopters.0.desc"),
     accent: '#22C68A',
-    elements: ['Score widgets', 'Lower thirds', 'Tickers'],
+    elements: [t("references.adopters.0.elements.0"), t("references.adopters.0.elements.1"), t("references.adopters.0.elements.2")],
   },
   {
     name: 'PRAHA TV',
     logo: '/assets/praha-tv-logo.png',
-    type: 'Regional Television',
-    desc: 'Full on-air graphics package — news lower thirds, tickers, and channel branding.',
+    type: t("references.adopters.1.type"),
+    desc: t("references.adopters.1.desc"),
     accent: '#0AB6E0',
-    elements: ['Lower thirds', 'News tickers', 'Bugs'],
+    elements: [t("references.adopters.1.elements.0"), t("references.adopters.1.elements.1"), t("references.adopters.1.elements.2")],
   },
 ];
 
@@ -31,9 +34,9 @@ export default function References() {
     <section id="references" style={{ padding: isMobile ? '64px 20px' : '100px 40px', background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
-          <SectionLabel label="Early Adopters" color="#22C68A" />
+          <SectionLabel label={t("references.sectionLabel")} color="#22C68A" />
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(32px, 4vw, 44px)', letterSpacing: -1, color: 'var(--white)', lineHeight: 1.1, marginTop: 8 }}>
-            Already on air with Tweenly
+            {t("references.heading")}
           </h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 20 }}>

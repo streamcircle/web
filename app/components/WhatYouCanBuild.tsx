@@ -3,42 +3,45 @@
 import { useState } from "react";
 import { PlayMark, SectionLabel } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── What You Can Build (4-card grid) ───────────────────────────────────────
 
 const BUILD_CARDS = [
   {
-    label: 'Lower Third',
-    desc: 'Name straps and title cards with smooth reveal animations.',
+    label: t("build.cards.0.label"),
+    desc: t("build.cards.0.desc"),
     color: '#22C68A',
     preview: 'lt',
   },
   {
-    label: 'Live Ticker',
-    desc: 'Scrolling text bars for news, sports scores, and real-time updates.',
+    label: t("build.cards.1.label"),
+    desc: t("build.cards.1.desc"),
     color: '#0AB6E0',
     preview: 'ticker',
   },
   {
-    label: 'Score Widget',
-    desc: 'Live scoreboards connected to JSON or XML data sources with auto-refresh.',
+    label: t("build.cards.2.label"),
+    desc: t("build.cards.2.desc"),
     color: '#82B820',
     preview: 'score',
   },
   {
-    label: 'Full-Screen Graphic',
-    desc: 'Stingers, bumpers, and full-frame takeover graphics.',
+    label: t("build.cards.3.label"),
+    desc: t("build.cards.3.desc"),
     color: '#107F76',
     preview: 'fs',
   },
   {
-    label: 'Bug & Watermark',
-    desc: 'Persistent corner logos and channel branding overlays.',
+    label: t("build.cards.4.label"),
+    desc: t("build.cards.4.desc"),
     color: '#22C68A',
     preview: 'bug',
   },
   {
-    label: 'Breaking News',
-    desc: 'Alert templates with pre-built in/out transitions — trigger from On Air or via API.',
+    label: t("build.cards.5.label"),
+    desc: t("build.cards.5.desc"),
     color: '#E05151',
     preview: 'breaking',
   },
@@ -177,12 +180,12 @@ export default function WhatYouCanBuild() {
     <section id="elements" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
-          <div style={{ display: 'inline-block' }}><SectionLabel label="Broadcast Elements" /></div>
+          <div style={{ display: 'inline-block' }}><SectionLabel label={t("build.sectionLabel")} /></div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.05 }}>
-            What You Can Build
+            {t("build.heading")}
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(226,228,229,0.62)', maxWidth: 560, margin: '16px auto 0', lineHeight: 1.65 }}>
-            Graphics designed for live broadcasting. Data-driven. Ready for playout.
+            {t("build.subheading")}
           </p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: 20 }}>

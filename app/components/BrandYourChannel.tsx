@@ -4,6 +4,9 @@ import { useState, useRef, useLayoutEffect } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { GradientShape, SectionLabel } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── Brand Your Channel ────────────────────────────────────────────────────
 // Each kit is a complete on-air look — built in Tweenly as a coordinated system
 // of bug, lower third, ticker, scoreboard etc. Three concrete demo brands
@@ -13,33 +16,33 @@ import { useViewport } from "./useViewport";
 const CHANNEL_KITS = [
   {
     id: 'kick',
-    name: 'KICK',
-    tagline: 'Live sports. Real-time data. High energy.',
-    sector: 'Sports',
+    name: t("brand.kits.0.name"),
+    tagline: t("brand.kits.0.tagline"),
+    sector: t("brand.kits.0.sector"),
     accent: '#FF5A00',
     accent2: '#FFB347',
     elements: 12,
-    typeNote: 'Bebas Neue · Inter',
+    typeNote: t("brand.kits.0.typeNote"),
   },
   {
     id: 'veritas',
-    name: 'VERITAS',
-    tagline: 'Editorial news with verified sources.',
-    sector: 'News',
+    name: t("brand.kits.1.name"),
+    tagline: t("brand.kits.1.tagline"),
+    sector: t("brand.kits.1.sector"),
     accent: '#C41E2A',
     accent2: '#2B4570',
     elements: 7,
-    typeNote: 'Lora · Inter',
+    typeNote: t("brand.kits.1.typeNote"),
   },
   {
     id: '404',
-    name: '404',
-    tagline: 'Tech-native. Terminal. Glitch-friendly.',
-    sector: 'Experimental',
+    name: t("brand.kits.2.name"),
+    tagline: t("brand.kits.2.tagline"),
+    sector: t("brand.kits.2.sector"),
     accent: '#00E5FF',
     accent2: '#FFD60A',
     elements: 8,
-    typeNote: 'JetBrains Mono · Inter',
+    typeNote: t("brand.kits.2.typeNote"),
   },
 ];
 
@@ -586,7 +589,7 @@ function ChannelKitCard({ kit, active, onClick }: { kit: Kit; active: boolean; o
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(226,228,229,0.55)', lineHeight: 1.4, marginBottom: 8, minHeight: 32 }}>{kit.tagline}</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, paddingTop: 8, borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: 10, color: 'rgba(226,228,229,0.35)', letterSpacing: 0.5 }}>{kit.typeNote}</div>
-          <div style={{ marginLeft: 'auto', fontFamily: 'var(--font-display)', fontSize: 9, fontWeight: 700, color: 'rgba(226,228,229,0.4)', letterSpacing: 1.5 }}>{kit.elements} ELEMENTS</div>
+          <div style={{ marginLeft: 'auto', fontFamily: 'var(--font-display)', fontSize: 9, fontWeight: 700, color: 'rgba(226,228,229,0.4)', letterSpacing: 1.5 }}>{kit.elements} {t("brand.elements")}</div>
         </div>
       </div>
     </div>
@@ -608,17 +611,17 @@ export default function BrandYourChannel() {
       <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 24 : 80, alignItems: isMobile ? 'start' : 'end', marginBottom: isMobile ? 36 : 56 }}>
           <div>
-            <SectionLabel label="Channel Branding" color="#9B7BFF" />
+            <SectionLabel label={t("brand.sectionLabel")} color="#9B7BFF" />
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.02, marginTop: 8 }}>
-              Build an entire <span style={{
+              {t("brand.headingLead")} <span style={{
                 background: 'linear-gradient(135deg, #9B7BFF 0%, #22C68A 50%, #0AB6E0 100%)',
                 WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
-              }}>channel identity</span>
-              <span style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 300 }}> — not just one graphic.</span>
+              }}>{t("brand.headingAccent")}</span>
+              <span style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 300 }}>{t("brand.headingTail")}</span>
             </h2>
           </div>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(226,228,229,0.6)', lineHeight: 1.7, maxWidth: 460 }}>
-            Design a complete on-air look — every lower third, ticker, score widget, and bug coordinated as one brand system. Build a new channel from scratch, or extend your existing graphics package without breaking visual consistency.
+            {t("brand.intro")}
           </p>
         </div>
 
@@ -629,8 +632,8 @@ export default function BrandYourChannel() {
             <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#FF6258' }} />
             <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#FFBD2E' }} />
             <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#27C93F' }} />
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(226,228,229,0.4)', marginLeft: 12 }}>tweenly — {activeKit.name.toLowerCase()} brand kit</span>
-            <span style={{ marginLeft: 'auto', fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: activeKit.accent, letterSpacing: 1.5, textTransform: 'uppercase' }}>● Live preview</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(226,228,229,0.4)', marginLeft: 12 }}>{t("brand.previewChromePrefix")}{activeKit.name.toLowerCase()}{t("brand.previewChromeSuffix")}</span>
+            <span style={{ marginLeft: 'auto', fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: activeKit.accent, letterSpacing: 1.5, textTransform: 'uppercase' }}>{t("brand.livePreview")}</span>
           </div>
           <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
             <ChannelScene kit={activeKit} />
@@ -658,9 +661,9 @@ export default function BrandYourChannel() {
             onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'rgba(34,198,138,0.3)'; }}>
             <div style={{ width: 56, height: 56, borderRadius: '12px 24px 12px 24px', background: 'linear-gradient(135deg, #82B820, #22C68A)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 32, color: '#0a0d10' }}>+</div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, color: '#22C68A', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 4 }}>For new channels</div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, color: 'var(--white)', letterSpacing: -0.5, lineHeight: 1.1 }}>Launch a brand-new channel</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.55)', marginTop: 6, lineHeight: 1.55 }}>Start from a blank canvas. Define your colors, type, and motion language — then design a complete graphics package inside one workspace.</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, color: '#22C68A', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 4 }}>{t("brand.newChannels.label")}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, color: 'var(--white)', letterSpacing: -0.5, lineHeight: 1.1 }}>{t("brand.newChannels.heading")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.55)', marginTop: 6, lineHeight: 1.55 }}>{t("brand.newChannels.description")}</div>
             </div>
             <span style={{ color: '#22C68A', fontSize: 22, fontFamily: 'var(--font-display)' }}>→</span>
           </a>
@@ -679,9 +682,9 @@ export default function BrandYourChannel() {
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12 L20 12 M14 6 L20 12 L14 18" stroke="#0a0d10" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, color: '#9B7BFF', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 4 }}>For existing brands</div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, color: 'var(--white)', letterSpacing: -0.5, lineHeight: 1.1 }}>Extend your current branding</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.55)', marginTop: 6, lineHeight: 1.55 }}>Already have a brand book? Send us your existing design files and we&apos;ll rebuild them in Tweenly — pixel-perfect, animatable, and production-ready.</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, color: '#9B7BFF', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 4 }}>{t("brand.existingBrands.label")}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, color: 'var(--white)', letterSpacing: -0.5, lineHeight: 1.1 }}>{t("brand.existingBrands.heading")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.55)', marginTop: 6, lineHeight: 1.55 }}>{t("brand.existingBrands.description")}</div>
             </div>
             <span style={{ color: '#9B7BFF', fontSize: 22, fontFamily: 'var(--font-display)' }}>→</span>
           </a>

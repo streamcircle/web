@@ -1,0 +1,393 @@
+{
+  "nav": {
+    "links": [
+      "Elements",
+      "Branding",
+      "Editor",
+      "On Air",
+      "Services",
+      "Pricing",
+      "Contact",
+      "FAQ"
+    ],
+    "logIn": "Log in",
+    "signUp": "Sign up"
+  },
+  "hero": {
+    "badge": "LIVE BROADCASTING RUNS ON TIMING",
+    "headlineLine1": "Design",
+    "headlineLine2": "broadcast overlays.",
+    "headlineLine3": "Control them on air.",
+    "description": "Build tickers, lower thirds, score widgets, bugs, and stingers — bind live data, animate on a visual timeline, and export as HTML overlays ready for air.",
+    "ctaPrimary": "Start for Free",
+    "ctaSecondary": "See it in action",
+    "previewTitle": "tweenly — Score Widget",
+    "tags": [
+      "Lower Third",
+      "Live Ticker",
+      "Score Widget"
+    ],
+    "stats": [
+      {
+        "value": "30+",
+        "label": "Years in Broadcast"
+      },
+      {
+        "value": "100%",
+        "label": "Web-based"
+      },
+      {
+        "value": "No-Code",
+        "label": "Editor + Full API"
+      },
+      {
+        "value": "HTML5",
+        "label": "Production Export"
+      }
+    ]
+  },
+  "ticker": {
+    "items": [
+      "Your designer finished the graphics. Your operator needs them on air in 20 minutes. Tweenly handles the middle part.",
+      "No plugins were harmed in the making of this broadcast.",
+      "Fun fact: the lower third you're looking at right now was built in Tweenly.",
+      "One more \"can you just make the logo bigger\" away from switching to Tweenly.",
+      "Tweenly + Stream Circle — from playlist to pixel, no exports in between.",
+      "HTML overlays that work offline. Yes, really. ZIP it and forget the WiFi.",
+      "Your scoreboard data changes. Your graphic updates. Nobody had to alt-tab.",
+      "30 years in broadcast taught us one thing — operators don't have time for workarounds."
+    ],
+    "live": "LIVE"
+  },
+  "build": {
+    "sectionLabel": "Broadcast Elements",
+    "heading": "What You Can Build",
+    "subheading": "Graphics designed for live broadcasting. Data-driven. Ready for playout.",
+    "cards": [
+      {
+        "label": "Lower Third",
+        "desc": "Name straps and title cards with smooth reveal animations."
+      },
+      {
+        "label": "Live Ticker",
+        "desc": "Scrolling text bars for news, sports scores, and real-time updates."
+      },
+      {
+        "label": "Score Widget",
+        "desc": "Live scoreboards connected to JSON or XML data sources with auto-refresh."
+      },
+      {
+        "label": "Full-Screen Graphic",
+        "desc": "Stingers, bumpers, and full-frame takeover graphics."
+      },
+      {
+        "label": "Bug & Watermark",
+        "desc": "Persistent corner logos and channel branding overlays."
+      },
+      {
+        "label": "Breaking News",
+        "desc": "Alert templates with pre-built in/out transitions — trigger from On Air or via API."
+      }
+    ]
+  },
+  "brand": {
+    "sectionLabel": "Channel Branding",
+    "headingLead": "Build an entire",
+    "headingAccent": "channel identity",
+    "headingTail": " — not just one graphic.",
+    "intro": "Design a complete on-air look — every lower third, ticker, score widget, and bug coordinated as one brand system. Build a new channel from scratch, or extend your existing graphics package without breaking visual consistency.",
+    "previewChromePrefix": "tweenly — ",
+    "previewChromeSuffix": " brand kit",
+    "livePreview": "● Live preview",
+    "elements": "ELEMENTS",
+    "kits": [
+      {
+        "name": "KICK",
+        "tagline": "Live sports. Real-time data. High energy.",
+        "sector": "Sports",
+        "typeNote": "Bebas Neue · Inter"
+      },
+      {
+        "name": "VERITAS",
+        "tagline": "Editorial news with verified sources.",
+        "sector": "News",
+        "typeNote": "Lora · Inter"
+      },
+      {
+        "name": "404",
+        "tagline": "Tech-native. Terminal. Glitch-friendly.",
+        "sector": "Experimental",
+        "typeNote": "JetBrains Mono · Inter"
+      }
+    ],
+    "newChannels": {
+      "label": "For new channels",
+      "heading": "Launch a brand-new channel",
+      "description": "Start from a blank canvas. Define your colors, type, and motion language — then design a complete graphics package inside one workspace."
+    },
+    "existingBrands": {
+      "label": "For existing brands",
+      "heading": "Extend your current branding",
+      "description": "Already have a brand book? Send us your existing design files and we'll rebuild them in Tweenly — pixel-perfect, animatable, and production-ready."
+    }
+  },
+  "solution": {
+    "sectionLabel": "Tweenly Editor · Design",
+    "headingLine1": "A browser-based",
+    "headingLine2": "broadcast design studio.",
+    "description": "The visual design tool — a keyframe canvas where every element maps to an HTML overlay layer. Build at your real output resolution, animate on a timeline, bind live data, and ship as HTML or a self-contained package.",
+    "appName": "Tweenly Editor",
+    "badge": "● Design tool",
+    "placeholderNote": "Editor screenshot",
+    "chips": [
+      "Drag-and-drop canvas",
+      "Timeline · 33 animations",
+      "JSON / XML data binding",
+      "Gallery — shared graphic library",
+      "Workspaces & roles",
+      "HTML & ZIP export",
+      "JavaScript API"
+    ]
+  },
+  "onair": {
+    "sectionLabel": "Tweenly On Air · Live Control",
+    "headingLine1": "A browser-based",
+    "headingLine2": "live control room.",
+    "leadStrong": "Adjust your broadcast while on air.",
+    "leadRest": " On Air is a separate Tweenly app — the operator's view. Prep graphics in Standby, send them live with one command, edit text right up to the cut. All in the browser, no install.",
+    "chips": [
+      "Browser-based",
+      "Standalone app",
+      "Multi-session"
+    ],
+    "screenshot": {
+      "appName": "Tweenly On Air",
+      "urlLabel": "onair.tweenly.io",
+      "badge": "● Live control",
+      "placeholderNote": "On Air screenshot"
+    },
+    "flow": {
+      "standby": "STANDBY",
+      "inOut": "IN  ▸  OUT",
+      "live": "LIVE"
+    },
+    "caps": [
+      {
+        "title": "Standby → Live",
+        "desc": "A two-column control room. Drop a graphic into Standby, hit IN to send it live, OUT to pull it back."
+      },
+      {
+        "title": "Edit fields in Standby",
+        "desc": "Update names, scores, headlines — directly in Standby, with live preview. Once it’s on air, it’s locked. No accidents."
+      },
+      {
+        "title": "Full playback control",
+        "desc": "Play, Pause, Replay, jump to markers, trigger Outro — full transport control for every animated graphic."
+      },
+      {
+        "title": "Run as many sessions as you have events",
+        "desc": "Switch between concurrent sessions in a single browser tab. Each session connects to its own data sources — scoreboards, rundown systems, or manual operator input."
+      }
+    ],
+    "devTitle": "JavaScript API for full programmatic control",
+    "devDesc": "Drive On Air from your automation or scoreboard system. Set text, swap images, trigger play / next / outro from code."
+  },
+  "streamcircle": {
+    "sectionLabel": "Native Broadcast Workflow",
+    "headingPrefix": "Built to run with  ",
+    "headingBrand": "Stream Circle",
+    "headingSuffix": ".",
+    "intro": "When graphics and playout share the same runtime, live production gets faster and easier to manage. Tweenly integrates directly with Stream Circle — no file exports or middleware. Graphics attach to playlists, controlled from the same interface your operators already use.",
+    "tweenlyName": "tweenly",
+    "tweenlyRole": "EDITOR & ON AIR",
+    "tweenlyDesc": "HTML5 broadcast graphics with live data connectivity",
+    "sharedRuntime": "SHARED RUNTIME",
+    "scName": "Stream Circle",
+    "scRole": "INTEGRATED PLAYOUT",
+    "scDesc": "Channel automation, scheduling, and playout",
+    "benefit0Label": "Attach to playlists",
+    "benefit0Desc": "Attach graphics directly to scheduled events and running playlists.",
+    "benefit1Label": "Live data inserts",
+    "benefit1Desc": "Update graphics dynamically from live data sources and automation triggers.",
+    "benefit2Label": "One workflow",
+    "benefit2Desc": "From design to on air, no exports between systems.",
+    "benefit3Label": "No plug-ins",
+    "benefit3Desc": "Native integration — Tweenly is a first-class Stream Circle module.",
+    "modulesHeading": "What Stream Circle handles",
+    "module0Label": "Content Management",
+    "module0Desc": "Organize files with metadata and queries.",
+    "module1Label": "Planning & Scheduling",
+    "module1Desc": "Plan templates, dynamic blocks, file checking.",
+    "module2Label": "Playout Operations",
+    "module2Desc": "Multichannel server with live playlist control.",
+    "module3Label": "Live Graphics",
+    "module3Desc": "Tweenly graphics, attached to plans.",
+    "ctaHeading": "Run your channel with Stream Circle.",
+    "ctaBody": "TV channel automation and playout — scheduling, content management, and live graphics in one system. Built by the same team behind Tweenly.",
+    "ctaLink": "Visit streamcircle.com"
+  },
+  "pricing": {
+    "sectionLabel": "Pricing",
+    "heading": "Free to Start.",
+    "subheading": "Upgrade when you need API control and team collaboration. Per user, per month. No credit card required.",
+    "freePlanName": "Free",
+    "priceUnit": "/user/month",
+    "freeCta": "Get Started",
+    "recommendedBadge": "Recommended",
+    "unlPlanName": "Unlimited",
+    "unlCta": "Go Unlimited",
+    "freeFeatures": [
+      "Full visual editor",
+      "HTML export",
+      "Tickers & image sequences",
+      "JSON/XML data sources",
+      "On Air preview",
+      "256 MB storage"
+    ],
+    "unlFeatures": [
+      "Everything in Free",
+      "ZIP export (offline playout)",
+      "API control in exports",
+      "Code triggers",
+      "Unlimited storage",
+      "Shared workspaces",
+      "Team collaboration"
+    ]
+  },
+  "services": {
+    "sectionLabel": "Services",
+    "headingMain": "Send us your design file.",
+    "headingAccent": "We'll handle the rest.",
+    "paragraph": "Already have a finished design? We turn your source files into animatable HTML overlays — ready for Stream Circle playout or any system that supports HTML graphics.",
+    "contactButton": "Contact us →",
+    "steps": [
+      {
+        "title": "Send your design",
+        "desc": "Send us your source files — PSD, AI, video compositing projects, or any standard design format."
+      },
+      {
+        "title": "We rebuild it in HTML",
+        "desc": "Our team recreates your graphic as a pixel-perfect, animatable HTML overlay."
+      },
+      {
+        "title": "Deploy to playout",
+        "desc": "Get a production-ready HTML package for Stream Circle or any playout system that supports HTML overlays."
+      }
+    ]
+  },
+  "references": {
+    "sectionLabel": "Early Adopters",
+    "heading": "Already on air with Tweenly",
+    "adopters": [
+      {
+        "type": "Sports Broadcaster",
+        "desc": "Live score graphics and lower thirds for football and hockey coverage.",
+        "elements": [
+          "Score widgets",
+          "Lower thirds",
+          "Tickers"
+        ]
+      },
+      {
+        "type": "Regional Television",
+        "desc": "Full on-air graphics package — news lower thirds, tickers, and channel branding.",
+        "elements": [
+          "Lower thirds",
+          "News tickers",
+          "Bugs"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "heading": "Frequently Asked Questions",
+    "intro": "Everything you need to know before getting started.",
+    "items": [
+      {
+        "q": "What is the difference between Editor and On Air?",
+        "a": "Tweenly is a platform with two products. Editor is the design tool — create and animate broadcast graphics visually, no code required. On Air is the live control app — operators load finished graphics, edit fields in Standby, and send them to air. On Air requires graphics built in Editor, but Editor works independently on its own."
+      },
+      {
+        "q": "What playout systems does Tweenly work with?",
+        "a": "Tweenly integrates natively with Stream Circle for scheduling and live playout. Exported HTML graphics can also be loaded into any system that supports HTML overlays — via iframe or as a standalone browser source — and controlled through the JavaScript API. With the Unlimited plan, you can export self-contained ZIP packages that run offline in any HTML-compatible playout."
+      },
+      {
+        "q": "What output resolutions and frame rates are supported?",
+        "a": "You choose the resolution and frame rate when creating a graphic — Full HD (1920×1080), 4K (3840×2160), or any custom size. Frame rate options are 1 fps, 25 fps, and 50 fps. The exported HTML package matches exactly what you set in the editor."
+      },
+      {
+        "q": "What browsers are supported?",
+        "a": "Tweenly Editor and On Air run in any modern Chromium-based browser (Chrome, Edge, Opera). Firefox and Safari are not officially supported for the editor."
+      },
+      {
+        "q": "Where is my data stored?",
+        "a": "Tweenly runs on Amazon Web Services (AWS) infrastructure. Your graphics, assets, and account data are stored securely in the cloud. We take data protection seriously and comply with EU regulations."
+      },
+      {
+        "q": "What happens if I downgrade or cancel my plan?",
+        "a": "Your account and all your graphics remain accessible — nothing gets deleted. You simply return to the Free plan with its feature limits (HTML-only export, no collaboration, no API control in exports). Your work is always yours."
+      },
+      {
+        "q": "How long does it take to learn Tweenly?",
+        "a": "Most designers are productive in a few hours. The editor is a visual tool — if you've used any design software, you'll feel at home. On Air is even simpler — operators typically need less than an hour to learn the Standby → Live workflow."
+      },
+      {
+        "q": "What support is available?",
+        "a": "Tweenly Editor and On Air include email support. When deployed together with Stream Circle, support follows the Stream Circle SLA with dedicated response times. We're a small team and we respond fast."
+      }
+    ]
+  },
+  "about": {
+    "sectionLabel": "About Us",
+    "heading": "30 years of broadcast software.",
+    "description": "Tweenly is built by PROVYS Technologies — a Prague-based company that has been building mission-critical broadcast software since the early nineties. From scheduling to playout, our tools power TV stations across Europe.",
+    "stat0Value": "30+",
+    "stat0Label": "years",
+    "stat1Value": "~60",
+    "stat1Label": "employees",
+    "stat2Value": "Prague",
+    "stat2Label": "headquarters",
+    "productsLabel": "Our Products",
+    "product0Name": "Sphere by Provys",
+    "product0Desc": "Broadcast scheduling & planning",
+    "product1Name": "Stream Circle",
+    "product1Desc": "Channel automation & playout"
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "heading": "We'd like to hear from you",
+    "description": "Questions about graphics, playout integration, or On Air setup? Get in touch.",
+    "locations": [
+      {
+        "city": "Prague",
+        "country": "CZE"
+      },
+      {
+        "city": "Olomouc",
+        "country": "CZE"
+      },
+      {
+        "city": "Poprad",
+        "country": "SVK"
+      }
+    ],
+    "cta": "Get in touch"
+  },
+  "footer": {
+    "tagline": "Design broadcast overlays and control them on air. Built by PROVYS Technologies.",
+    "resourcesHeading": "Resources",
+    "socialsHeading": "Socials",
+    "resources": [
+      "Documentation",
+      "Terms",
+      "Privacy"
+    ],
+    "socials": [
+      "LinkedIn",
+      "YouTube"
+    ],
+    "copyright": "© 2026 PROVYS Technologies",
+    "locations": "Prague · Olomouc · Poprad"
+  }
+}

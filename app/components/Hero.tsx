@@ -5,6 +5,9 @@ import { BroadcastWindow } from "./BroadcastWindow";
 import { LiveTicker } from "./LiveTicker";
 import { GradientShape } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── Hero ─────────────────────────────────────────────────────────────────
 
 export default function Hero() {
@@ -49,7 +52,7 @@ export default function Hero() {
             transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)',
           }}>
             <div style={{ width: 6, height: 6, background: '#22C68A', borderRadius: '50%', animation: 'blink 1.5s ease infinite' }} />
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 600, letterSpacing: 2, color: '#22C68A', textTransform: 'uppercase' }}>LIVE BROADCASTING RUNS ON TIMING</span>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 600, letterSpacing: 2, color: '#22C68A', textTransform: 'uppercase' }}>{t("hero.badge")}</span>
           </div>
 
           <h1 style={{
@@ -59,7 +62,7 @@ export default function Hero() {
             opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(20px)',
             transition: 'all 0.7s 0.1s cubic-bezier(0.16,1,0.3,1)',
           }}>
-            <span style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 300 }}>Design</span><br/>
+            <span style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 300 }}>{t("hero.headlineLine1")}</span><br/>
             <span style={{
               background: 'linear-gradient(135deg, #82B820 0%, #22C68A 30%, #0AB6E0 70%, #007A98 100%)',
               backgroundSize: '200% 200%',
@@ -67,8 +70,8 @@ export default function Hero() {
               WebkitTextFillColor: 'transparent',
               animation: 'gradientFlow 6s ease infinite',
               display: 'inline-block',
-            }}>broadcast overlays.</span><br/>
-            <span>Control them on air.</span>
+            }}>{t("hero.headlineLine2")}</span><br/>
+            <span>{t("hero.headlineLine3")}</span>
           </h1>
 
           <p style={{
@@ -77,7 +80,7 @@ export default function Hero() {
             opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(15px)',
             transition: 'all 0.7s 0.25s cubic-bezier(0.16,1,0.3,1)',
           }}>
-            Build tickers, lower thirds, score widgets, bugs, and stingers — bind live data, animate on a visual timeline, and export as HTML overlays ready for air.
+            {t("hero.description")}
           </p>
 
           <div style={{
@@ -98,7 +101,7 @@ export default function Hero() {
             }}
               onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'none'}>
-              Start for Free
+              {t("hero.ctaPrimary")}
             </a>
             <a href="#editor" style={{
               fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 600,
@@ -108,7 +111,7 @@ export default function Hero() {
             }}
               onMouseEnter={e => e.currentTarget.style.color = 'var(--white)'}
               onMouseLeave={e => e.currentTarget.style.color = 'rgba(226,228,229,0.7)'}>
-              <span style={{ fontSize: 14 }}>▶</span> See it in action
+              <span style={{ fontSize: 14 }}>▶</span> {t("hero.ctaSecondary")}
             </a>
           </div>
         </div>
@@ -133,7 +136,7 @@ export default function Hero() {
               <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#FF6258' }} />
               <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#FFBD2E' }} />
               <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#27C93F' }} />
-              <span style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(226,228,229,0.4)', marginLeft: 12 }}>tweenly — Score Widget</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'rgba(226,228,229,0.4)', marginLeft: 12 }}>{t("hero.previewTitle")}</span>
             </div>
             <BroadcastWindow />
           </div>
@@ -141,17 +144,17 @@ export default function Hero() {
           {/* Floating element tags */}
           <div style={{ marginTop: 14, display: 'flex', gap: 8, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
             {[
-              { label: 'Lower Third', color: '#22C68A' },
-              { label: 'Live Ticker', color: '#0AB6E0' },
-              { label: 'Score Widget', color: '#82B820' },
-            ].map(t => (
-              <div key={t.label} style={{
+              { label: t("hero.tags.0"), color: '#22C68A' },
+              { label: t("hero.tags.1"), color: '#0AB6E0' },
+              { label: t("hero.tags.2"), color: '#82B820' },
+            ].map(tag => (
+              <div key={tag.label} style={{
                 fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 600,
-                color: t.color, background: `${t.color}14`,
-                border: `1px solid ${t.color}30`,
+                color: tag.color, background: `${tag.color}14`,
+                border: `1px solid ${tag.color}30`,
                 padding: '5px 12px', borderRadius: '4px 8px 4px 14px',
               }}>
-                {t.label}
+                {tag.label}
               </div>
             ))}
           </div>
@@ -162,10 +165,10 @@ export default function Hero() {
       <div style={{ position: 'relative', zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: isCompact ? '24px clamp(20px,5vw,40px)' : '28px 40px', display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: isMobile ? 24 : 40 }}>
           {[
-            ['30+', 'Years in Broadcast'],
-            ['100%', 'Web-based'],
-            ['No-Code', 'Editor + Full API'],
-            ['HTML5', 'Production Export'],
+            [t("hero.stats.0.value"), t("hero.stats.0.label")],
+            [t("hero.stats.1.value"), t("hero.stats.1.label")],
+            [t("hero.stats.2.value"), t("hero.stats.2.label")],
+            [t("hero.stats.3.value"), t("hero.stats.3.label")],
           ].map(([val, label], i) => (
             <div key={val} style={{ display: 'flex', alignItems: 'baseline', gap: 14 }}>
               <span style={{

@@ -3,6 +3,9 @@
 import { ScreenshotFrame } from "./ScreenshotFrame";
 import { SectionLabel } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── Tweenly On Air ──────────────────────────────────────────────────────
 // On Air is a standalone live-event control surface — its own app, not just
 // another feature. The hero visual is the Standby → Live two-column operator
@@ -231,26 +234,26 @@ export function OnAirOperatorUI() {
 export const ONAIR_CAPS = [
   {
     eyebrow: '01',
-    title: 'Standby → Live',
-    desc: 'A two-column control room. Drop a graphic into Standby, hit IN to send it live, OUT to pull it back.',
+    title: t("onair.caps.0.title"),
+    desc: t("onair.caps.0.desc"),
     accent: '#22C68A',
   },
   {
     eyebrow: '02',
-    title: 'Edit fields in Standby',
-    desc: 'Update names, scores, headlines — directly in Standby, with live preview. Once it\u2019s on air, it\u2019s locked. No accidents.',
+    title: t("onair.caps.1.title"),
+    desc: t("onair.caps.1.desc"),
     accent: '#0AB6E0',
   },
   {
     eyebrow: '03',
-    title: 'Full playback control',
-    desc: 'Play, Pause, Replay, jump to markers, trigger Outro — full transport control for every animated graphic.',
+    title: t("onair.caps.2.title"),
+    desc: t("onair.caps.2.desc"),
     accent: '#E05151',
   },
   {
     eyebrow: '04',
-    title: 'Run as many sessions as you have events',
-    desc: 'Switch between concurrent sessions in a single browser tab. Each session connects to its own data sources — scoreboards, rundown systems, or manual operator input.',
+    title: t("onair.caps.3.title"),
+    desc: t("onair.caps.3.desc"),
     accent: '#82B820',
   },
 ];
@@ -266,25 +269,25 @@ export default function TweenlyOnAir() {
         {/* HEADER */}
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 24 : 60, alignItems: isMobile ? 'start' : 'end', marginBottom: isMobile ? 36 : 56 }}>
           <div>
-            <SectionLabel label="Tweenly On Air · Live Control" color="#E05151" />
+            <SectionLabel label={t("onair.sectionLabel")} color="#E05151" />
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 68px)', letterSpacing: -1.8, color: 'var(--white)', lineHeight: 1.0, marginTop: 8 }}>
-              A browser-based<br/>
+              {t("onair.headingLine1")}<br/>
               <span style={{
                 background: 'linear-gradient(90deg, #FF8585 0%, #E05151 100%)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                 fontStyle: 'italic', fontWeight: 500,
-              }}>live control room.</span>
+              }}>{t("onair.headingLine2")}</span>
             </h2>
           </div>
           <div style={{ paddingBottom: 6 }}>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: 'rgba(226,228,229,0.65)', lineHeight: 1.65, maxWidth: 520 }}>
-              <strong style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 600 }}>Adjust your broadcast while on air.</strong> On Air is a separate Tweenly app — the operator&apos;s view. Prep graphics in Standby, send them live with one command, edit text right up to the cut. All in the browser, no install.
+              <strong style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 600 }}>{t("onair.leadStrong")}</strong>{t("onair.leadRest")}
             </p>
             <div style={{ marginTop: 22, display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
               {[
-                { icon: '◐', label: 'Browser-based' },
-                { icon: '◇', label: 'Standalone app' },
-                { icon: '◈', label: 'Multi-session' },
+                { icon: '◐', label: t("onair.chips.0") },
+                { icon: '◇', label: t("onair.chips.1") },
+                { icon: '◈', label: t("onair.chips.2") },
               ].map(t => (
                 <div key={t.label} style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -301,15 +304,15 @@ export default function TweenlyOnAir() {
         </div>
 
         {/* HERO SCREENSHOT */}
-        <ScreenshotFrame appName="Tweenly On Air" urlLabel="onair.tweenly.io" accent="#E05151" badge="● Live control" placeholderNote="On Air screenshot" aspectRatio="16/9" />
+        <ScreenshotFrame appName={t("onair.screenshot.appName")} urlLabel={t("onair.screenshot.urlLabel")} accent="#E05151" badge={t("onair.screenshot.badge")} placeholderNote={t("onair.screenshot.placeholderNote")} aspectRatio="16/9" />
 
         {/* FLOW HINT — between mockup and caps */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 18, margin: '36px 0 56px', fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase' }}>
-          <span style={{ color: '#22C68A' }}>STANDBY</span>
+          <span style={{ color: '#22C68A' }}>{t("onair.flow.standby")}</span>
           <span style={{ width: 60, height: 1, background: 'linear-gradient(90deg, #22C68A, #E05151)' }} />
-          <span style={{ color: 'rgba(226,228,229,0.5)' }}>IN  ▸  OUT</span>
+          <span style={{ color: 'rgba(226,228,229,0.5)' }}>{t("onair.flow.inOut")}</span>
           <span style={{ width: 60, height: 1, background: 'linear-gradient(90deg, #E05151, #22C68A)' }} />
-          <span style={{ color: '#E05151' }}>LIVE</span>
+          <span style={{ color: '#E05151' }}>{t("onair.flow.live")}</span>
         </div>
 
         {/* CAPABILITY GRID */}
@@ -337,8 +340,8 @@ export default function TweenlyOnAir() {
               <path d="M9 7 L4 12 L9 17 M15 7 L20 12 L15 17" stroke="#22C68A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 700, color: 'var(--white)', letterSpacing: -0.2 }}>JavaScript API for full programmatic control</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(226,228,229,0.5)', marginTop: 2 }}>Drive On Air from your automation or scoreboard system. Set text, swap images, trigger play / next / outro from code.</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 700, color: 'var(--white)', letterSpacing: -0.2 }}>{t("onair.devTitle")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(226,228,229,0.5)', marginTop: 2 }}>{t("onair.devDesc")}</div>
             </div>
           </div>
           <code style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#22C68A', background: 'rgba(0,0,0,0.4)', padding: '8px 14px', borderRadius: '3px 10px 3px 6px', whiteSpace: 'nowrap' }}>graphic.play() · graphic.next()</code>

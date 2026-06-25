@@ -2,6 +2,9 @@
 
 import { PlayMark, SectionLabel } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── Stream Circle Integration ──────────────────────────────────────────────
 // Stream Circle icon — from official icon_STREAM-CIRCLE_RGB_WEB_color.svg
 
@@ -58,15 +61,15 @@ export default function StreamCircleIntegration() {
       <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 72 }}>
-          <SectionLabel label="Native Broadcast Workflow" color="#0AB6E0" />
+          <SectionLabel label={t("streamcircle.sectionLabel")} color="#0AB6E0" />
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.02, marginTop: 8, marginBottom: 18 }}>
-            Built to run with  <span style={{
+            {t("streamcircle.headingPrefix")}<span style={{
               background: 'linear-gradient(135deg, #22C68A 0%, #0AB6E0 50%, #007A98 100%)',
               WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>Stream Circle</span>.
+            }}>{t("streamcircle.headingBrand")}</span>{t("streamcircle.headingSuffix")}
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: 'rgba(226,228,229,0.6)', lineHeight: 1.65, maxWidth: 680, margin: '0 auto' }}>
-            When graphics and playout share the same runtime, live production gets faster and easier to manage. Tweenly integrates directly with Stream Circle — no file exports or middleware. Graphics attach to playlists, controlled from the same interface your operators already use.
+            {t("streamcircle.intro")}
           </p>
         </div>
 
@@ -110,9 +113,9 @@ export default function StreamCircleIntegration() {
                   <PlayMark size={56} />
                 </div>
               </div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 24, color: 'var(--white)', letterSpacing: -0.5, marginBottom: 4 }}>tweenly</div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: '#00B1EB', letterSpacing: 2, textTransform: 'uppercase' }}>EDITOR &amp; ON AIR</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.5)', marginTop: 8, maxWidth: 220, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.5 }}>HTML5 broadcast graphics with live data connectivity</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 24, color: 'var(--white)', letterSpacing: -0.5, marginBottom: 4 }}>{t("streamcircle.tweenlyName")}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: '#00B1EB', letterSpacing: 2, textTransform: 'uppercase' }}>{t("streamcircle.tweenlyRole")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.5)', marginTop: 8, maxWidth: 220, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.5 }}>{t("streamcircle.tweenlyDesc")}</div>
             </div>
 
             {/* Flow pipe */}
@@ -123,7 +126,7 @@ export default function StreamCircleIntegration() {
                 <FlowDot delay={1} color="#22C68A" />
                 <FlowDot delay={2} color="#0AB6E0" />
               </div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: 'rgba(10,182,224,0.7)', letterSpacing: 2, textTransform: 'uppercase' }}>SHARED RUNTIME</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: 'rgba(10,182,224,0.7)', letterSpacing: 2, textTransform: 'uppercase' }}>{t("streamcircle.sharedRuntime")}</div>
             </div>
 
             {/* Stream Circle node */}
@@ -142,19 +145,19 @@ export default function StreamCircleIntegration() {
                   <StreamCircleMark size={56} />
                 </div>
               </div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 24, color: 'var(--white)', letterSpacing: -0.5, marginBottom: 4 }}>Stream Circle</div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: '#0AB6E0', letterSpacing: 2, textTransform: 'uppercase' }}>INTEGRATED PLAYOUT</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.5)', marginTop: 8, maxWidth: 220, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.5 }}>Channel automation, scheduling, and playout</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 24, color: 'var(--white)', letterSpacing: -0.5, marginBottom: 4 }}>{t("streamcircle.scName")}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: '#0AB6E0', letterSpacing: 2, textTransform: 'uppercase' }}>{t("streamcircle.scRole")}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.5)', marginTop: 8, maxWidth: 220, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.5 }}>{t("streamcircle.scDesc")}</div>
             </div>
           </div>
 
           {/* Bottom bar — what the integration delivers */}
           <div style={{ marginTop: 56, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
             {[
-              { label: 'Attach to playlists', desc: 'Attach graphics directly to scheduled events and running playlists.' },
-              { label: 'Live data inserts', desc: 'Update graphics dynamically from live data sources and automation triggers.' },
-              { label: 'One workflow', desc: 'From design to on air, no exports between systems.' },
-              { label: 'No plug-ins', desc: 'Native integration — Tweenly is a first-class Stream Circle module.' },
+              { label: t("streamcircle.benefit0Label"), desc: t("streamcircle.benefit0Desc") },
+              { label: t("streamcircle.benefit1Label"), desc: t("streamcircle.benefit1Desc") },
+              { label: t("streamcircle.benefit2Label"), desc: t("streamcircle.benefit2Desc") },
+              { label: t("streamcircle.benefit3Label"), desc: t("streamcircle.benefit3Desc") },
             ].map((b, i) => (
               <div key={b.label}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
@@ -170,13 +173,13 @@ export default function StreamCircleIntegration() {
         {/* Stream Circle modules summary + CTA */}
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.3fr 1fr', gap: isMobile ? 32 : 40, alignItems: 'center' }}>
           <div>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, color: '#0AB6E0', letterSpacing: 2.5, textTransform: 'uppercase', marginBottom: 16 }}>What Stream Circle handles</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, color: '#0AB6E0', letterSpacing: 2.5, textTransform: 'uppercase', marginBottom: 16 }}>{t("streamcircle.modulesHeading")}</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               {[
-                { num: '01', label: 'Content Management', desc: 'Organize files with metadata and queries.' },
-                { num: '02', label: 'Planning & Scheduling', desc: 'Plan templates, dynamic blocks, file checking.' },
-                { num: '03', label: 'Playout Operations', desc: 'Multichannel server with live playlist control.' },
-                { num: '04', label: 'Live Graphics', desc: 'Tweenly graphics, attached to plans.' },
+                { num: '01', label: t("streamcircle.module0Label"), desc: t("streamcircle.module0Desc") },
+                { num: '02', label: t("streamcircle.module1Label"), desc: t("streamcircle.module1Desc") },
+                { num: '03', label: t("streamcircle.module2Label"), desc: t("streamcircle.module2Desc") },
+                { num: '04', label: t("streamcircle.module3Label"), desc: t("streamcircle.module3Desc") },
               ].map(m => (
                 <div key={m.num} style={{
                   background: 'var(--bg2)',
@@ -204,10 +207,10 @@ export default function StreamCircleIntegration() {
           }}>
             <StreamCircleMark size={36} />
             <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 24, color: 'var(--white)', letterSpacing: -0.5, marginTop: 16, marginBottom: 10, lineHeight: 1.1 }}>
-              Run your channel with Stream Circle.
+              {t("streamcircle.ctaHeading")}
             </div>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(226,228,229,0.55)', lineHeight: 1.6, marginBottom: 20 }}>
-              TV channel automation and playout — scheduling, content management, and live graphics in one system. Built by the same team behind Tweenly.
+              {t("streamcircle.ctaBody")}
             </p>
             <a href="https://streamcircle.com" target="_blank" rel="noopener" style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
@@ -220,7 +223,7 @@ export default function StreamCircleIntegration() {
             }}
               onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'none'}>
-              Visit streamcircle.com <span style={{ fontSize: 14 }}>↗</span>
+              {t("streamcircle.ctaLink")} <span style={{ fontSize: 14 }}>↗</span>
             </a>
           </div>
         </div>

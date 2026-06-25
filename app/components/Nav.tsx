@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { Logo } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── Navigation ───────────────────────────────────────────────────────────
 
 export default function Nav() {
@@ -19,14 +22,14 @@ export default function Nav() {
   if (!isCompact && menuOpen) setMenuOpen(false);
 
   const navLinks = [
-    { label: 'Elements', href: '#elements', group: 'product', top: true },
-    { label: 'Branding', href: '#branding', group: 'product', top: true },
-    { label: 'Editor', href: '#editor', group: 'product', top: true, sep: true },
-    { label: 'On Air', href: '#onair', accent: '#E05151', group: 'product', top: true },
-    { label: 'Services', href: '#services', group: 'utility', top: true },
-    { label: 'Pricing', href: '#pricing', group: 'utility', top: true },
-    { label: 'Contact', href: '#contact', group: 'utility', top: true },
-    { label: 'FAQ', href: '#faq', group: 'utility', top: false },
+    { label: t("nav.links.0"), href: '#elements', group: 'product', top: true },
+    { label: t("nav.links.1"), href: '#branding', group: 'product', top: true },
+    { label: t("nav.links.2"), href: '#editor', group: 'product', top: true, sep: true },
+    { label: t("nav.links.3"), href: '#onair', accent: '#E05151', group: 'product', top: true },
+    { label: t("nav.links.4"), href: '#services', group: 'utility', top: true },
+    { label: t("nav.links.5"), href: '#pricing', group: 'utility', top: true },
+    { label: t("nav.links.6"), href: '#contact', group: 'utility', top: true },
+    { label: t("nav.links.7"), href: '#faq', group: 'utility', top: false },
   ];
   const topLinks = navLinks.filter(l => l.top);
 
@@ -65,7 +68,7 @@ export default function Nav() {
                     {l.accent && <span style={{
                       width: 5, height: 5, borderRadius: '50%', background: l.accent,
                       boxShadow: `0 0 8px ${l.accent}`,
-                      animation: l.label === 'On Air' ? 'blink 1.6s infinite' : 'none',
+                      animation: l.href === '#onair' ? 'blink 1.6s infinite' : 'none',
                     }} />}
                     {l.label}
                   </a>
@@ -80,7 +83,7 @@ export default function Nav() {
           {!isCompact && (
             <a href="https://editor.tweenly.io/login" style={{ fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 500, color: 'rgba(226,228,229,0.7)', textDecoration: 'none', padding: '8px 14px', whiteSpace: 'nowrap', transition: 'color 0.2s' }}
               onMouseEnter={e => e.currentTarget.style.color = 'var(--white)'}
-              onMouseLeave={e => e.currentTarget.style.color = 'rgba(226,228,229,0.7)'}>Log in</a>
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(226,228,229,0.7)'}>{t("nav.logIn")}</a>
           )}
           <a href="https://editor.tweenly.io/signup" style={{
             fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 700,
@@ -93,7 +96,7 @@ export default function Nav() {
           }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(34,198,138,0.4)'; }}
             onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(34,198,138,0.2)'; }}>
-            Sign up
+            {t("nav.signUp")}
           </a>
 
           {/* Mobile/tablet: hamburger */}
@@ -141,7 +144,7 @@ export default function Nav() {
             <a href="https://editor.tweenly.io/login" onClick={() => setMenuOpen(false)} style={{
               fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 600,
               color: 'rgba(255,255,255,0.92)', textDecoration: 'none', padding: '13px 4px',
-            }}>Log in</a>
+            }}>{t("nav.logIn")}</a>
           </div>
         </div>
       )}

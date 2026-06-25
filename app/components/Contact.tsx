@@ -2,6 +2,9 @@
 
 import { SectionLabel } from "./primitives";
 import { useViewport } from "./useViewport";
+import { getTranslation } from "../i18n";
+
+const { t } = getTranslation();
 // ─── Contact ─────────────────────────────────────────────────────────────────
 
 export default function Contact() {
@@ -10,12 +13,12 @@ export default function Contact() {
     <section id="contact" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 700, height: 500, background: 'radial-gradient(ellipse, rgba(34,198,138,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-        <SectionLabel label="Contact" />
+        <SectionLabel label={t("contact.sectionLabel")} />
         <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.05, marginBottom: 16, marginTop: 8 }}>
-          We&apos;d like to hear from you
+          {t("contact.heading")}
         </h2>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(226,228,229,0.62)', maxWidth: 520, margin: '0 auto 36px' }}>
-          Questions about graphics, playout integration, or On Air setup? Get in touch.
+          {t("contact.description")}
         </p>
         <a href="mailto:info@tweenly.io" style={{
           display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 800,
@@ -30,9 +33,9 @@ export default function Contact() {
         </a>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 32, flexWrap: 'wrap' }}>
           {[
-            { city: 'Prague', country: 'CZE' },
-            { city: 'Olomouc', country: 'CZE' },
-            { city: 'Poprad', country: 'SVK' },
+            { city: t("contact.locations.0.city"), country: t("contact.locations.0.country") },
+            { city: t("contact.locations.1.city"), country: t("contact.locations.1.country") },
+            { city: t("contact.locations.2.city"), country: t("contact.locations.2.country") },
           ].map(loc => (
             <div key={loc.city} style={{
               padding: '14px 24px',
@@ -60,7 +63,7 @@ export default function Contact() {
           }}
             onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'}
             onMouseLeave={e => e.currentTarget.style.transform = 'none'}>
-            Get in touch
+            {t("contact.cta")}
           </a>
         </div>
       </div>
