@@ -82,7 +82,7 @@ function BuildPreview({ kind, color }) {
         </div>
       </div>
       <div style={{ padding: '8px 12px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minWidth: 44 }}>
-        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 13, color, lineHeight: 1 }}>72'</div>
+        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 13, color, lineHeight: 1 }}>72&apos;</div>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 7, color: 'rgba(255,255,255,0.4)', letterSpacing: 1, marginTop: 2 }}>2ND HALF</div>
       </div>
     </div>

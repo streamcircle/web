@@ -278,7 +278,7 @@ export default function TweenlyOnAir() {
           </div>
           <div style={{ paddingBottom: 6 }}>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: 'rgba(226,228,229,0.65)', lineHeight: 1.65, maxWidth: 520 }}>
-              <strong style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 600 }}>Adjust your broadcast while on air.</strong> On Air is a separate Tweenly app — the operator's view. Prep graphics in Standby, send them live with one command, edit text right up to the cut. All in the browser, no install.
+              <strong style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 600 }}>Adjust your broadcast while on air.</strong> On Air is a separate Tweenly app — the operator&apos;s view. Prep graphics in Standby, send them live with one command, edit text right up to the cut. All in the browser, no install.
             </p>
             <div style={{ marginTop: 22, display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
               {[

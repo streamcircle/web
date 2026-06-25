@@ -12,7 +12,7 @@ export default function Contact() {
       <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
         <SectionLabel label="Contact" />
         <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.05, marginBottom: 16, marginTop: 8 }}>
-          We'd like to hear from you
+          We&apos;d like to hear from you
         </h2>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(226,228,229,0.62)', maxWidth: 520, margin: '0 auto 36px' }}>
           Questions about graphics, playout integration, or On Air setup? Get in touch.

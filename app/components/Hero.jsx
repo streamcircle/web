@@ -11,9 +11,11 @@ export default function Hero() {
   const [loaded, setLoaded] = useState(true);
   const { isCompact, isMobile } = useViewport();
   useEffect(() => {
-    setLoaded(false);
+    // Mount entrance: paint visible (SSR/no-JS friendly), then replay the
+    // fade-in. Deferred so neither setState runs synchronously in the effect.
+    const reset = setTimeout(() => setLoaded(false), 0);
     const t = setTimeout(() => setLoaded(true), 60);
-    return () => clearTimeout(t);
+    return () => { clearTimeout(reset); clearTimeout(t); };
   }, []);
 
   return (

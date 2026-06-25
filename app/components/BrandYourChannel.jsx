@@ -181,14 +181,14 @@ function KickScene({ crop }) {
         {/* Item 1 */}
         <div style={{ ...px(200, 16, 8, 8), background: '#FF5A00' }}/>
         <div style={{ ...px(216, 12), fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#fff', whiteSpace: 'nowrap' }}>SLA 2:1 SPA  (89. min — Chytil)</div>
-        <div style={{ ...px(530, 12), fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#555' }}>//</div>
+        <div style={{ ...px(530, 12), fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#555' }}>{'//'}</div>
         {/* Item 2 */}
         <div style={{ ...px(560, 16, 8, 8), background: '#FF5A00' }}/>
         <div style={{ ...px(576, 12), fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#fff', whiteSpace: 'nowrap' }}>BAY 3:0 DOR  (FT)</div>
-        <div style={{ ...px(790, 12), fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#555' }}>//</div>
+        <div style={{ ...px(790, 12), fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#555' }}>{'//'}</div>
         {/* Item 3 */}
         <div style={{ ...px(820, 12), fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#999', whiteSpace: 'nowrap' }}>WIMBLEDON — Nosková → semifinále</div>
-        <div style={{ ...px(1130, 12), fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#555' }}>//</div>
+        <div style={{ ...px(1130, 12), fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#555' }}>{'//'}</div>
         {/* Item 4 */}
         <div style={{ ...px(1160, 12), fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#999', whiteSpace: 'nowrap' }}>F1 — Hamilton P1 v tréninku, Verstappen P3</div>
       </div>
@@ -305,11 +305,11 @@ function FourOhFourScene({ crop }) {
 
         {/* Meta row */}
         <div style={{ ...px(14, 97), fontFamily: 'JetBrains Mono, monospace', fontWeight: 500, fontSize: 10, color: '#444' }}>14:32:07</div>
-        <div style={{ ...px(70, 97), fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#333' }}>//</div>
+        <div style={{ ...px(70, 97), fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#333' }}>{'//'}</div>
         <div style={{ ...px(90, 97), fontFamily: 'JetBrains Mono, monospace', fontWeight: 500, fontSize: 10, color: '#444' }}>ID:40417</div>
-        <div style={{ ...px(146, 97), fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#333' }}>//</div>
+        <div style={{ ...px(146, 97), fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#333' }}>{'//'}</div>
         <div style={{ ...px(166, 97), fontFamily: 'JetBrains Mono, monospace', fontWeight: 500, fontSize: 10, color: '#444' }}>FEED:ACTIVE</div>
-        <div style={{ ...px(240, 97), fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#333' }}>//</div>
+        <div style={{ ...px(240, 97), fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#333' }}>{'//'}</div>
         <div style={{ ...px(260, 97), fontFamily: 'JetBrains Mono, monospace', fontWeight: 500, fontSize: 10, color: '#444' }}>STREAM:OK</div>
         <div style={{ ...px(322, 103, 344, 1), background: '#222' }}/>
       </div>
@@ -671,7 +671,7 @@ export default function BrandYourChannel() {
             <div style={{ flex: 1 }}>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, color: '#9B7BFF', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 4 }}>For existing brands</div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 22, color: 'var(--white)', letterSpacing: -0.5, lineHeight: 1.1 }}>Extend your current branding</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.55)', marginTop: 6, lineHeight: 1.55 }}>Already have a brand book? Send us your existing design files and we'll rebuild them in Tweenly — pixel-perfect, animatable, and production-ready.</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.55)', marginTop: 6, lineHeight: 1.55 }}>Already have a brand book? Send us your existing design files and we&apos;ll rebuild them in Tweenly — pixel-perfect, animatable, and production-ready.</div>
             </div>
             <span style={{ color: '#9B7BFF', fontSize: 22, fontFamily: 'var(--font-display)' }}>→</span>
           </a>

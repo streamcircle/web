@@ -14,8 +14,9 @@ export default function Nav() {
     window.addEventListener('scroll', handler);
     return () => window.removeEventListener('scroll', handler);
   }, []);
-  // Close the mobile menu once we grow back to desktop
-  useEffect(() => { if (!isCompact) setMenuOpen(false); }, [isCompact]);
+  // Close the mobile menu once we grow back to desktop (adjust during render
+  // rather than in an effect — the documented pattern for derived resets).
+  if (!isCompact && menuOpen) setMenuOpen(false);
 
   const navLinks = [
     { label: 'Elements', href: '#elements', group: 'product', top: true },

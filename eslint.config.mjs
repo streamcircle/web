@@ -18,6 +18,11 @@ const eslintConfig = defineConfig([
       // The landing page intentionally uses plain <img> for logos/screenshots
       // (images are served as-is under `output: "export"` + unoptimized).
       "@next/next/no-img-element": "off",
+      // Fonts are loaded via <link> in the App Router root layout (loads
+      // globally). This rule targets the Pages Router `_document.js` and is a
+      // false positive here; next/font can't be used because the design
+      // references font families by literal name (e.g. 'Bebas Neue').
+      "@next/next/no-page-custom-font": "off",
     },
   },
 ]);

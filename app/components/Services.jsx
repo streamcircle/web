@@ -12,7 +12,7 @@ export default function Services() {
         <div>
           <SectionLabel label="Services" color="#0AB6E0" />
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 60px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.05, marginBottom: 24 }}>
-            Send us your design file. <span style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 300 }}>We'll handle the rest.</span>
+            Send us your design file. <span style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 300 }}>We&apos;ll handle the rest.</span>
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(226,228,229,0.55)', lineHeight: 1.7, marginBottom: 32 }}>
             Already have a finished design? We turn your source files into animatable HTML overlays — ready for Stream Circle playout or any system that supports HTML graphics.

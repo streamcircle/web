@@ -134,15 +134,15 @@ export function ToolVisual({ kind, accent }) {
       <div style={{ fontFamily: 'var(--font-display)', fontSize: 10, fontWeight: 700, color: 'rgba(226,228,229,0.5)', letterSpacing: 2, marginBottom: 10, textTransform: 'uppercase' }}>Export & Broadcast Settings</div>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 10 }}>
         <div style={{ background: 'rgba(0,0,0,0.4)', borderRadius: '4px 8px 4px 14px', padding: 10, fontFamily: 'monospace', fontSize: 8, color: '#22C68A', lineHeight: 1.5, overflow: 'hidden', border: '1px solid rgba(34,198,138,0.15)' }}>
-          <div style={{ color: 'rgba(226,228,229,0.4)' }}>// HTML5 Code Output</div>
-          <div>&lt;div class="overlay"&gt;</div>
-          <div>  &lt;div class="title"&gt;</div>
+          <div style={{ color: 'rgba(226,228,229,0.4)' }}>{'// HTML5 Code Output'}</div>
+          <div>&lt;div class=&quot;overlay&quot;&gt;</div>
+          <div>  &lt;div class=&quot;title&quot;&gt;</div>
           <div>    {`{{name}}`}</div>
           <div>  &lt;/div&gt;</div>
           <div>&lt;/div&gt;</div>
         </div>
         <div style={{ background: 'rgba(0,0,0,0.4)', borderRadius: '4px 8px 4px 14px', padding: 10, fontFamily: 'monospace', fontSize: 8, color: '#0AB6E0', lineHeight: 1.5, border: '1px solid rgba(10,182,224,0.15)' }}>
-          <div style={{ color: 'rgba(226,228,229,0.4)' }}>// API Configuration</div>
+          <div style={{ color: 'rgba(226,228,229,0.4)' }}>{'// API Configuration'}</div>
           <div>endpoint: /api/v1</div>
           <div>method: POST</div>
           <div>format: HTML5</div>
