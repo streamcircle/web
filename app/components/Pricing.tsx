@@ -54,8 +54,8 @@ export default function Pricing() {
               padding: '12px 20px', textDecoration: 'none',
               borderRadius: '6px 12px 6px 20px', transition: 'all 0.2s',
             }}
-              onMouseEnter={e => { e.target.style.background = 'rgba(255,255,255,0.06)'; e.target.style.borderColor = 'rgba(255,255,255,0.4)'; }}
-              onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.borderColor = 'rgba(255,255,255,0.2)'; }}>
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; }}>
               Get Started
             </a>
           </div>
@@ -100,8 +100,8 @@ export default function Pricing() {
               borderRadius: '6px 12px 6px 20px', transition: 'all 0.2s',
               animation: 'gradientFlow 5s ease infinite',
             }}
-              onMouseEnter={e => e.target.style.transform = 'translateY(-1px)'}
-              onMouseLeave={e => e.target.style.transform = 'none'}>
+              onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'none'}>
               Go Unlimited
             </a>
           </div>

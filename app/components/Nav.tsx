@@ -79,8 +79,8 @@ export default function Nav() {
         <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginLeft: isCompact ? 'auto' : 0 }}>
           {!isCompact && (
             <a href="https://editor.tweenly.io/login" style={{ fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 500, color: 'rgba(226,228,229,0.7)', textDecoration: 'none', padding: '8px 14px', whiteSpace: 'nowrap', transition: 'color 0.2s' }}
-              onMouseEnter={e => e.target.style.color = 'var(--white)'}
-              onMouseLeave={e => e.target.style.color = 'rgba(226,228,229,0.7)'}>Log in</a>
+              onMouseEnter={e => e.currentTarget.style.color = 'var(--white)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(226,228,229,0.7)'}>Log in</a>
           )}
           <a href="https://editor.tweenly.io/signup" style={{
             fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 700,
@@ -91,8 +91,8 @@ export default function Nav() {
             transition: 'all 0.25s',
             boxShadow: '0 8px 24px rgba(34,198,138,0.2)',
           }}
-            onMouseEnter={e => { e.target.style.transform = 'translateY(-1px)'; e.target.style.boxShadow = '0 12px 32px rgba(34,198,138,0.4)'; }}
-            onMouseLeave={e => { e.target.style.transform = 'none'; e.target.style.boxShadow = '0 8px 24px rgba(34,198,138,0.2)'; }}>
+            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(34,198,138,0.4)'; }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(34,198,138,0.2)'; }}>
             Sign up
           </a>
 

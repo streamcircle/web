@@ -10,7 +10,7 @@ const LOWER_THIRDS = [
   { name: 'Marcus Weber', title: 'Technical Director, RTL', accent: '#82B820' },
 ];
 
-function LowerThird({ data, visible }) {
+function LowerThird({ data, visible }: { data: (typeof LOWER_THIRDS)[number]; visible: boolean }) {
   return (
     <div style={{
       position: 'absolute', bottom: 70, left: 36,

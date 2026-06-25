@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useLayoutEffect } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { GradientShape, SectionLabel } from "./primitives";
 import { useViewport } from "./useViewport";
 // ─── Brand Your Channel ────────────────────────────────────────────────────
@@ -42,13 +43,16 @@ const CHANNEL_KITS = [
   },
 ];
 
+type Crop = { x: number; y: number; w: number; h: number };
+type Kit = (typeof CHANNEL_KITS)[number];
+
 // Renders mockup content authored at native 1920×1080 (matching .pen source),
 // scaled to fit any container via CSS transform. Optional `crop` zooms into a
 // sub-region {x, y, w, h} of the 1920×1080 frame so kit selector cards can
 // highlight the signature element rather than shrinking the full scene.
 
-function ScaledMockup({ crop, children }) {
-  const wrapperRef = useRef(null);
+function ScaledMockup({ crop, children }: { crop?: Crop; children: ReactNode }) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0.2);
   const baseW = crop ? crop.w : 1920;
   useLayoutEffect(() => {
@@ -79,7 +83,13 @@ function ScaledMockup({ crop, children }) {
 // Small helper to position an absolutely-positioned element by x/y/w/h in
 // 1920×1080 pixel space. Children inherit standard CSS coordinates.
 
-const px = (x, y, w, h, extra = {}) => ({
+const px = (
+  x: number,
+  y: number,
+  w?: number,
+  h?: number,
+  extra: CSSProperties = {},
+): CSSProperties => ({
   position: 'absolute', left: x, top: y,
   ...(w != null ? { width: w } : {}),
   ...(h != null ? { height: h } : {}),
@@ -91,7 +101,7 @@ const px = (x, y, w, h, extra = {}) => ({
 // "Stats Card" panel on the right so the main scene has a substantial data
 // element to balance the lower third.
 
-function KickScene({ crop }) {
+function KickScene({ crop }: { crop?: Crop }) {
   return (
     <ScaledMockup crop={crop}>
       {/* Stadium background + darken overlay (from oa-bg in kick.pen) */}
@@ -198,7 +208,7 @@ function KickScene({ crop }) {
 
 // ─── VERITAS — editorial news, white card + red accent ──────────────────
 
-function VeritasScene({ crop }) {
+function VeritasScene({ crop }: { crop?: Crop }) {
   return (
     <ScaledMockup crop={crop}>
       <img src="https://images.unsplash.com/photo-1742805382153-bb4be26d6031?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80" alt="" style={{ ...px(0, 0, 1920, 1080), objectFit: 'cover' }} draggable="false"/>
@@ -264,7 +274,7 @@ function VeritasScene({ crop }) {
 
 // ─── 404 — terminal aesthetic, cyan on black ────────────────────────────
 
-function FourOhFourScene({ crop }) {
+function FourOhFourScene({ crop }: { crop?: Crop }) {
   return (
     <ScaledMockup crop={crop}>
       <img src="https://images.unsplash.com/photo-1765445666244-ccfec0904605?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80" alt="" style={{ ...px(0, 0, 1920, 1080), objectFit: 'cover' }} draggable="false"/>
@@ -356,7 +366,7 @@ function FourOhFourScene({ crop }) {
 
 // ─── AURORA — premium cinematic, refined editorial ──────────────────────
 
-function AuroraScene({ crop }) {
+function AuroraScene({ crop }: { crop?: Crop }) {
   return (
     <ScaledMockup crop={crop}>
       {/* Soft gradient background */}
@@ -399,7 +409,7 @@ function AuroraScene({ crop }) {
 
 // ─── PULSE — finance / markets, dense data ─────────────────────────────
 
-function PulseScene({ crop }) {
+function PulseScene({ crop }: { crop?: Crop }) {
   const indices = [
     { name: 'S&P 500', val: '5,847.21', chg: '+0.84%', up: true },
     { name: 'DAX', val: '19,234.55', chg: '-0.32%', up: false },
@@ -492,7 +502,7 @@ function PulseScene({ crop }) {
 
 // ─── BLUEPRINT — generic wireframe starter ──────────────────────────────
 
-function BlueprintScene({ crop }) {
+function BlueprintScene({ crop }: { crop?: Crop }) {
   const slot = (extra = {}) => ({
     border: '2px dashed rgba(155,123,255,0.4)',
     background: 'rgba(155,123,255,0.04)',
@@ -539,7 +549,7 @@ function BlueprintScene({ crop }) {
   );
 }
 
-function ChannelScene({ kit, crop }) {
+function ChannelScene({ kit, crop }: { kit: Kit; crop?: Crop }) {
   if (kit.id === 'kick') return <KickScene crop={crop}/>;
   if (kit.id === 'veritas') return <VeritasScene crop={crop}/>;
   if (kit.id === '404') return <FourOhFourScene crop={crop}/>;
@@ -548,7 +558,7 @@ function ChannelScene({ kit, crop }) {
   return <BlueprintScene crop={crop}/>;
 }
 
-function ChannelKitCard({ kit, active, onClick }) {
+function ChannelKitCard({ kit, active, onClick }: { kit: Kit; active: boolean; onClick: () => void }) {
   return (
     <div
       onClick={onClick}

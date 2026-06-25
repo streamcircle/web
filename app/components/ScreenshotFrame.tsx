@@ -4,7 +4,16 @@
 // screenshot exists; until then it renders a styled placeholder so the layout
 // is final and the image simply drops in later.
 
-export function ScreenshotFrame({ src, alt, urlLabel, accent = '#22C68A', badge, appName, placeholderNote = 'Product screenshot', aspectRatio = '16/9' }) {
+export function ScreenshotFrame({ src, alt, urlLabel, accent = '#22C68A', badge, appName, placeholderNote = 'Product screenshot', aspectRatio = '16/9' }: {
+  src?: string;
+  alt?: string;
+  urlLabel?: string;
+  accent?: string;
+  badge?: string;
+  appName?: string;
+  placeholderNote?: string;
+  aspectRatio?: string;
+}) {
   const gridId = 'ph-grid-' + (appName || 'x').replace(/\s+/g, '-');
   return (
     <div style={{

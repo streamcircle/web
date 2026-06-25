@@ -58,8 +58,8 @@ export default function Contact() {
             animation: 'gradientFlow 5s ease infinite',
             transition: 'transform 0.2s',
           }}
-            onMouseEnter={e => e.target.style.transform = 'translateY(-2px) scale(1.02)'}
-            onMouseLeave={e => e.target.style.transform = 'none'}>
+            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'}
+            onMouseLeave={e => e.currentTarget.style.transform = 'none'}>
             Get in touch
           </a>
         </div>

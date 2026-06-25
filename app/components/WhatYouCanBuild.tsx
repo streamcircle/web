@@ -44,7 +44,7 @@ const BUILD_CARDS = [
   },
 ];
 
-function BuildPreview({ kind, color }) {
+function BuildPreview({ kind, color }: { kind: string; color: string }) {
   if (kind === 'lt') return (
     <div style={{ position: 'absolute', bottom: 22, left: 24, right: 70, display: 'flex', alignItems: 'stretch', filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.6))' }}>
       <div style={{ width: 3, background: color, flexShrink: 0 }}/>
@@ -131,7 +131,7 @@ function BuildPreview({ kind, color }) {
   return null;
 }
 
-function BuildCard({ item }) {
+function BuildCard({ item }: { item: (typeof BUILD_CARDS)[number] }) {
   const [hovered, setHovered] = useState(false);
   return (
     <div

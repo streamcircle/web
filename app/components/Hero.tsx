@@ -96,8 +96,8 @@ export default function Hero() {
               animation: 'pulseGlow 3s ease infinite, gradientFlow 5s ease infinite',
               boxShadow: '0 8px 24px rgba(34,198,138,0.25)',
             }}
-              onMouseEnter={e => e.target.style.transform = 'translateY(-2px) scale(1.02)'}
-              onMouseLeave={e => e.target.style.transform = 'none'}>
+              onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'none'}>
               Start for Free
             </a>
             <a href="#editor" style={{

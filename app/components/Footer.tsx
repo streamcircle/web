@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { Logo } from "./primitives";
 import { useViewport } from "./useViewport";
 // ─── Footer ───────────────────────────────────────────────────────────────────
@@ -11,7 +12,7 @@ export default function Footer() {
     ['Terms', 'https://docs.tweenly.io/appendices/terms-and-conditions/'],
     ['Privacy', 'https://docs.tweenly.io/appendices/privacy-policy/'],
   ];
-  const socialLinks = [
+  const socialLinks: [string, string, ReactNode][] = [
     ['LinkedIn', 'https://www.linkedin.com/company/tween-ly',
       <path key="li" fill="currentColor" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zM8 19h-3v-9h3v9zM6.5 8.31c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76zM20 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-.83 0-1.62.62-1.62 1.97v4.7h-3v-9h2.9v1.32h.04c.4-.76 1.35-1.5 2.69-1.5 2.4 0 3.37 1.28 3.37 4.03v5.15z"/>],
     ['YouTube', 'https://www.youtube.com/@Tweenly',
@@ -32,8 +33,8 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
               {resourceLinks.map(([l, u]) => (
                 <a key={l} href={u} style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(226,228,229,0.7)', textDecoration: 'none', transition: 'color 0.2s', width: 'fit-content' }}
-                  onMouseEnter={e => e.target.style.color = '#22C68A'}
-                  onMouseLeave={e => e.target.style.color = 'rgba(226,228,229,0.7)'}>{l}</a>
+                  onMouseEnter={e => e.currentTarget.style.color = '#22C68A'}
+                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(226,228,229,0.7)'}>{l}</a>
               ))}
             </div>
           </div>

@@ -23,7 +23,7 @@ export default function App() {
   const [tweaksVisible, setTweaksVisible] = useState(false);
 
   useEffect(() => {
-    const handler = e => {
+    const handler = (e: MessageEvent) => {
       if (e.data?.type === '__activate_edit_mode') setTweaksVisible(true);
       if (e.data?.type === '__deactivate_edit_mode') setTweaksVisible(false);
     };

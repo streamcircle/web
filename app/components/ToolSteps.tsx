@@ -38,7 +38,7 @@ export const TOOL_STEPS = [
   },
 ];
 
-export function ToolVisual({ kind, accent }) {
+export function ToolVisual({ kind, accent }: { kind: string; accent: string }) {
   if (kind === 'editor') return (
     <div style={{ width: '100%', height: '100%', background: 'var(--bg2)', borderRadius: '8px 16px 8px 32px', overflow: 'hidden', position: 'relative', border: '1px solid rgba(255,255,255,0.06)' }}>
       {/* Editor chrome */}
@@ -188,7 +188,7 @@ export function ToolVisual({ kind, accent }) {
   return null;
 }
 
-export function ToolStep({ step, index }) {
+export function ToolStep({ step, index }: { step: (typeof TOOL_STEPS)[number]; index: number }) {
   const { isMobile } = useViewport();
   const reverse = index % 2 === 1;
   return (

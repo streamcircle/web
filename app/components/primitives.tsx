@@ -1,3 +1,5 @@
+import type { CSSProperties, ReactNode } from "react";
+
 // Tweenly play mark — from official tweenly_triangle_web.svg
 
 export function PlayMark({ size = 28, color = '#00B1EB' }) {
@@ -34,7 +36,7 @@ export function Logo({ size = 26, white = true }) {
 
 // Animated gradient shape — brand DNA primitive
 
-export function GradientShape({ style = {}, radius = '20% 40% 20% 60%', children, className = '' }) {
+export function GradientShape({ style = {}, radius = '20% 40% 20% 60%', children, className = '' }: { style?: CSSProperties; radius?: string; children?: ReactNode; className?: string }) {
   return (
     <div className={className} style={{
       background: 'linear-gradient(135deg, #82B820 0%, #22C68A 40%, #107F76 75%, #007A98 100%)',
@@ -50,7 +52,7 @@ export function GradientShape({ style = {}, radius = '20% 40% 20% 60%', children
 
 // ─── Section header ────────────────────────────────────────────────────────
 
-export function SectionLabel({ label, color = '#22C68A' }) {
+export function SectionLabel({ label, color = '#22C68A' }: { label: string; color?: string }) {
   return (
     <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 20, background: `${color}10`, border: `1px solid ${color}28`, borderRadius: '4px 14px 4px 8px', padding: '6px 14px' }}>
       <span style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, letterSpacing: 2.5, color: color, textTransform: 'uppercase' }}>{label}</span>

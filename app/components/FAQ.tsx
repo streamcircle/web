@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   { q: 'What support is available?', a: 'Tweenly Editor and On Air include email support. When deployed together with Stream Circle, support follows the Stream Circle SLA with dedicated response times. We\'re a small team and we respond fast.' },
 ];
 
-function FAQItem({ item, open, onClick }) {
+function FAQItem({ item, open, onClick }: { item: (typeof FAQ_ITEMS)[number]; open: boolean; onClick: () => void }) {
   return (
     <div style={{
       background: open ? 'rgba(34,198,138,0.04)' : 'var(--bg2)',

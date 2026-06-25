@@ -10,10 +10,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "asymmetric": 1
 }/*EDITMODE-END*/;
 
-export default function TweaksPanel({ visible, onClose }) {
-  const [tweaks, setTweaks] = useState(TWEAK_DEFAULTS);
+export default function TweaksPanel({ visible, onClose }: { visible: boolean; onClose: () => void }) {
+  const [tweaks, setTweaks] = useState<Record<string, string | number>>(TWEAK_DEFAULTS);
 
-  const update = (key, val) => {
+  const update = (key: string, val: string | number) => {
     const next = { ...tweaks, [key]: val };
     setTweaks(next);
     window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: val } }, '*');
