@@ -152,7 +152,7 @@ export default function StreamCircleIntegration() {
           </div>
 
           {/* Bottom bar — what the integration delivers */}
-          <div style={{ marginTop: 56, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+          <div style={{ marginTop: 56, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)', gap: 24 }}>
             {[
               { label: t("streamcircle.benefit0Label"), desc: t("streamcircle.benefit0Desc") },
               { label: t("streamcircle.benefit1Label"), desc: t("streamcircle.benefit1Desc") },
