@@ -12,7 +12,10 @@ const { t } = getTranslation();
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(true);
-  const { isCompact, isMobile } = useViewport();
+  const { w, isCompact, isMobile } = useViewport();
+  // Below the stats section's own max-width the 4 columns get too tight for the
+  // value + label to sit side by side, so stack them (value above label).
+  const stackStats = w < 1280;
   useEffect(() => {
     // Mount entrance: paint visible (SSR/no-JS friendly), then replay the
     // fade-in. Deferred so neither setState runs synchronously in the effect.
@@ -170,7 +173,7 @@ export default function Hero() {
             [t("hero.stats.2.value"), t("hero.stats.2.label")],
             [t("hero.stats.3.value"), t("hero.stats.3.label")],
           ].map(([val, label], i) => (
-            <div key={val} style={{ display: 'flex', alignItems: 'baseline', gap: 14 }}>
+            <div key={val} style={{ display: 'flex', flexDirection: stackStats ? 'column' : 'row', alignItems: stackStats ? 'flex-start' : 'baseline', gap: stackStats ? 4 : 14 }}>
               <span style={{
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36,
                 background: ['linear-gradient(135deg,#82B820,#22C68A)','linear-gradient(135deg,#22C68A,#0AB6E0)','linear-gradient(135deg,#0AB6E0,#007A98)','linear-gradient(135deg,#82B820,#107F76)'][i],
