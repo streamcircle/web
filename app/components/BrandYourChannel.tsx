@@ -658,7 +658,7 @@ export default function BrandYourChannel() {
             borderRadius: '8px 16px 8px 32px',
             padding: '32px 36px',
             border: '1px solid rgba(34,198,138,0.3)',
-            textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 24,
+            textDecoration: 'none', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: 24,
             transition: 'all 0.3s',
           }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(34,198,138,0.6)'; }}
@@ -677,7 +677,7 @@ export default function BrandYourChannel() {
             borderRadius: '8px 16px 8px 32px',
             padding: '32px 36px',
             border: '1px solid rgba(155,123,255,0.3)',
-            textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 24,
+            textDecoration: 'none', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: 24,
             transition: 'all 0.3s',
           }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(155,123,255,0.6)'; }}
