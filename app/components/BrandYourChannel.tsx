@@ -625,7 +625,10 @@ export default function BrandYourChannel() {
           </p>
         </div>
 
-        {/* Featured large preview */}
+        {/* Featured large preview — hidden once the selector cards collapse to a
+            single column (isMobile), where it would be the same width as them
+            and just duplicate the active kit. */}
+        {!isMobile && (
         <div style={{ position: 'relative', marginBottom: 32, borderRadius: '12px 24px 12px 40px', overflow: 'hidden', border: `1px solid ${activeKit.accent}30`, background: '#0a0d10', boxShadow: `0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px ${activeKit.accent}10` }}>
           {/* Window chrome */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.05)', background: 'rgba(0,0,0,0.4)' }}>
@@ -639,6 +642,7 @@ export default function BrandYourChannel() {
             <ChannelScene kit={activeKit} />
           </div>
         </div>
+        )}
 
         {/* Kit selector cards */}
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: 16, marginBottom: isMobile ? 36 : 56 }}>
@@ -654,7 +658,7 @@ export default function BrandYourChannel() {
             borderRadius: '8px 16px 8px 32px',
             padding: '32px 36px',
             border: '1px solid rgba(34,198,138,0.3)',
-            textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 24,
+            textDecoration: 'none', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: 24,
             transition: 'all 0.3s',
           }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(34,198,138,0.6)'; }}
@@ -673,7 +677,7 @@ export default function BrandYourChannel() {
             borderRadius: '8px 16px 8px 32px',
             padding: '32px 36px',
             border: '1px solid rgba(155,123,255,0.3)',
-            textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 24,
+            textDecoration: 'none', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: 24,
             transition: 'all 0.3s',
           }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(155,123,255,0.6)'; }}
