@@ -304,7 +304,7 @@ export default function TweenlyOnAir() {
         </div>
 
         {/* HERO SCREENSHOT */}
-        <ScreenshotFrame appName={t("onair.screenshot.appName")} urlLabel={t("onair.screenshot.urlLabel")} accent="#E05151" badge={t("onair.screenshot.badge")} placeholderNote={t("onair.screenshot.placeholderNote")} aspectRatio="16/9" />
+        <ScreenshotFrame src="/assets/tw-on-air.png" appName={t("onair.screenshot.appName")} urlLabel={t("onair.screenshot.urlLabel")} accent="#E05151" badge={t("onair.screenshot.badge")} placeholderNote={t("onair.screenshot.placeholderNote")} aspectRatio="16/9" />
 
         {/* FLOW HINT — between mockup and caps */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 18, margin: '36px 0 56px', fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase' }}>

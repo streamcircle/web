@@ -38,7 +38,7 @@ export default function Solution() {
             {t("solution.description")}
           </p>
         </div>
-        <ScreenshotFrame appName={t("solution.appName")} urlLabel="editor.tweenly.io" accent="#22C68A" badge={t("solution.badge")} placeholderNote={t("solution.placeholderNote")} aspectRatio="16/9" />
+        <ScreenshotFrame src="/assets/tw-editor.png" appName={t("solution.appName")} urlLabel="editor.tweenly.io" accent="#22C68A" badge={t("solution.badge")} placeholderNote={t("solution.placeholderNote")} aspectRatio="16/9" />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginTop: isMobile ? 24 : 28 }}>
           {EDITOR_CHIPS.map(c => (
             <div key={c.label} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px 12px 4px 8px', padding: '9px 16px' }}>
