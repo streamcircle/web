@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 // Brand play-mark favicon (from tweenly_triangle_web.svg)
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
     "Build tickers, lower thirds, score widgets, bugs, and stingers — bind live data, animate on a visual timeline, and export as HTML overlays ready for air.",
   icons: {
     icon: { url: FAVICON, type: "image/svg+xml" },
+  },
+  verification: {
+    google: "9FnQ7OzWpHc6UFaT3ABR27osLCIUu-oaWFTIKb-SrC0",
   },
 };
 
@@ -34,6 +38,7 @@ export default function RootLayout({
         />
       </head>
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-4BPP6FPK8H" />
     </html>
   );
 }
