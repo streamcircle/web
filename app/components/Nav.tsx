@@ -22,7 +22,7 @@ export default function Nav() {
   if (!isCompact && menuOpen) setMenuOpen(false);
 
   const navLinks = [
-    { label: t("nav.links.0"), href: '#elements', group: 'product', top: true },
+    { label: t("nav.links.0"), href: '#examples', group: 'product', top: true },
     { label: t("nav.links.1"), href: '#branding', group: 'product', top: true },
     { label: t("nav.links.2"), href: '#editor', group: 'product', top: true, sep: true },
     { label: t("nav.links.3"), href: '#onair', accent: '#E05151', group: 'product', top: true },

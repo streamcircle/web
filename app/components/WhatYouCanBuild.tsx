@@ -177,7 +177,7 @@ function BuildCard({ item }: { item: (typeof BUILD_CARDS)[number] }) {
 export default function WhatYouCanBuild() {
   const { isMobile } = useViewport();
   return (
-    <section id="elements" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative' }}>
+    <section id="examples" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <div style={{ display: 'inline-block' }}><SectionLabel label={t("build.sectionLabel")} /></div>

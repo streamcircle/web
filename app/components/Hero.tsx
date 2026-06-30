@@ -47,16 +47,6 @@ export default function Hero() {
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: isCompact ? '40px clamp(20px,5vw,40px) 56px' : '60px 40px 80px', width: '100%', display: 'grid', gridTemplateColumns: isCompact ? '1fr' : '1fr 1.1fr', gap: isCompact ? 48 : 64, alignItems: 'center', position: 'relative', zIndex: 1 }}>
         {/* Left: headline */}
         <div>
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 32,
-            background: 'rgba(34,198,138,0.08)', border: '1px solid rgba(34,198,138,0.25)',
-            borderRadius: '4px 14px 4px 8px', padding: '6px 14px',
-            opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(10px)',
-            transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)',
-          }}>
-            <div style={{ width: 6, height: 6, background: '#22C68A', borderRadius: '50%', animation: 'blink 1.5s ease infinite' }} />
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 600, letterSpacing: 2, color: '#22C68A', textTransform: 'uppercase' }}>{t("hero.badge")}</span>
-          </div>
 
           <h1 style={{
             fontFamily: 'var(--font-display)', fontWeight: 800,
@@ -106,7 +96,7 @@ export default function Hero() {
               onMouseLeave={e => e.currentTarget.style.transform = 'none'}>
               {t("hero.ctaPrimary")}
             </a>
-            <a href="#editor" style={{
+            <a href="#examples" style={{
               fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 600,
               color: 'rgba(226,228,229,0.7)', textDecoration: 'none',
               display: 'inline-flex', alignItems: 'center', gap: 8,

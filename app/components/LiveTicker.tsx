@@ -12,7 +12,6 @@ const TICKER_ITEMS = [
   t("ticker.items.4"),
   t("ticker.items.5"),
   t("ticker.items.6"),
-  t("ticker.items.7"),
 ];
 
 export function LiveTicker({ accentColor = '#22C68A', bg = 'rgba(15,19,22,0.92)' }) {

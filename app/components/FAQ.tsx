@@ -16,7 +16,6 @@ const FAQ_ITEMS = [
   { q: t("faq.items.4.q"), a: t("faq.items.4.a") },
   { q: t("faq.items.5.q"), a: t("faq.items.5.a") },
   { q: t("faq.items.6.q"), a: t("faq.items.6.a") },
-  { q: t("faq.items.7.q"), a: t("faq.items.7.a") },
 ];
 
 function FAQItem({ item, open, onClick }: { item: (typeof FAQ_ITEMS)[number]; open: boolean; onClick: () => void }) {

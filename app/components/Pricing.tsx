@@ -7,7 +7,7 @@ import { getTranslation } from "../i18n";
 const { t } = getTranslation();
 // ─── Pricing ────────────────────────────────────────────────────────────────
 
-const FREE_FEATURES = [t("pricing.freeFeatures.0"), t("pricing.freeFeatures.1"), t("pricing.freeFeatures.2"), t("pricing.freeFeatures.3"), t("pricing.freeFeatures.4"), t("pricing.freeFeatures.5")];
+const FREE_FEATURES = [t("pricing.freeFeatures.0"), t("pricing.freeFeatures.1"), t("pricing.freeFeatures.2"), t("pricing.freeFeatures.3"), t("pricing.freeFeatures.4")];
 
 export const UNL_FEATURES = [t("pricing.unlFeatures.0"), t("pricing.unlFeatures.1"), t("pricing.unlFeatures.2"), t("pricing.unlFeatures.3"), t("pricing.unlFeatures.4"), t("pricing.unlFeatures.5"), t("pricing.unlFeatures.6")];
 
