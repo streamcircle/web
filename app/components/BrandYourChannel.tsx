@@ -22,7 +22,6 @@ const CHANNEL_KITS = [
     accent: '#FF5A00',
     accent2: '#FFB347',
     elements: 12,
-    typeNote: t("brand.kits.0.typeNote"),
   },
   {
     id: 'veritas',
@@ -32,7 +31,6 @@ const CHANNEL_KITS = [
     accent: '#C41E2A',
     accent2: '#2B4570',
     elements: 7,
-    typeNote: t("brand.kits.1.typeNote"),
   },
   {
     id: '404',
@@ -42,7 +40,6 @@ const CHANNEL_KITS = [
     accent: '#00E5FF',
     accent2: '#FFD60A',
     elements: 8,
-    typeNote: t("brand.kits.2.typeNote"),
   },
 ];
 
@@ -588,7 +585,6 @@ function ChannelKitCard({ kit, active, onClick }: { kit: Kit; active: boolean; o
         </div>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(226,228,229,0.55)', lineHeight: 1.4, marginBottom: 8, minHeight: 32 }}>{kit.tagline}</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, paddingTop: 8, borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-          <div style={{ fontFamily: 'var(--font-body)', fontSize: 10, color: 'rgba(226,228,229,0.35)', letterSpacing: 0.5 }}>{kit.typeNote}</div>
           <div style={{ marginLeft: 'auto', fontFamily: 'var(--font-display)', fontSize: 9, fontWeight: 700, color: 'rgba(226,228,229,0.4)', letterSpacing: 1.5 }}>{kit.elements} {t("brand.elements")}</div>
         </div>
       </div>

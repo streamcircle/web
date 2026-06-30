@@ -287,7 +287,6 @@ export default function TweenlyOnAir() {
               {[
                 { icon: '◐', label: t("onair.chips.0") },
                 { icon: '◇', label: t("onair.chips.1") },
-                { icon: '◈', label: t("onair.chips.2") },
               ].map(t => (
                 <div key={t.label} style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -307,12 +306,14 @@ export default function TweenlyOnAir() {
         <ScreenshotFrame src="/assets/tw-on-air.png" appName={t("onair.screenshot.appName")} urlLabel={t("onair.screenshot.urlLabel")} accent="#E05151" badge={t("onair.screenshot.badge")} placeholderNote={t("onair.screenshot.placeholderNote")} aspectRatio="16/9" />
 
         {/* FLOW HINT — between mockup and caps */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 18, margin: '36px 0 56px', fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase' }}>
-          <span style={{ color: '#22C68A' }}>{t("onair.flow.standby")}</span>
-          <span style={{ width: 60, height: 1, background: 'linear-gradient(90deg, #22C68A, #E05151)' }} />
-          <span style={{ color: 'rgba(226,228,229,0.5)' }}>{t("onair.flow.inOut")}</span>
-          <span style={{ width: 60, height: 1, background: 'linear-gradient(90deg, #E05151, #22C68A)' }} />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, margin: '36px 0 56px', fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase', flexWrap: 'wrap' }}>
+          <span style={{ color: '#22C68A' }}>{t("onair.flow.preview")}</span>
+          <span style={{ width: 44, height: 1, background: 'linear-gradient(90deg, #22C68A, #E05151)' }} />
+          <span style={{ color: 'rgba(226,228,229,0.7)' }}>{t("onair.flow.in")}</span>
+          <span style={{ width: 44, height: 1, background: '#E05151' }} />
           <span style={{ color: '#E05151' }}>{t("onair.flow.live")}</span>
+          <span style={{ width: 44, height: 1, background: 'linear-gradient(90deg, #E05151, rgba(226,228,229,0.4))' }} />
+          <span style={{ color: 'rgba(226,228,229,0.5)' }}>{t("onair.flow.out")}</span>
         </div>
 
         {/* CAPABILITY GRID */}
@@ -331,20 +332,6 @@ export default function TweenlyOnAir() {
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.55)', lineHeight: 1.55 }}>{cap.desc}</div>
             </div>
           ))}
-        </div>
-
-        {/* DEV LINE — under the grid, technical reassurance */}
-        <div style={{ marginTop: 40, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap', padding: '18px 24px', background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '6px 16px 6px 22px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M9 7 L4 12 L9 17 M15 7 L20 12 L15 17" stroke="#22C68A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 700, color: 'var(--white)', letterSpacing: -0.2 }}>{t("onair.devTitle")}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(226,228,229,0.5)', marginTop: 2 }}>{t("onair.devDesc")}</div>
-            </div>
-          </div>
-          <code style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#22C68A', background: 'rgba(0,0,0,0.4)', padding: '8px 14px', borderRadius: '3px 10px 3px 6px', whiteSpace: 'nowrap' }}>graphic.play() · graphic.next()</code>
         </div>
       </div>
     </section>
