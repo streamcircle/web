@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { showPreferences } from "vanilla-cookieconsent";
 import { Logo } from "./primitives";
 import { useViewport } from "./useViewport";
 import { getTranslation } from "../i18n";
@@ -39,6 +40,11 @@ export default function Footer() {
                   onMouseEnter={e => e.currentTarget.style.color = '#22C68A'}
                   onMouseLeave={e => e.currentTarget.style.color = 'rgba(226,228,229,0.7)'}>{l}</a>
               ))}
+              {/* Re-opens the cookie preferences modal so consent can be changed anytime. */}
+              <button type="button" onClick={() => showPreferences()}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, textAlign: 'left', fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(226,228,229,0.7)', transition: 'color 0.2s', width: 'fit-content' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#22C68A'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(226,228,229,0.7)'}>{t("footer.cookieSettings")}</button>
             </div>
           </div>
           <div>
