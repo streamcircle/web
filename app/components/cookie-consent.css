@@ -1,0 +1,65 @@
+/*
+ * Brand skin for vanilla-cookieconsent. Overrides only the library's own
+ * `--cc-*` custom properties (scoped to #cc-main) so it reads on the same
+ * dark palette, fonts and button shapes as the rest of the site. Values are
+ * pulled from the tokens in globals.css.
+ */
+#cc-main {
+  --cc-font-family: var(--font-body);
+
+  --cc-bg: #0f1316;
+  --cc-primary-color: var(--white);
+  --cc-secondary-color: rgba(226, 228, 229, 0.65);
+
+  --cc-btn-border-radius: 6px 12px 6px 20px;
+
+  /* Primary = accept: brand mint on dark text */
+  --cc-btn-primary-bg: #22c68a;
+  --cc-btn-primary-border-color: #22c68a;
+  --cc-btn-primary-color: #0a0d10;
+  --cc-btn-primary-hover-bg: #2ad79a;
+  --cc-btn-primary-hover-border-color: #2ad79a;
+  --cc-btn-primary-hover-color: #0a0d10;
+
+  /* Secondary = reject / manage: outlined */
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-border-color: rgba(255, 255, 255, 0.18);
+  --cc-btn-secondary-color: var(--text-secondary);
+  --cc-btn-secondary-hover-bg: rgba(255, 255, 255, 0.06);
+  --cc-btn-secondary-hover-border-color: rgba(255, 255, 255, 0.3);
+  --cc-btn-secondary-hover-color: var(--white);
+
+  --cc-link-color: #22c68a;
+
+  --cc-toggle-on-bg: #22c68a;
+  --cc-toggle-off-bg: #3a4147;
+  --cc-toggle-on-knob-bg: #0a0d10;
+  --cc-toggle-off-knob-bg: #e2e4e5;
+  --cc-toggle-enabled-icon-color: #0a0d10;
+  --cc-toggle-disabled-icon-color: #e2e4e5;
+  --cc-toggle-readonly-bg: #2a3036;
+  --cc-toggle-readonly-knob-bg: #8a9299;
+  --cc-toggle-readonly-knob-icon-color: #2a3036;
+
+  --cc-modal-border-radius: 12px;
+  --cc-modal-transition-duration: 0.25s;
+
+  --cc-cookie-category-block-bg: #151a1e;
+  --cc-cookie-category-block-border: rgba(255, 255, 255, 0.08);
+  --cc-cookie-category-block-hover-bg: #1a2025;
+  --cc-cookie-category-block-hover-border: rgba(255, 255, 255, 0.14);
+  --cc-cookie-category-expanded-block-bg: #10151a;
+  --cc-cookie-category-expanded-block-hover-bg: #10151a;
+
+  --cc-separator-border-color: rgba(255, 255, 255, 0.08);
+  --cc-section-category-border: rgba(255, 255, 255, 0.08);
+
+  --cc-footer-bg: #0b0e11;
+  --cc-footer-color: rgba(226, 228, 229, 0.55);
+  --cc-footer-border-color: rgba(255, 255, 255, 0.08);
+
+  --cc-overlay-bg: rgba(10, 13, 16, 0.7);
+
+  --cc-webkit-scrollbar-bg: #22c68a;
+  --cc-webkit-scrollbar-hover-bg: #107f76;
+}

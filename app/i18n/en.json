@@ -376,6 +376,27 @@
       "YouTube"
     ],
     "copyright": "© 2026 PROVYS Technologies",
-    "locations": "Prague · Olomouc · Poprad"
+    "locations": "Prague · Olomouc · Poprad",
+    "cookieSettings": "Cookie settings"
+  },
+  "cookies": {
+    "title": "We value your privacy",
+    "description": "We use cookies to run this site and, with your consent, to measure traffic and improve Tweenly. Analytics and marketing cookies stay off until you allow them. See our <a href=\"https://docs.tweenly.io/appendices/privacy-policy/\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a>.",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "manage": "Manage preferences",
+    "save": "Save preferences",
+    "close": "Close",
+    "settingsTitle": "Cookie preferences",
+    "settingsIntroTitle": "Your choices",
+    "settingsIntroDesc": "Choose which categories of cookies you allow. You can change this at any time via “Cookie settings” in the footer.",
+    "necessaryTitle": "Strictly necessary",
+    "necessaryDesc": "Required for the site to function and remember your consent choice. Always on.",
+    "analyticsTitle": "Analytics",
+    "analyticsDesc": "Let us measure visits and how the site is used (Google Analytics 4) so we can improve it. Enables Google Consent Mode’s analytics_storage.",
+    "marketingTitle": "Marketing",
+    "marketingDesc": "Used for advertising measurement and remarketing. Enables Google Consent Mode’s ad_storage, ad_user_data and ad_personalization.",
+    "moreTitle": "More information",
+    "moreDesc": "For questions about our cookie policy, contact us via the details on this site."
   }
 }

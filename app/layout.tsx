@@ -1,6 +1,30 @@
 import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
+import CookieConsent from "./components/CookieConsent";
 import "./globals.css";
+
+// Google Consent Mode v2 default state. Emitted as a raw, synchronous inline
+// script at the very top of <head> so it runs during HTML parsing — before the
+// GTM container (which @next/third-parties injects with the afterInteractive
+// strategy, i.e. after hydration) can initialise GA4 or any ad tag. Everything
+// defaults to `denied` until the visitor chooses in the cookie banner;
+// `wait_for_update` gives the banner a moment to restore a returning visitor's
+// stored choice. See docs/cookie-consent-gtm.md for the matching GTM setup.
+const CONSENT_MODE_DEFAULT = `
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ window.dataLayer.push(arguments); };
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+`;
 
 // Brand play-mark favicon (from tweenly_triangle_web.svg)
 const FAVICON =
@@ -24,6 +48,8 @@ export default function RootLayout({
     <html lang="en">
       <GoogleTagManager gtmId="GTM-MTSX222V" />
       <head>
+        {/* First thing in <head>: set Consent Mode defaults before GTM runs. */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_MODE_DEFAULT }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -35,7 +61,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }
