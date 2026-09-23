@@ -26,6 +26,24 @@ const ADOPTERS = [
     accent: '#0AB6E0',
     elements: [t("references.adopters.1.elements.0"), t("references.adopters.1.elements.1"), t("references.adopters.1.elements.2")],
   },
+  {
+    name: 'TV BARRANDOV',
+    logo: '/assets/tv-barrandov-logo.png',
+    logoHeight: 40,
+    type: t("references.adopters.2.type"),
+    desc: t("references.adopters.2.desc"),
+    accent: '#E0107F',
+    elements: [t("references.adopters.2.elements.0"), t("references.adopters.2.elements.1"), t("references.adopters.2.elements.2")],
+  },
+  {
+    name: 'OIK TV',
+    logo: '/assets/oik-tv-logo.png',
+    logoHeight: 30,
+    type: t("references.adopters.3.type"),
+    desc: t("references.adopters.3.desc"),
+    accent: '#8B5CF6',
+    elements: [t("references.adopters.3.elements.0"), t("references.adopters.3.elements.1"), t("references.adopters.3.elements.2")],
+  },
 ];
 
 export default function References() {
