@@ -294,7 +294,6 @@
         "desc": "Existing on-air graphics converted to Tweenly as part of the Stream Circle playout implementation.",
         "elements": [
           "Graphics conversion",
-          "Stream Circle playout",
           "Channel branding"
         ]
       },
@@ -303,8 +302,7 @@
         "desc": "Regional TV for the Orlické hory foothills running its everyday on-air graphics in Tweenly, played out through Stream Circle.",
         "elements": [
           "Lower thirds",
-          "Bugs",
-          "Stream Circle playout"
+          "Bugs"
         ]
       }
     ]

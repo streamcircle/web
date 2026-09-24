@@ -33,7 +33,7 @@ const ADOPTERS = [
     type: t("references.adopters.2.type"),
     desc: t("references.adopters.2.desc"),
     accent: '#E0107F',
-    elements: [t("references.adopters.2.elements.0"), t("references.adopters.2.elements.1"), t("references.adopters.2.elements.2")],
+    elements: [t("references.adopters.2.elements.0"), t("references.adopters.2.elements.1")],
   },
   {
     name: 'OIK TV',
@@ -42,7 +42,7 @@ const ADOPTERS = [
     type: t("references.adopters.3.type"),
     desc: t("references.adopters.3.desc"),
     accent: '#8B5CF6',
-    elements: [t("references.adopters.3.elements.0"), t("references.adopters.3.elements.1"), t("references.adopters.3.elements.2")],
+    elements: [t("references.adopters.3.elements.0"), t("references.adopters.3.elements.1")],
   },
 ];
 
