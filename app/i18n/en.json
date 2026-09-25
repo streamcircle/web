@@ -288,6 +288,22 @@
           "News tickers",
           "Bugs"
         ]
+      },
+      {
+        "type": "National Broadcaster",
+        "desc": "Existing on-air graphics converted to Tweenly as part of the Stream Circle playout implementation.",
+        "elements": [
+          "Graphics conversion",
+          "Channel branding"
+        ]
+      },
+      {
+        "type": "Regional News",
+        "desc": "Regional TV for the Orlické hory foothills running its everyday on-air graphics in Tweenly, played out through Stream Circle.",
+        "elements": [
+          "Lower thirds",
+          "Bugs"
+        ]
       }
     ]
   },
