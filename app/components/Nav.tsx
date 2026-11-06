@@ -21,15 +21,17 @@ export default function Nav() {
   // rather than in an effect — the documented pattern for derived resets).
   if (!isCompact && menuOpen) setMenuOpen(false);
 
+  // Section links point at the homepage (`/#…`) so they also work from
+  // subpages; on the homepage itself they still just scroll.
   const navLinks = [
-    { label: t("nav.links.0"), href: '#examples', group: 'product', top: true },
-    { label: t("nav.links.1"), href: '#branding', group: 'product', top: true },
-    { label: t("nav.links.2"), href: '#editor', group: 'product', top: true, sep: true },
-    { label: t("nav.links.3"), href: '#onair', accent: '#E05151', group: 'product', top: true },
-    { label: t("nav.links.4"), href: '#services', group: 'utility', top: true },
-    { label: t("nav.links.5"), href: '#pricing', group: 'utility', top: true },
-    { label: t("nav.links.6"), href: '#contact', group: 'utility', top: true },
-    { label: t("nav.links.7"), href: '#faq', group: 'utility', top: false },
+    { label: t("nav.links.0"), href: '/#examples', group: 'product', top: true },
+    { label: t("nav.links.1"), href: '/#branding', group: 'product', top: true },
+    { label: t("nav.links.2"), href: '/#editor', group: 'product', top: true, sep: true },
+    { label: t("nav.links.3"), href: '/#onair', accent: '#E05151', group: 'product', top: true },
+    { label: t("nav.links.4"), href: '/#services', group: 'utility', top: true },
+    { label: t("nav.links.5"), href: '/#pricing', group: 'utility', top: true },
+    { label: t("nav.links.6"), href: '/#contact', group: 'utility', top: true },
+    { label: t("nav.links.7"), href: '/#faq', group: 'utility', top: false },
   ];
   const topLinks = navLinks.filter(l => l.top);
 
@@ -68,7 +70,7 @@ export default function Nav() {
                     {l.accent && <span style={{
                       width: 5, height: 5, borderRadius: '50%', background: l.accent,
                       boxShadow: `0 0 8px ${l.accent}`,
-                      animation: l.href === '#onair' ? 'blink 1.6s infinite' : 'none',
+                      animation: l.href === '/#onair' ? 'blink 1.6s infinite' : 'none',
                     }} />}
                     {l.label}
                   </a>
