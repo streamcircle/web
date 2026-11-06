@@ -306,7 +306,9 @@
           "Bugs"
         ]
       }
-    ]
+    ],
+    "readStory": "Read the story",
+    "allReferences": "All references"
   },
   "faq": {
     "label": "FAQ",
