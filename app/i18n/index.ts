@@ -1,8 +1,16 @@
-import en from "./en.json";
+import common from "./en/common.json";
+import references from "./en/references.json";
 
 // Single source of truth for UI copy. Keys are nested by section; read them
-// with a dotted path (e.g. "hero.title", "faq.items.0.q"). Add a locale by
-// dropping in another JSON file with the same shape and registering it below.
+// with a dotted path (e.g. "hero.title", "faq.items.0.q").
+//
+// Layout: one folder per locale, one file per namespace —
+//   <locale>/common.json      homepage + shared UI (nav, footer)
+//   <locale>/<page>.json      one subpage's copy (e.g. references.json)
+// A locale's files are merged into one dictionary, so their top-level keys
+// must not overlap. Add a locale by copying the `en/` folder with the same
+// shape and registering it below.
+const en = { ...common, ...references };
 const dictionaries = { en };
 
 export type Locale = keyof typeof dictionaries;

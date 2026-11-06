@@ -25,6 +25,8 @@ const ADOPTERS = [
     desc: t("references.adopters.1.desc"),
     accent: '#0AB6E0',
     elements: [t("references.adopters.1.elements.0"), t("references.adopters.1.elements.1"), t("references.adopters.1.elements.2")],
+    storyHref: '/references#praha-tv',
+    storyName: 'Praha TV',
   },
   {
     name: 'TV BARRANDOV',
@@ -102,8 +104,32 @@ export default function References() {
                   }}>{el}</div>
                 ))}
               </div>
+              {/* Link to the full customer story, when one is published */}
+              {a.storyHref && (
+                // aria-label names the customer, so screen readers don't hear
+                // several identical "Read the story" links once more are added
+                <a href={a.storyHref} aria-label={`${t("references.readStory")}: ${a.storyName}`} style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 18,
+                  fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 700,
+                  color: a.accent, textDecoration: 'none',
+                }}>
+                  {t("references.readStory")} <span aria-hidden="true">→</span>
+                </a>
+              )}
             </div>
           ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 36 }}>
+          <a href="/references" style={{
+            fontFamily: 'var(--font-display)', fontSize: 15, fontWeight: 700,
+            color: 'var(--white)', textDecoration: 'none',
+            padding: '12px 24px', borderRadius: 'var(--r-button)',
+            border: '1px solid rgba(255,255,255,0.2)', display: 'inline-block', transition: 'border-color 0.2s',
+          }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = '#22C68A'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'}>
+            {t("references.allReferences")}
+          </a>
         </div>
       </div>
     </section>
