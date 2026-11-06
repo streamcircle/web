@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Logo } from "./primitives";
 import { useViewport } from "./useViewport";
 import { getTranslation } from "../i18n";
@@ -12,6 +13,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { isCompact } = useViewport();
+  const pathname = usePathname();
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handler);
@@ -23,16 +25,18 @@ export default function Nav() {
 
   // Section links point at the homepage (`/#…`) so they also work from
   // subpages; on the homepage itself they still just scroll.
-  const navLinks = [
+  const navLinks: { label: string; href: string; group: string; top: boolean; sep?: boolean; accent?: string }[] = [
     { label: t("nav.links.0"), href: '/#examples', group: 'product', top: true },
     { label: t("nav.links.1"), href: '/#branding', group: 'product', top: true },
     { label: t("nav.links.2"), href: '/#editor', group: 'product', top: true, sep: true },
     { label: t("nav.links.3"), href: '/#onair', accent: '#E05151', group: 'product', top: true },
+    { label: t("nav.references"), href: '/references', group: 'utility', top: true },
     { label: t("nav.links.4"), href: '/#services', group: 'utility', top: true },
     { label: t("nav.links.5"), href: '/#pricing', group: 'utility', top: true },
     { label: t("nav.links.6"), href: '/#contact', group: 'utility', top: true },
     { label: t("nav.links.7"), href: '/#faq', group: 'utility', top: false },
   ];
+  const isCurrent = (href: string) => !href.includes('#') && pathname === href;
   const topLinks = navLinks.filter(l => l.top);
 
   const navOpaque = scrolled || (isCompact && menuOpen);
@@ -55,18 +59,22 @@ export default function Nav() {
             {topLinks.map((l, i) => {
               const prev = topLinks[i - 1];
               const showDivider = prev && (prev.group !== l.group || l.sep);
+              const current = isCurrent(l.href);
+              const restColor = current ? 'var(--white)' : 'rgba(226,228,229,0.7)';
               return (
                 <React.Fragment key={l.label}>
                   {showDivider && (
                     <span style={{ width: 1, height: 14, background: 'rgba(255,255,255,0.12)' }} aria-hidden="true" />
                   )}
-                  <a href={l.href} style={{
+                  <a href={l.href} aria-current={current ? 'page' : undefined} style={{
                     fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 500,
-                    color: 'rgba(226,228,229,0.7)', textDecoration: 'none', transition: 'color 0.2s',
+                    color: restColor, textDecoration: 'none', transition: 'color 0.2s',
                     display: 'inline-flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap',
+                    // Active page: mint underline (padding keeps the row aligned)
+                    padding: '6px 0', borderBottom: `2px solid ${current ? 'var(--mint)' : 'transparent'}`,
                   }}
                     onMouseEnter={e => e.currentTarget.style.color = l.accent || 'var(--white)'}
-                    onMouseLeave={e => e.currentTarget.style.color = 'rgba(226,228,229,0.7)'}>
+                    onMouseLeave={e => e.currentTarget.style.color = restColor}>
                     {l.accent && <span style={{
                       width: 5, height: 5, borderRadius: '50%', background: l.accent,
                       boxShadow: `0 0 8px ${l.accent}`,
@@ -119,8 +127,11 @@ export default function Nav() {
       {/* Mobile/tablet: slide-down menu panel */}
       {isCompact && (
         <div style={{
-          overflow: 'hidden',
-          maxHeight: menuOpen ? 560 : 0,
+          // Cap at the space below the 72px bar (+2px top offset) and scroll
+          // inside, so every item stays reachable on short phones.
+          overflowX: 'hidden',
+          overflowY: menuOpen ? 'auto' : 'hidden',
+          maxHeight: menuOpen ? 'calc(100dvh - 74px)' : 0,
           opacity: menuOpen ? 1 : 0,
           transition: 'max-height 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.25s ease',
         }}>
@@ -131,9 +142,9 @@ export default function Nav() {
               return (
                 <React.Fragment key={l.label}>
                   {showDivider && <div style={{ height: 1, background: 'rgba(255,255,255,0.07)', margin: '8px 0' }} aria-hidden="true" />}
-                  <a href={l.href} onClick={() => setMenuOpen(false)} style={{
+                  <a href={l.href} onClick={() => setMenuOpen(false)} aria-current={isCurrent(l.href) ? 'page' : undefined} style={{
                     fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 600,
-                    color: l.accent || 'rgba(255,255,255,0.92)', textDecoration: 'none',
+                    color: l.accent || (isCurrent(l.href) ? 'var(--mint)' : 'rgba(255,255,255,0.92)'), textDecoration: 'none',
                     padding: '13px 4px', display: 'flex', alignItems: 'center', gap: 9,
                   }}>
                     {l.accent && <span style={{ width: 7, height: 7, borderRadius: '50%', background: l.accent, boxShadow: `0 0 8px ${l.accent}`, animation: l.label === 'On Air' ? 'blink 1.6s infinite' : 'none' }} />}
