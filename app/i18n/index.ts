@@ -7,10 +7,19 @@ import references from "./en/references.json";
 // Layout: one folder per locale, one file per namespace —
 //   <locale>/common.json      homepage + shared UI (nav, footer)
 //   <locale>/<page>.json      one subpage's copy (e.g. references.json)
-// A locale's files are merged into one dictionary, so their top-level keys
-// must not overlap. Add a locale by copying the `en/` folder with the same
-// shape and registering it below.
-const en = { ...common, ...references };
+// A locale's files are merged into one dictionary with `merge`, which makes a
+// top-level key present in both files a compile error (a plain spread would
+// let the later file silently overwrite the earlier one's copy). Merge more
+// files by nesting: merge(merge(common, references), pricing). Add a locale
+// by copying the `en/` folder with the same shape and registering it below.
+function merge<A extends object, B extends object>(
+  a: A,
+  b: B & { [K in keyof A & keyof B]: never },
+): A & B {
+  return { ...a, ...b };
+}
+
+const en = merge(common, references);
 const dictionaries = { en };
 
 export type Locale = keyof typeof dictionaries;
