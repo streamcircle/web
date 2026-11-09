@@ -14,7 +14,7 @@ export const UNL_FEATURES = [t("pricing.unlFeatures.0"), t("pricing.unlFeatures.
 export default function Pricing() {
   const { isMobile } = useViewport();
   return (
-    <section id="pricing" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative' }}>
+    <section id="pricing" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
       {/* Decorative gradient shape */}
       <div style={{ position: 'absolute', top: '20%', right: '-10%', width: 500, height: 360, opacity: 0.06, zIndex: 0 }}>
         <GradientShape style={{ width: '100%', height: '100%' }} radius="20% 50% 20% 60%" />
