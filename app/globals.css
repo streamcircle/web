@@ -24,7 +24,14 @@
     --r-hero: 20px 40px 20px 80px;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  /* Smooth-scroll in-page link clicks, but not the browser's jump to a
+     `#hash` on page load: a smooth jump keeps its original target while web
+     fonts swap in and the page grows, so it lands short. An instant jump stays
+     anchored to the target as the layout shifts. `.smooth-scroll` is added
+     after `load` by <SmoothScroll />. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.smooth-scroll { scroll-behavior: smooth; }
+  }
   body {
     background: var(--bg);
     color: var(--white);

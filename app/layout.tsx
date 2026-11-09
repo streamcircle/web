@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
 import CookieConsent from "./components/CookieConsent";
+import SmoothScroll from "./components/SmoothScroll";
 import "./globals.css";
 
 // Google Consent Mode v2 default state. Emitted as a raw, synchronous inline
@@ -64,6 +65,7 @@ export default function RootLayout({
       <body>
         {children}
         <CookieConsent />
+        <SmoothScroll />
       </body>
     </html>
   );
