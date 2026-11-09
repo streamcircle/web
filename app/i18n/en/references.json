@@ -1,7 +1,7 @@
 {
   "referencesPage": {
     "meta": {
-      "title": "References — Tweenly",
+      "title": "References – Tweenly",
       "description": "How channels and events use Tweenly to design graphics and run them live."
     },
     "hero": {
@@ -13,7 +13,7 @@
     "cta": {
       "label": "Pilot until March 2027",
       "heading": "Your channel next.",
-      "text": "We're welcoming more early adopters who want to bring live graphics into their productions — and help shape Tweenly On Air with their feedback.",
+      "text": "We're welcoming more early adopters who want to bring live graphics into their productions – and help shape Tweenly On Air with their feedback.",
       "button": "Join the pilot"
     }
   },
@@ -26,15 +26,15 @@
       "facts": [
         {
           "value": "Praha TV",
-          "label": "Regional broadcaster · Prague"
+          "label": "Regional broadcaster, Prague"
         },
         {
           "value": "Tweenly On Air, Stream Circle",
-          "label": "Integrated directly — no production switcher"
+          "label": "Integrated directly – no production switcher"
         },
         {
           "value": "5 hours",
-          "label": "One live election special"
+          "label": "One live election special; 8 studio guests, 5 field reporters"
         },
         {
           "value": "2 graphic types",
@@ -59,7 +59,7 @@
         }
       ],
       "figureAlt": "Tweenly On Air grid interface during the Praha TV election broadcast: graphics list, preparation panel, live grid with IN and OUT buttons, and live output",
-      "figureCaption": "The new grid in Tweenly On Air during the election broadcast — prepared graphics on the left, the live grid with IN / OUT in the middle, live output on the right.",
+      "figureCaption": "The new grid in Tweenly On Air during the election broadcast – prepared graphics on the left, the live grid with IN / OUT in the middle, live output on the right.",
       "sectionsAfterFigure": [
         {
           "heading": "Developed together with broadcasters",
@@ -70,7 +70,7 @@
         }
       ],
       "quote": "“The new On Air is a million times more user-friendly than the old one.”",
-      "quoteAttribution": "Praha TV",
+      "quoteAttribution": "Barbora Máchová, Head of Broadcasting, Praha TV",
       "outcome": "The collaboration has also contributed to improvements in connection-status detection and the user interface, helping shape Tweenly On Air around the practical needs of live production teams."
     }
   }
