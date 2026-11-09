@@ -2,7 +2,7 @@
 
 import { ScreenshotFrame } from "./ScreenshotFrame";
 import { SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import styles from "./TweenlyOnAir.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -14,7 +14,6 @@ const { t } = getTranslation();
 
 
 export function OnAirOperatorUI() {
-  const { isMobile } = useViewport();
   const LIVE = '#E05151';
   const LIVE_GLOW = '#FF8585';
   const STBY = '#0AB6E0';
@@ -64,7 +63,7 @@ export function OnAirOperatorUI() {
       </div>
 
       {/* TWO COLUMNS */}
-      <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 14 : 22 }}>
+      <div className={styles.columns} style={{ position: 'relative', display: 'grid' }}>
 
         {/* ─── STANDBY ─── */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -259,15 +258,14 @@ export const ONAIR_CAPS = [
 ];
 
 export default function TweenlyOnAir() {
-  const { isMobile } = useViewport();
   return (
-    <section id="onair" style={{ padding: isMobile ? '80px 20px 72px' : '140px 40px 120px', background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
+    <section id="onair" className={styles.section} style={{ background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
       {/* faint horizontal lines motif */}
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(224,81,81,0.04) 0%, transparent 30%)', pointerEvents: 'none' }} />
 
       <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
         {/* HEADER */}
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 24 : 60, alignItems: isMobile ? 'start' : 'end', marginBottom: isMobile ? 36 : 56 }}>
+        <div className={styles.header} style={{ display: 'grid' }}>
           <div>
             <SectionLabel label={t("onair.sectionLabel")} color="#E05151" />
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 68px)', letterSpacing: -1.8, color: 'var(--white)', lineHeight: 1.0, marginTop: 8 }}>
@@ -317,7 +315,7 @@ export default function TweenlyOnAir() {
         </div>
 
         {/* CAPABILITY GRID */}
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)', gap: isMobile ? 12 : 18 }}>
+        <div className={styles.caps} style={{ display: 'grid' }}>
           {ONAIR_CAPS.map(cap => (
             <div key={cap.eyebrow} style={{
               background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',

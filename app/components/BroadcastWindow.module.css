@@ -1,0 +1,49 @@
+.window {
+  aspect-ratio: 16 / 9;
+}
+
+.watermark {
+  bottom: 50px;
+}
+
+/* Lower third */
+.lt {
+  bottom: 70px;
+  left: 36px;
+}
+
+.ltTitle {
+  font-size: 11px;
+  padding: 4px 14px;
+}
+
+.ltNameBox {
+  padding: 10px 22px;
+}
+
+.ltName {
+  font-size: 22px;
+}
+
+@media (max-width: 759.98px) {
+  .window {
+    aspect-ratio: 4 / 3;
+  }
+  .watermark {
+    bottom: 44px;
+  }
+  .lt {
+    bottom: 54px;
+    left: 14px;
+  }
+  .ltTitle {
+    font-size: 9px;
+    padding: 3px 10px;
+  }
+  .ltNameBox {
+    padding: 6px 14px;
+  }
+  .ltName {
+    font-size: 15px;
+  }
+}

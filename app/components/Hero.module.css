@@ -1,0 +1,47 @@
+/* Breakpoints: mobile < 760px, compact (mobile + tablet) < 1040px */
+
+.main {
+  padding: 60px 40px 80px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+}
+
+.stats {
+  padding: 28px 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.stat {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 14px;
+}
+
+/* Below the stats bar's own max-width the 4 columns get too tight for the
+   value + label to sit side by side, so stack them (value above label). */
+@media (max-width: 1279.98px) {
+  .stat {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 1039.98px) {
+  .main {
+    padding: 40px clamp(20px, 5vw, 40px) 56px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .stats {
+    padding: 24px clamp(20px, 5vw, 40px);
+  }
+}
+
+@media (max-width: 759.98px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}

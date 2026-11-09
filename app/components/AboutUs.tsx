@@ -1,17 +1,16 @@
 "use client";
 
 import { SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import s from "./section.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
 // ─── About ────────────────────────────────────────────────────────────────────
 
 export default function AboutUs() {
-  const { isMobile } = useViewport();
   return (
-    <section style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg)', position: 'relative' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 40 : 80, alignItems: 'center' }}>
+    <section className={s.section} style={{ background: 'var(--bg)', position: 'relative' }}>
+      <div className={`${s.cols2} ${s.splitGap}`} style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', alignItems: 'center' }}>
         <div>
           <SectionLabel label={t("about.sectionLabel")} color="#82B820" />
           {/* PROVYS Technologies logo */}

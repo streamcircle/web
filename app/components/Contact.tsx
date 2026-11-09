@@ -1,16 +1,15 @@
 "use client";
 
 import { SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import s from "./section.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
 // ─── Contact ─────────────────────────────────────────────────────────────────
 
 export default function Contact() {
-  const { isMobile } = useViewport();
   return (
-    <section id="contact" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
+    <section id="contact" className={s.section} style={{ background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 700, height: 500, background: 'radial-gradient(ellipse, rgba(34,198,138,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
         <SectionLabel label={t("contact.sectionLabel")} />

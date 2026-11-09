@@ -1,7 +1,7 @@
 "use client";
 
 import { PlayMark, SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import styles from "./StreamCircleIntegration.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -34,9 +34,8 @@ function FlowDot({ delay = 0, color = '#22C68A' }) {
 }
 
 export default function StreamCircleIntegration() {
-  const { isMobile } = useViewport();
   return (
-    <section style={{ padding: isMobile ? '80px 20px' : '140px 40px', background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
+    <section className={styles.section} style={{ background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
       {/* Animation keyframes injected once for this section */}
       <style>{`
         @keyframes flowRight {
@@ -74,13 +73,12 @@ export default function StreamCircleIntegration() {
         </div>
 
         {/* Flow diagram */}
-        <div style={{
+        <div className={styles.diagram} style={{
           position: 'relative',
           background: 'linear-gradient(135deg, rgba(15,19,22,0.6) 0%, rgba(10,13,16,0.6) 100%)',
           backdropFilter: 'blur(8px)',
           borderRadius: '12px 24px 12px 40px',
           border: '1px solid rgba(10,182,224,0.18)',
-          padding: isMobile ? '32px 20px' : '56px 48px',
           marginBottom: 56,
           overflow: 'hidden',
           boxShadow: '0 40px 100px rgba(0,0,0,0.5)',
@@ -95,7 +93,7 @@ export default function StreamCircleIntegration() {
             <rect width="100%" height="100%" fill="url(#sc-bg)"/>
           </svg>
 
-          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr auto 1fr', gap: isMobile ? 28 : 40, alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className={styles.flow} style={{ display: 'grid', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             {/* Tweenly node */}
             <div style={{ textAlign: 'center', position: 'relative' }}>
               <div style={{ position: 'relative', display: 'inline-block', marginBottom: 20 }}>
@@ -119,7 +117,7 @@ export default function StreamCircleIntegration() {
             </div>
 
             {/* Flow pipe */}
-            <div style={{ width: isMobile ? '100%' : 220, position: 'relative', height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 12 }}>
+            <div className={styles.pipe} style={{ position: 'relative', height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 12 }}>
               {/* Pipe line with traveling dots */}
               <div style={{ position: 'relative', width: '100%', height: 2, background: 'linear-gradient(90deg, #22C68A, #0AB6E0)', opacity: 0.4 }}>
                 <FlowDot delay={0} color="#22C68A" />
@@ -152,7 +150,7 @@ export default function StreamCircleIntegration() {
           </div>
 
           {/* Bottom bar — what the integration delivers */}
-          <div style={{ marginTop: 56, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)', gap: 24 }}>
+          <div className={styles.benefits} style={{ marginTop: 56, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'grid', gap: 24 }}>
             {[
               { label: t("streamcircle.benefit0Label"), desc: t("streamcircle.benefit0Desc") },
               { label: t("streamcircle.benefit1Label"), desc: t("streamcircle.benefit1Desc") },
@@ -171,7 +169,7 @@ export default function StreamCircleIntegration() {
         </div>
 
         {/* Stream Circle modules summary + CTA */}
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.3fr 1fr', gap: isMobile ? 32 : 40, alignItems: 'center' }}>
+        <div className={styles.summary} style={{ display: 'grid', alignItems: 'center' }}>
           <div>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: 11, fontWeight: 700, color: '#0AB6E0', letterSpacing: 2.5, textTransform: 'uppercase', marginBottom: 16 }}>{t("streamcircle.modulesHeading")}</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>

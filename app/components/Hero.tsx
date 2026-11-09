@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { BroadcastWindow } from "./BroadcastWindow";
 import { LiveTicker } from "./LiveTicker";
 import { GradientShape } from "./primitives";
-import { useViewport } from "./useViewport";
+import styles from "./Hero.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -12,10 +12,6 @@ const { t } = getTranslation();
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(true);
-  const { w, isCompact, isMobile } = useViewport();
-  // Below the stats section's own max-width the 4 columns get too tight for the
-  // value + label to sit side by side, so stack them (value above label).
-  const stackStats = w < 1280;
   useEffect(() => {
     // Mount entrance: paint visible (SSR/no-JS friendly), then replay the
     // fade-in. Deferred so neither setState runs synchronously in the effect.
@@ -44,7 +40,7 @@ export default function Hero() {
         <rect width="100%" height="100%" fill="url(#heroLines)"/>
       </svg>
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: isCompact ? '40px clamp(20px,5vw,40px) 56px' : '60px 40px 80px', width: '100%', display: 'grid', gridTemplateColumns: isCompact ? '1fr' : '1fr 1.1fr', gap: isCompact ? 48 : 64, alignItems: 'center', position: 'relative', zIndex: 1 }}>
+      <div className={styles.main} style={{ maxWidth: 1280, margin: '0 auto', width: '100%', display: 'grid', alignItems: 'center', position: 'relative', zIndex: 1 }}>
         {/* Left: headline */}
         <div>
 
@@ -156,14 +152,14 @@ export default function Hero() {
 
       {/* Stats bar */}
       <div style={{ position: 'relative', zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: isCompact ? '24px clamp(20px,5vw,40px)' : '28px 40px', display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: isMobile ? 24 : 40 }}>
+        <div className={styles.stats} style={{ maxWidth: 1280, margin: '0 auto', display: 'grid' }}>
           {[
             [t("hero.stats.0.value"), t("hero.stats.0.label")],
             [t("hero.stats.1.value"), t("hero.stats.1.label")],
             [t("hero.stats.2.value"), t("hero.stats.2.label")],
             [t("hero.stats.3.value"), t("hero.stats.3.label")],
           ].map(([val, label], i) => (
-            <div key={val} style={{ display: 'flex', flexDirection: stackStats ? 'column' : 'row', alignItems: stackStats ? 'flex-start' : 'baseline', gap: stackStats ? 4 : 14 }}>
+            <div key={val} className={styles.stat} style={{ display: 'flex' }}>
               <span style={{
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 36,
                 background: ['linear-gradient(135deg,#82B820,#22C68A)','linear-gradient(135deg,#22C68A,#0AB6E0)','linear-gradient(135deg,#0AB6E0,#007A98)','linear-gradient(135deg,#82B820,#107F76)'][i],

@@ -1,0 +1,22 @@
+.footer {
+  padding: 64px 40px 32px;
+}
+
+.grid {
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 759.98px) {
+  .footer {
+    padding: 48px clamp(20px, 5vw, 40px) 32px;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  /* Brand block spans the full row above the two link columns */
+  .brand {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,22 @@
+.step {
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  margin-bottom: 100px;
+  direction: ltr;
+}
+
+/* Every other step mirrors (media on the left) on wider screens */
+.reverse {
+  direction: rtl;
+}
+
+@media (max-width: 759.98px) {
+  .step {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+  .reverse {
+    direction: ltr;
+  }
+}

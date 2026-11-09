@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import s from "./section.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -45,9 +45,8 @@ function FAQItem({ item, open, onClick }: { item: (typeof FAQ_ITEMS)[number]; op
 
 export default function FAQ() {
   const [open, setOpen] = useState(0);
-  const { isMobile } = useViewport();
   return (
-    <section id="faq" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)' }}>
+    <section id="faq" className={s.section} style={{ background: 'var(--bg2)' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <div style={{ display: 'inline-block' }}><SectionLabel label={t("faq.label")} /></div>

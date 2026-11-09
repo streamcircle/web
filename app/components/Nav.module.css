@@ -1,0 +1,32 @@
+/* Desktop shows the centered link row; compact (< 1040px) shows the
+   hamburger + slide-down panel. Both are always rendered and toggled here,
+   so `display` must not be set inline on these elements. */
+
+.links {
+  display: flex;
+}
+
+.right {
+  margin-left: 0;
+}
+
+.burger,
+.panel {
+  display: none;
+}
+
+@media (max-width: 1039.98px) {
+  .links,
+  .desktopOnly {
+    display: none;
+  }
+  .right {
+    margin-left: auto;
+  }
+  .burger {
+    display: flex;
+  }
+  .panel {
+    display: block;
+  }
+}

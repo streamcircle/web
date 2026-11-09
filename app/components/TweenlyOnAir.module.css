@@ -1,0 +1,41 @@
+.section {
+  padding: 140px 40px 120px;
+}
+
+.header {
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.caps {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* Operator UI: Standby / Live columns */
+.columns {
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+@media (max-width: 759.98px) {
+  .section {
+    padding: 80px 20px 72px;
+  }
+  .header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 36px;
+  }
+  .caps {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

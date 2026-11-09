@@ -1,7 +1,8 @@
 "use client";
 
 import { PlayMark, SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import s from "./section.module.css";
+import styles from "./References.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -49,9 +50,8 @@ const ADOPTERS = [
 ];
 
 export default function References() {
-  const { isMobile } = useViewport();
   return (
-    <section id="references" style={{ padding: isMobile ? '64px 20px' : '100px 40px', background: 'var(--bg)' }}>
+    <section id="references" className={styles.section} style={{ background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <SectionLabel label={t("references.sectionLabel")} color="#22C68A" />
@@ -59,7 +59,7 @@ export default function References() {
             {t("references.heading")}
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 20 }}>
+        <div className={s.cols2} style={{ display: 'grid', gap: 20 }}>
           {ADOPTERS.map(a => (
             <div key={a.name} style={{
               background: 'var(--bg2)',
