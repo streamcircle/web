@@ -1,6 +1,6 @@
 "use client";
 
-import { useViewport } from "./useViewport";
+import styles from "./ToolSteps.module.css";
 // ─── One Tool from Design to Playout ─────────────────────────────────────────
 
 export const TOOL_STEPS = [
@@ -189,10 +189,9 @@ export function ToolVisual({ kind, accent }: { kind: string; accent: string }) {
 }
 
 export function ToolStep({ step, index }: { step: (typeof TOOL_STEPS)[number]; index: number }) {
-  const { isMobile } = useViewport();
   const reverse = index % 2 === 1;
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1.1fr', gap: isMobile ? 32 : 80, alignItems: 'center', marginBottom: isMobile ? 56 : 100, direction: isMobile ? 'ltr' : (reverse ? 'rtl' : 'ltr') }}>
+    <div className={reverse ? `${styles.step} ${styles.reverse}` : styles.step} style={{ display: 'grid', alignItems: 'center' }}>
       <div style={{ direction: 'ltr' }}>
         <div style={{
           fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 14,

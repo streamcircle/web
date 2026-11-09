@@ -1,7 +1,7 @@
 "use client";
 
 import { GradientShape, SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import s from "./section.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -12,9 +12,8 @@ const FREE_FEATURES = [t("pricing.freeFeatures.0"), t("pricing.freeFeatures.1"),
 export const UNL_FEATURES = [t("pricing.unlFeatures.0"), t("pricing.unlFeatures.1"), t("pricing.unlFeatures.2"), t("pricing.unlFeatures.3"), t("pricing.unlFeatures.4"), t("pricing.unlFeatures.5"), t("pricing.unlFeatures.6")];
 
 export default function Pricing() {
-  const { isMobile } = useViewport();
   return (
-    <section id="pricing" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative' }}>
+    <section id="pricing" className={s.section} style={{ background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
       {/* Decorative gradient shape */}
       <div style={{ position: 'absolute', top: '20%', right: '-10%', width: 500, height: 360, opacity: 0.06, zIndex: 0 }}>
         <GradientShape style={{ width: '100%', height: '100%' }} radius="20% 50% 20% 60%" />
@@ -31,7 +30,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 24 }}>
+        <div className={s.cols2} style={{ display: 'grid', gap: 24 }}>
           {/* Free */}
           <div style={{
             background: 'var(--bg2)', borderRadius: '8px 16px 8px 32px',

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { PlayMark, SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import s from "./section.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -175,9 +175,8 @@ function BuildCard({ item }: { item: (typeof BUILD_CARDS)[number] }) {
 }
 
 export default function WhatYouCanBuild() {
-  const { isMobile } = useViewport();
   return (
-    <section id="examples" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative' }}>
+    <section id="examples" className={s.section} style={{ background: 'var(--bg2)', position: 'relative' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <div style={{ display: 'inline-block' }}><SectionLabel label={t("build.sectionLabel")} /></div>
@@ -188,7 +187,7 @@ export default function WhatYouCanBuild() {
             {t("build.subheading")}
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: 20 }}>
+        <div className={s.cols3} style={{ display: 'grid', gap: 20 }}>
           {BUILD_CARDS.map(item => <BuildCard key={item.label} item={item} />)}
         </div>
       </div>

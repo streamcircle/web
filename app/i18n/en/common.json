@@ -11,7 +11,8 @@
       "FAQ"
     ],
     "logIn": "Log in",
-    "signUp": "Sign up"
+    "signUp": "Sign up",
+    "references": "References"
   },
   "hero": {
     "headlineLine1": "Design",
@@ -287,7 +288,8 @@
           "Lower thirds",
           "News tickers",
           "Bugs"
-        ]
+        ],
+        "storyName": "Praha TV"
       },
       {
         "type": "National Broadcaster",
@@ -305,7 +307,9 @@
           "Bugs"
         ]
       }
-    ]
+    ],
+    "readStory": "Read the story",
+    "allReferences": "All references"
   },
   "faq": {
     "label": "FAQ",

@@ -1,0 +1,77 @@
+{
+  "referencesPage": {
+    "meta": {
+      "title": "References – Tweenly",
+      "description": "How channels and events use Tweenly to design graphics and run them live."
+    },
+    "hero": {
+      "label": "References",
+      "headlineLine1": "Live graphics.",
+      "headlineLine2": "Real stories.",
+      "lead": "How channels and events use Tweenly to design graphics and run them live. Read below."
+    },
+    "cta": {
+      "label": "Pilot until March 2027",
+      "heading": "Your channel next.",
+      "text": "We're welcoming more early adopters who want to bring live graphics into their productions – and help shape Tweenly On Air with their feedback.",
+      "button": "Join the pilot"
+    }
+  },
+  "caseStudies": {
+    "prahaTv": {
+      "name": "Praha TV.",
+      "headline": "Live graphics for a five-hour election broadcast.",
+      "date": "10 October 2026",
+      "leadImageAlt": "Praha TV election broadcast with the Volby 2026 živě title and a lower third, made in Tweenly",
+      "facts": [
+        {
+          "value": "Praha TV",
+          "label": "Regional broadcaster, Prague"
+        },
+        {
+          "value": "Tweenly On Air, Stream Circle",
+          "label": "Integrated directly – no production switcher"
+        },
+        {
+          "value": "5 hours",
+          "label": "One live election special; 8 studio guests, 5 field reporters"
+        },
+        {
+          "value": "2 graphic types",
+          "label": "Show title “Volby 2026 živě” and speaker lower thirds"
+        }
+      ],
+      "sectionsBeforeFigure": [
+        {
+          "heading": "Bringing live graphics into the broadcast workflow",
+          "paragraphs": [
+            "Praha TV was preparing a five-hour special broadcast covering the 2026 Czech elections. Having already used Stream Circle for playout, the broadcaster introduced Tweenly On Air to manage live graphics during the production.",
+            "Unlike more traditional setups, where graphics are integrated through a production switcher, Tweenly On Air was integrated directly with Stream Circle. With both products developed by the same company, Praha TV could introduce live graphics without having to manage a separate integration project."
+          ]
+        },
+        {
+          "heading": "A simpler way to control live graphics",
+          "paragraphs": [
+            "For the election broadcast, Praha TV became the first customer to use a new grid-based interface in Tweenly On Air during a live production.",
+            "The interface allowed operators to organize and preview prepared graphics, edit text when needed, and bring graphics on and off air directly from the grid.",
+            "Two types of graphics were used throughout the broadcast: a persistent “Volby 2026 živě” title and lower thirds identifying individual speakers. Two operators managed the graphics during the five-hour production, testing how the new interface supported real broadcast operations."
+          ]
+        }
+      ],
+      "figureAlt": "Tweenly On Air grid interface during the Praha TV election broadcast: graphics list, preparation panel, live grid with IN and OUT buttons, and live output",
+      "figureCaption": "The new grid in Tweenly On Air during the election broadcast – prepared graphics on the left, the live grid with IN / OUT in the middle, live output on the right.",
+      "sectionsAfterFigure": [
+        {
+          "heading": "Developed together with broadcasters",
+          "paragraphs": [
+            "Praha TV is among the first early adopters of Tweenly On Air. Before the election special, the broadcaster had already completed three live test broadcasts, helping the teams refine both the technical setup and the operational workflow.",
+            "For the election broadcast, Praha TV received early access to the new grid interface, becoming the first customer to test it in a live production environment."
+          ]
+        }
+      ],
+      "quote": "“The new On Air is a million times more user-friendly than the old one.”",
+      "quoteAttribution": "Barbora Máchová, Head of Broadcasting, Praha TV",
+      "outcome": "The collaboration has also contributed to improvements in connection-status detection and the user interface, helping shape Tweenly On Air around the practical needs of live production teams."
+    }
+  }
+}

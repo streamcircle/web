@@ -1,0 +1,16 @@
+.intro {
+  margin-bottom: 52px;
+}
+
+.chips {
+  margin-top: 28px;
+}
+
+@media (max-width: 759.98px) {
+  .intro {
+    margin-bottom: 32px;
+  }
+  .chips {
+    margin-top: 24px;
+  }
+}

@@ -3,14 +3,13 @@
 import type { ReactNode } from "react";
 import { showPreferences } from "vanilla-cookieconsent";
 import { Logo } from "./primitives";
-import { useViewport } from "./useViewport";
+import styles from "./Footer.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 export default function Footer() {
-  const { isMobile } = useViewport();
   const resourceLinks = [
     [t("footer.resources.0"), 'https://docs.tweenly.io'],
     [t("footer.resources.1"), 'https://docs.tweenly.io/appendices/terms-and-conditions/'],
@@ -23,10 +22,10 @@ export default function Footer() {
       <path key="yt" fill="currentColor" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/>],
   ];
   return (
-    <footer style={{ background: 'var(--bg)', borderTop: '1px solid rgba(255,255,255,0.06)', padding: isMobile ? '48px clamp(20px,5vw,40px) 32px' : '64px 40px 32px' }}>
+    <footer className={styles.footer} style={{ background: 'var(--bg)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : '1.6fr 1fr 1fr', gap: isMobile ? 32 : 40, marginBottom: 48 }}>
-          <div style={{ gridColumn: isMobile ? '1 / -1' : 'auto' }}>
+        <div className={styles.grid} style={{ display: 'grid', marginBottom: 48 }}>
+          <div className={styles.brand}>
             <Logo size={22} />
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(226,228,229,0.55)', lineHeight: 1.6, maxWidth: 260, marginTop: 16 }}>
               {t("footer.tagline")}

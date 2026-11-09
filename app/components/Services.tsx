@@ -1,17 +1,16 @@
 "use client";
 
 import { SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import s from "./section.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
 // ─── Services ────────────────────────────────────────────────────────────────
 
 export default function Services() {
-  const { isMobile } = useViewport();
   return (
-    <section id="services" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 40 : 80, alignItems: 'center' }}>
+    <section id="services" className={s.section} style={{ background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
+      <div className={`${s.cols2} ${s.splitGap}`} style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', display: 'grid', alignItems: 'center' }}>
         <div>
           <SectionLabel label={t("services.sectionLabel")} color="#0AB6E0" />
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 60px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.05, marginBottom: 24 }}>

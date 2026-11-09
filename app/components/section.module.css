@@ -1,0 +1,35 @@
+/* Shared section spacing. Breakpoints: mobile < 760px, compact < 1040px.
+   Responsive values live in CSS (not inline styles) so the prerendered HTML
+   already has the right layout for the device — no post-hydration jump. */
+
+.section {
+  padding: 120px 40px;
+}
+
+/* Two equal columns that stack on mobile */
+.cols2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Three equal columns that stack on mobile */
+.cols3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Wide gutter between text and media columns */
+.splitGap {
+  gap: 80px;
+}
+
+@media (max-width: 759.98px) {
+  .section {
+    padding: 72px 20px;
+  }
+  .cols2,
+  .cols3 {
+    grid-template-columns: 1fr;
+  }
+  .splitGap {
+    gap: 40px;
+  }
+}

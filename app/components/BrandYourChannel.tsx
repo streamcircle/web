@@ -3,7 +3,7 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { GradientShape, SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import styles from "./BrandYourChannel.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -593,7 +593,6 @@ function ChannelKitCard({ kit, active, onClick }: { kit: Kit; active: boolean; o
 }
 
 export default function BrandYourChannel() {
-  const { isMobile } = useViewport();
   const [active, setActive] = useState('kick');
   const activeKit = CHANNEL_KITS.find(k => k.id === active) || CHANNEL_KITS[0];
 
@@ -605,7 +604,7 @@ export default function BrandYourChannel() {
       </div>
 
       <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 24 : 80, alignItems: isMobile ? 'start' : 'end', marginBottom: isMobile ? 36 : 56 }}>
+        <div className={styles.header} style={{ display: 'grid' }}>
           <div>
             <SectionLabel label={t("brand.sectionLabel")} color="#9B7BFF" />
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.02, marginTop: 8 }}>
@@ -621,11 +620,8 @@ export default function BrandYourChannel() {
           </p>
         </div>
 
-        {/* Featured large preview — hidden once the selector cards collapse to a
-            single column (isMobile), where it would be the same width as them
-            and just duplicate the active kit. */}
-        {!isMobile && (
-        <div style={{ position: 'relative', marginBottom: 32, borderRadius: '12px 24px 12px 40px', overflow: 'hidden', border: `1px solid ${activeKit.accent}30`, background: '#0a0d10', boxShadow: `0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px ${activeKit.accent}10` }}>
+        {/* Featured large preview — hidden on mobile (see .preview) */}
+        <div className={styles.preview} style={{ position: 'relative', marginBottom: 32, borderRadius: '12px 24px 12px 40px', overflow: 'hidden', border: `1px solid ${activeKit.accent}30`, background: '#0a0d10', boxShadow: `0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px ${activeKit.accent}10` }}>
           {/* Window chrome */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.05)', background: 'rgba(0,0,0,0.4)' }}>
             <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#FF6258' }} />
@@ -638,23 +634,22 @@ export default function BrandYourChannel() {
             <ChannelScene kit={activeKit} />
           </div>
         </div>
-        )}
 
         {/* Kit selector cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: 16, marginBottom: isMobile ? 36 : 56 }}>
+        <div className={styles.kits} style={{ display: 'grid', gap: 16 }}>
           {CHANNEL_KITS.map(kit => (
             <ChannelKitCard key={kit.id} kit={kit} active={kit.id === active} onClick={() => setActive(kit.id)} />
           ))}
         </div>
 
         {/* CTA path cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 16 }}>
-          <a href="https://editor.tweenly.io/signup" style={{
+        <div className={styles.paths} style={{ display: 'grid', gap: 16 }}>
+          <a href="https://editor.tweenly.io/signup" className={styles.pathCard} style={{
             background: 'linear-gradient(135deg, rgba(34,198,138,0.08), rgba(10,182,224,0.08))',
             borderRadius: '8px 16px 8px 32px',
             padding: '32px 36px',
             border: '1px solid rgba(34,198,138,0.3)',
-            textDecoration: 'none', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: 24,
+            textDecoration: 'none', display: 'flex', gap: 24,
             transition: 'all 0.3s',
           }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(34,198,138,0.6)'; }}
@@ -668,12 +663,12 @@ export default function BrandYourChannel() {
             <span style={{ color: '#22C68A', fontSize: 22, fontFamily: 'var(--font-display)' }}>→</span>
           </a>
 
-          <a href="mailto:info@tweenly.io" style={{
+          <a href="mailto:info@tweenly.io" className={styles.pathCard} style={{
             background: 'linear-gradient(135deg, rgba(155,123,255,0.08), rgba(10,182,224,0.08))',
             borderRadius: '8px 16px 8px 32px',
             padding: '32px 36px',
             border: '1px solid rgba(155,123,255,0.3)',
-            textDecoration: 'none', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: 24,
+            textDecoration: 'none', display: 'flex', gap: 24,
             transition: 'all 0.3s',
           }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(155,123,255,0.6)'; }}

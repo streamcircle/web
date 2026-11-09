@@ -12,6 +12,9 @@
     --muted: rgba(226,228,229,0.5);
     --muted2: rgba(226,228,229,0.35);
     --border: rgba(255,255,255,0.08);
+    --cyan: #00A9D1;
+    --gradient-brand: linear-gradient(135deg, #82B820 0%, #22C68A 40%, #107F76 75%, #007A98 100%);
+    --gradient-headline: linear-gradient(135deg, #82B820 0%, #22C68A 30%, #0AB6E0 70%, #007A98 100%);
     --font-display: 'Manrope', sans-serif;
     --font-body: 'Inter', sans-serif;
     /* asymmetric radii from brand manual */
@@ -21,7 +24,14 @@
     --r-hero: 20px 40px 20px 80px;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  /* Smooth-scroll in-page link clicks, but not the browser's jump to a
+     `#hash` on page load: a smooth jump keeps its original target while web
+     fonts swap in and the page grows, so it lands short. An instant jump stays
+     anchored to the target as the layout shifts. `.smooth-scroll` is added
+     after `load` by <SmoothScroll />. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.smooth-scroll { scroll-behavior: smooth; }
+  }
   body {
     background: var(--bg);
     color: var(--white);

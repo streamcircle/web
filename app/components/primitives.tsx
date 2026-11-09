@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import Link from "next/link";
 
 // Tweenly play mark — from official tweenly_triangle_web.svg
 
@@ -17,7 +18,7 @@ export function Logo({ size = 26, white = true }) {
   const w = Math.round(h * (1045 / 257));
   const fill = white ? '#FFFFFF' : '#0F1B30';
   return (
-    <a href="#" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+    <Link href="/" aria-label="Tweenly home" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
       <svg width={w} height={h} viewBox="0 0 1045 257" style={{ display: 'block' }}>
         <g>
           <path d="M109.07,82.93L85.49,82.93L85.49,58.31L109.07,58.31L109.07,31.1L143.28,15.55L143.28,58.31L179.82,58.31L179.82,82.93L143.28,82.93L143.28,149.27C143.28,157.74 144.79,163.91 147.81,167.8C150.83,171.69 155.8,173.63 162.71,173.63C165.99,173.63 169.45,173.07 173.08,171.95C176.71,170.83 179.82,169.32 182.41,167.42L180.08,195.41C176.28,197.13 172.05,198.39 167.38,199.17C162.72,199.95 158.22,200.33 153.9,200.33C138.7,200.33 127.42,196.53 120.08,188.93C112.73,181.33 109.06,169.93 109.06,154.72L109.06,82.93L109.07,82.93Z" fill={fill} fillRule="nonzero"/>
@@ -30,7 +31,7 @@ export function Logo({ size = 26, white = true }) {
           <path d="M66.55,118.16L16.42,89.22C9.12,85.01 -0,90.27 -0,98.7L-0,156.58C-0,165.01 9.12,170.27 16.42,166.06L66.55,137.12C73.85,132.91 73.85,122.38 66.55,118.16" fill="#00B1EB" fillRule="nonzero"/>
         </g>
       </svg>
-    </a>
+    </Link>
   );
 }
 

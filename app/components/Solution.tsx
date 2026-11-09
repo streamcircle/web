@@ -2,7 +2,8 @@
 
 import { ScreenshotFrame } from "./ScreenshotFrame";
 import { SectionLabel } from "./primitives";
-import { useViewport } from "./useViewport";
+import s from "./section.module.css";
+import styles from "./Solution.module.css";
 import { getTranslation } from "../i18n";
 
 const { t } = getTranslation();
@@ -20,11 +21,10 @@ const EDITOR_CHIPS = [
 ];
 
 export default function Solution() {
-  const { isMobile } = useViewport();
   return (
-    <section id="editor" style={{ padding: isMobile ? '72px 20px' : '120px 40px', background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
+    <section id="editor" className={s.section} style={{ background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
-        <div style={{ textAlign: 'center', marginBottom: isMobile ? 32 : 52 }}>
+        <div className={styles.intro} style={{ textAlign: 'center' }}>
           <div style={{ display: 'inline-block' }}><SectionLabel label={t("solution.sectionLabel")} /></div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(36px, 5vw, 60px)', letterSpacing: -1.5, color: 'var(--white)', lineHeight: 1.05 }}>
             {t("solution.headingLine1")}<br/>
@@ -39,7 +39,7 @@ export default function Solution() {
           </p>
         </div>
         <ScreenshotFrame src="/assets/tw-editor.png" appName={t("solution.appName")} urlLabel="editor.tweenly.io" accent="#22C68A" badge={t("solution.badge")} placeholderNote={t("solution.placeholderNote")} aspectRatio="16/9" />
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginTop: isMobile ? 24 : 28 }}>
+        <div className={styles.chips} style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
           {EDITOR_CHIPS.map(c => (
             <div key={c.label} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px 12px 4px 8px', padding: '9px 16px' }}>
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: c.accent, flexShrink: 0 }} />

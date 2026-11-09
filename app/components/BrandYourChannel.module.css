@@ -1,0 +1,46 @@
+.header {
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.kits {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 56px;
+}
+
+.paths {
+  grid-template-columns: 1fr 1fr;
+}
+
+.pathCard {
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 759.98px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 36px;
+  }
+  /* Featured large preview — hidden once the selector cards collapse to a
+     single column, where it would be the same width as them and just
+     duplicate the active kit. */
+  .preview {
+    display: none;
+  }
+  .kits {
+    grid-template-columns: 1fr;
+    margin-bottom: 36px;
+  }
+  .paths {
+    grid-template-columns: 1fr;
+  }
+  .pathCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
