@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { PlayMark, SectionLabel } from "./primitives";
 import s from "./section.module.css";
 import styles from "./References.module.css";
@@ -108,19 +109,19 @@ export default function References() {
               {a.storyHref && (
                 // aria-label names the customer, so screen readers don't hear
                 // several identical "Read the story" links once more are added
-                <a href={a.storyHref} aria-label={`${t("references.readStory")}: ${a.storyName}`} style={{
+                <Link href={a.storyHref} aria-label={`${t("references.readStory")}: ${a.storyName}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 18,
                   fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 700,
                   color: a.accent, textDecoration: 'none',
                 }}>
                   {t("references.readStory")} <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               )}
             </div>
           ))}
         </div>
         <div style={{ textAlign: 'center', marginTop: 36 }}>
-          <a href="/references" style={{
+          <Link href="/references" style={{
             fontFamily: 'var(--font-display)', fontSize: 15, fontWeight: 700,
             color: 'var(--white)', textDecoration: 'none',
             padding: '12px 24px', borderRadius: 'var(--r-button)',
@@ -129,7 +130,7 @@ export default function References() {
             onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--mint)'}
             onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'}>
             {t("references.allReferences")}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./primitives";
 import styles from "./Nav.module.css";
@@ -69,7 +70,7 @@ export default function Nav() {
                 {showDivider && (
                   <span style={{ width: 1, height: 14, background: 'rgba(255,255,255,0.12)' }} aria-hidden="true" />
                 )}
-                <a href={l.href} aria-current={current ? 'page' : undefined} style={{
+                <Link href={l.href} aria-current={current ? 'page' : undefined} style={{
                   fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 500,
                   color: restColor, textDecoration: 'none', transition: 'color 0.2s',
                   display: 'inline-flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap',
@@ -84,7 +85,7 @@ export default function Nav() {
                     animation: l.href === '/#onair' ? 'blink 1.6s infinite' : 'none',
                   }} />}
                   {l.label}
-                </a>
+                </Link>
               </React.Fragment>
             );
           })}
@@ -139,14 +140,14 @@ export default function Nav() {
             return (
               <React.Fragment key={l.label}>
                 {showDivider && <div style={{ height: 1, background: 'rgba(255,255,255,0.07)', margin: '8px 0' }} aria-hidden="true" />}
-                <a href={l.href} onClick={() => setMenuOpen(false)} aria-current={isCurrent(l.href) ? 'page' : undefined} style={{
+                <Link href={l.href} onClick={() => setMenuOpen(false)} aria-current={isCurrent(l.href) ? 'page' : undefined} style={{
                   fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 600,
                   color: l.accent || (isCurrent(l.href) ? 'var(--mint)' : 'rgba(255,255,255,0.92)'), textDecoration: 'none',
                   padding: '13px 4px', display: 'flex', alignItems: 'center', gap: 9,
                 }}>
                   {l.accent && <span style={{ width: 7, height: 7, borderRadius: '50%', background: l.accent, boxShadow: `0 0 8px ${l.accent}`, animation: l.label === 'On Air' ? 'blink 1.6s infinite' : 'none' }} />}
                   {l.label}
-                </a>
+                </Link>
               </React.Fragment>
             );
           })}
