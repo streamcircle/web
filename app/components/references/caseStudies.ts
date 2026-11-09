@@ -26,12 +26,13 @@ export type CaseStudyData = {
   outcome: string;
 };
 
-const shape = pageCopy.caseStudies.prahaTv;
+/** Key of a story under `caseStudies` in i18n/en/references.json */
+type CaseStudyId = keyof typeof pageCopy.caseStudies;
 
-function sections(group: "sectionsBeforeFigure" | "sectionsAfterFigure"): CaseStudySection[] {
-  return shape[group].map((section, s) => ({
-    heading: t(`caseStudies.prahaTv.${group}.${s}.heading`),
-    paragraphs: section.paragraphs.map((_, p) => t(`caseStudies.prahaTv.${group}.${s}.paragraphs.${p}`)),
+function sections(id: CaseStudyId, group: "sectionsBeforeFigure" | "sectionsAfterFigure"): CaseStudySection[] {
+  return pageCopy.caseStudies[id][group].map((section, s) => ({
+    heading: t(`caseStudies.${id}.${group}.${s}.heading`),
+    paragraphs: section.paragraphs.map((_, p) => t(`caseStudies.${id}.${group}.${s}.paragraphs.${p}`)),
   }));
 }
 
@@ -46,11 +47,11 @@ const prahaTv: CaseStudyData = {
     width: 1920,
     height: 1081,
   },
-  facts: shape.facts.map((_, i) => ({
+  facts: pageCopy.caseStudies.prahaTv.facts.map((_, i) => ({
     value: t(`caseStudies.prahaTv.facts.${i}.value`),
     label: t(`caseStudies.prahaTv.facts.${i}.label`),
   })),
-  sectionsBeforeFigure: sections("sectionsBeforeFigure"),
+  sectionsBeforeFigure: sections("prahaTv", "sectionsBeforeFigure"),
   figure: {
     src: "/assets/references/praha-tv-onair-grid.jpg",
     alt: t("caseStudies.prahaTv.figureAlt"),
@@ -58,7 +59,7 @@ const prahaTv: CaseStudyData = {
     width: 2105,
     height: 1133,
   },
-  sectionsAfterFigure: sections("sectionsAfterFigure"),
+  sectionsAfterFigure: sections("prahaTv", "sectionsAfterFigure"),
   quote: {
     text: t("caseStudies.prahaTv.quote"),
     attribution: t("caseStudies.prahaTv.quoteAttribution"),
