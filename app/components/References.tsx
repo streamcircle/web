@@ -126,7 +126,7 @@ export default function References() {
             padding: '12px 24px', borderRadius: 'var(--r-button)',
             border: '1px solid rgba(255,255,255,0.2)', display: 'inline-block', transition: 'border-color 0.2s',
           }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = '#22C68A'}
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--mint)'}
             onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'}>
             {t("references.allReferences")}
           </a>
