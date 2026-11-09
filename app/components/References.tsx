@@ -27,7 +27,7 @@ const ADOPTERS = [
     accent: '#0AB6E0',
     elements: [t("references.adopters.1.elements.0"), t("references.adopters.1.elements.1"), t("references.adopters.1.elements.2")],
     storyHref: '/references#praha-tv',
-    storyName: 'Praha TV',
+    storyName: t("references.adopters.1.storyName"),
   },
   {
     name: 'TV BARRANDOV',
