@@ -15,12 +15,12 @@ const META_TEXT: CSSProperties = {
 function Sections({ sections }: { sections: CaseStudySection[] }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 48, maxWidth: 780 }}>
-      {sections.map(s => (
-        <section key={s.heading} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+      {sections.map((s, i) => (
+        <section key={i} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <h3 style={{ margin: 0, fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700, letterSpacing: -0.3, lineHeight: 1.3, color: 'var(--white)' }}>
             {s.heading}
           </h3>
-          {s.paragraphs.map(p => <p key={p} style={BODY_TEXT}>{p}</p>)}
+          {s.paragraphs.map((p, j) => <p key={j} style={BODY_TEXT}>{p}</p>)}
         </section>
       ))}
     </div>
@@ -53,8 +53,8 @@ export default function CaseStudy({ data }: { data: CaseStudyData }) {
 
       {/* Fact cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
-        {data.facts.map(f => (
-          <div key={f.value} style={{
+        {data.facts.map((f, i) => (
+          <div key={i} style={{
             background: 'var(--bg3)', border: '1px solid var(--border)', borderRadius: 'var(--r-card)',
             padding: '28px 28px 32px', display: 'flex', flexDirection: 'column', gap: 12,
           }}>
